@@ -1,0 +1,859 @@
+# English translations for STALKER CTF
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-21 12:00+0000\n"
+"PO-Revision-Date: 2023-12-21 12:00+0000\n"
+"Last-Translator: STALKER Team\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Base translations
+msgid "STALKER::NOVICE"
+msgstr "STALKER::NOVICE"
+
+msgid "STALKER PDA Terminal v1.0"
+msgstr "STALKER PDA Terminal v1.0"
+
+# Index page translations
+msgid "STALKER::INTRODUCTION"
+msgstr "STALKER::INTRODUCTION"
+
+msgid "INTRODUCTION"
+msgstr "INTRODUCTION"
+
+msgid "Welcome to the Zone of Exclusion, stalker. You have just arrived at the Cordon - the first entry point into this dangerous territory. Your equipment is minimal, but Sidorovich, the local trader, can help... for a price."
+msgstr "Welcome to the Zone of Exclusion, stalker. You have just arrived at the Cordon - the first entry point into this dangerous territory. Your equipment is minimal, but Sidorovich, the local trader, can help... for a price."
+
+msgid "WARNING:"
+msgstr "WARNING:"
+
+msgid "Sidorovich is interested in special \"flags\" that can be found in various locations of the Cordon. For each such flag, he is ready to exchange valuable equipment."
+msgstr "Sidorovich is interested in special \"flags\" that can be found in various locations of the Cordon. For each such flag, he is ready to exchange valuable equipment."
+
+msgid "To begin your journey, enter your stalker name:"
+msgstr "To begin your journey, enter your stalker name:"
+
+msgid "Enter stalker name..."
+msgstr "Enter stalker name..."
+
+msgid "Enter the Zone"
+msgstr "Enter the Zone"
+
+msgid "Radiation level"
+msgstr "Radiation level"
+
+msgid "System active"
+msgstr "System active"
+
+msgid "Danger zone"
+msgstr "Danger zone"
+
+# Map page translations
+msgid "Information"
+msgstr "Information"
+
+msgid "Stalker:"
+msgstr "Stalker:"
+
+msgid "Unknown"
+msgstr "Unknown"
+
+msgid "Status:"
+msgstr "Status:"
+
+msgid "Novice"
+msgstr "Novice"
+
+msgid "Location:"
+msgstr "Location:"
+
+msgid "Cordon"
+msgstr "Cordon"
+
+msgid "Danger level: High"
+msgstr "Danger level: High"
+
+msgid "Tasks"
+msgstr "Tasks"
+
+msgid "Find flags in each location"
+msgstr "Find flags in each location"
+
+msgid "Bring them to Sidorovich"
+msgstr "Bring them to Sidorovich"
+
+msgid "Be careful with anomalies!"
+msgstr "Be careful with anomalies!"
+
+msgid "Stalkers Campfire"
+msgstr "Stalkers Campfire"
+
+msgid "Old Shed"
+msgstr "Old Shed"
+
+msgid "Farmhouse"
+msgstr "Farmhouse"
+
+msgid "Dog Pack"
+msgstr "Dog Pack"
+
+msgid "Abandoned House"
+msgstr "Abandoned House"
+
+msgid "Technician House"
+msgstr "Technician House"
+
+msgid "Anomaly"
+msgstr "Anomaly"
+
+msgid "Bandit Camp"
+msgstr "Bandit Camp"
+
+msgid "Sidorovich Bunker"
+msgstr "Sidorovich Bunker"
+
+# Common UI elements
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Submit"
+msgstr "Submit"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Got it"
+msgstr "Got it"
+
+msgid "Message"
+msgstr "Message"
+
+# Dogs location translations
+msgid "DOG PACK"
+msgstr "DOG PACK"
+
+msgid "You stumbled upon a pack of wild dogs. Nearby there is an observation tower, but the guard does not seem to notice you."
+msgstr "You stumbled upon a pack of wild dogs. Nearby there is an observation tower, but the guard does not seem to notice you."
+
+msgid "Look at tower"
+msgstr "Look at tower"
+
+msgid "Assess situation"
+msgstr "Assess situation"
+
+msgid "Try to signal"
+msgstr "Try to signal"
+
+msgid "ALERT SYSTEM"
+msgstr "ALERT SYSTEM"
+
+msgid "You see a guard post ahead. The guard seems to be monitoring some kind of alert system..."
+msgstr "You see a guard post ahead. The guard seems to be monitoring some kind of alert system..."
+
+msgid "Enter message..."
+msgstr "Enter message..."
+
+msgid "Send signal"
+msgstr "Send signal"
+
+msgid "REWARD:"
+msgstr "REWARD:"
+
+msgid "Copy"
+msgstr "Copy"
+
+msgid "Tower Examination"
+msgstr "Tower Examination"
+
+msgid "The guard in the tower is looking the other way. Maybe you should get his attention with some kind of popup message?"
+msgstr "The guard in the tower is looking the other way. Maybe you should get his attention with some kind of popup message?"
+
+msgid "Situation Assessment"
+msgstr "Situation Assessment"
+
+msgid "The dogs look aggressive. Need to call for help urgently! Maybe an alert(\"dogs!\") message would get the guard's attention?"
+msgstr "The dogs look aggressive. Need to call for help urgently! Maybe an alert(\"dogs!\") message would get the guard's attention?"
+
+msgid "I heard the alarm!\nHold on, I'm coming to help!\nAnd here's your reward for quick thinking!"
+msgstr "I heard the alarm!\nHold on, I'm coming to help!\nAnd here's your reward for quick thinking!"
+
+msgid "Copied!"
+msgstr "Copied!"
+
+# Campfire page translations
+msgid "STALKER::CAMPFIRE"
+msgstr "STALKER::CAMPFIRE"
+
+msgid "CAMPFIRE"
+msgstr "CAMPFIRE"
+
+msgid "Several stalkers are sitting by the campfire. The warm light creates a cozy atmosphere, and you can hear quiet conversations and occasional laughter."
+msgstr "Several stalkers are sitting by the campfire. The warm light creates a cozy atmosphere, and you can hear quiet conversations and occasional laughter."
+
+msgid "Ask about the shed"
+msgstr "Ask about the shed"
+
+msgid "Ask about the farmhouse"
+msgstr "Ask about the farmhouse"
+
+msgid "Ask about the dogs"
+msgstr "Ask about the dogs"
+
+msgid "Ask about the abandoned house"
+msgstr "Ask about the abandoned house"
+
+msgid "Ask about the technician"
+msgstr "Ask about the technician"
+
+msgid "Ask about the anomaly"
+msgstr "Ask about the anomaly"
+
+msgid "Ask about the bandits"
+msgstr "Ask about the bandits"
+
+msgid "Ask about the garage"
+msgstr "Ask about the garage"
+
+msgid "Garage Information"
+msgstr "Garage Information"
+
+msgid "A stalker with a laptop mentions: \"Network traffic inspection tools are essential in the Zone. Always check response headers when dealing with suspicious vehicles.\""
+msgstr "A stalker with a laptop mentions: \"Network traffic inspection tools are essential in the Zone. Always check response headers when dealing with suspicious vehicles.\""
+
+msgid "Return to map"
+msgstr "Return to map"
+
+msgid "An old stalker says: \"There's something hidden in that shed. Try looking in a hidden directory. I have a list of common paths you can look at.\""
+msgstr "An old stalker says: \"There's something hidden in that shed. Try looking in a hidden directory. I have a list of common paths you can look at.\""
+
+msgid "View paths list"
+msgstr "View paths list"
+
+msgid "An experienced stalker tells: \"There's a treasures table in the database. Use a simple SELECT query to get the data. You can pull all or just what you need. Your choice.\""
+msgstr "An experienced stalker tells: \"There's a treasures table in the database. Use a simple SELECT query to get the data. You can pull all or just what you need. Your choice.\""
+
+msgid "A young stalker recalls: \"The guard reacts to popup messages. You know, those that appear through alert(). And he's afraid of dogs...\""
+msgstr "A young stalker recalls: \"The guard reacts to popup messages. You know, those that appear through alert(). And he's afraid of dogs...\""
+
+msgid "The technician by the fire mumbles: \"That safe... I have lists of common logins and passwords. Maybe something will work?\""
+msgstr "The technician by the fire mumbles: \"That safe... I have lists of common logins and passwords. Maybe something will work?\""
+
+msgid "View logins list"
+msgstr "View logins list"
+
+msgid "View passwords list"
+msgstr "View passwords list"
+
+msgid "The old stalker smiles: \"*lowers voice* If you get stuck - look for CyberChef online. They say specialists often use this tool for working with ciphers.\""
+msgstr "The old stalker smiles: \"*lowers voice* If you get stuck - look for CyberChef online. They say specialists often use this tool for working with ciphers.\""
+
+msgid "An experienced stalker advises: \"Open developer tools (F12), Network tab. You can see all requests there, including hidden parameters.\""
+msgstr "An experienced stalker advises: \"Open developer tools (F12), Network tab. You can see all requests there, including hidden parameters.\""
+
+msgid "A seasoned stalker whispers: \"Bandits check the role through a cookie. If you change the cookie role value from stalker to bandit...\""
+msgstr "A seasoned stalker whispers: \"Bandits check the role through a cookie. If you change the cookie role value from stalker to bandit...\""
+
+msgid "What's new in zone?"
+msgstr "What's new in zone?"
+
+msgid "Does anybody know cool jokes?"
+msgstr "Does anybody know cool jokes?"
+
+msgid "Guys, I need some advice"
+msgstr "Guys, I need some advice"
+
+msgid "The stalkers exchange knowing looks. Everyone here has their own expertise to share."
+msgstr "The stalkers exchange knowing looks. Everyone here has their own expertise to share."
+
+msgid "The stalkers share the latest stories from around the Zone:"
+msgstr "The stalkers share the latest stories from around the Zone:"
+
+msgid "\"Did you hear? They say someone managed to hack that old vending machine near the road. Got themselves a nice prize...\""
+msgstr "\"Did you hear? They say someone managed to hack that old vending machine near the road. Got themselves a nice prize...\""
+
+msgid "\"The anomaly field has been acting strange lately. More signals than usual.\""
+msgstr "\"The anomaly field has been acting strange lately. More signals than usual.\""
+
+msgid "\"Bandits are getting craftier with their security. But their systems still have weaknesses if you know where to look.\""
+msgstr "\"Bandits are getting craftier with their security. But their systems still have weaknesses if you know where to look.\""
+
+msgid "\"That garage by the old road... smugglers are using it again. Their security is all digital now.\""
+msgstr "\"That garage by the old road... smugglers are using it again. Their security is all digital now.\""
+
+msgid "The stalkers share their favorite Zone humor:"
+msgstr "The stalkers share their favorite Zone humor:"
+
+msgid "\"Why did the rookie bring a keyboard to an anomaly field? He heard you could hack artifacts!\""
+msgstr "\"Why did the rookie bring a keyboard to an anomaly field? He heard you could hack artifacts!\""
+
+msgid "\"What's a stalker's favorite programming language? C-Zone!\""
+msgstr "\"What's a stalker's favorite programming language? C-Zone!\""
+
+msgid "\"How many stalkers does it take to fix a bug? None, they just call it a new anomaly!\""
+msgstr "\"How many stalkers does it take to fix a bug? None, they just call it a new anomaly!\""
+
+msgid "\"What did the stalker say when his PDA crashed? Blyat, not again!\""
+msgstr "\"What did the stalker say when his PDA crashed? Blyat, not again!\""
+
+msgid "Back to conversation"
+msgstr "Back to conversation"
+
+# Sydorovich bunker translations
+msgid "STALKER::BUNKER"
+msgstr "STALKER::BUNKER"
+
+msgid "You descend into Sydorovich's underground bunker. The trader sits at his desk, surrounded by various equipment."
+msgstr "You descend into Sydorovich's underground bunker. The trader sits at his desk, surrounded by various equipment."
+
+msgid "Talk to Sydorovich"
+msgstr "Talk to Sydorovich"
+
+msgid "Show found flags"
+msgstr "Show found flags"
+
+msgid "Ask about equipment"
+msgstr "Ask about equipment"
+
+msgid "Sydorovich looks at you intently:"
+msgstr "Sydorovich looks at you intently:"
+
+msgid "\"Well, show me what you brought. For each correct flag, you'll get a piece of equipment.\""
+msgstr "\"Well, show me what you brought. For each correct flag, you'll get a piece of equipment.\""
+
+msgid "Shed:"
+msgstr "Shed:"
+
+msgid "Farmhouse:"
+msgstr "Farmhouse:"
+
+msgid "Dogs:"
+msgstr "Dogs:"
+
+msgid "Abandoned house:"
+msgstr "Abandoned house:"
+
+msgid "Technician house:"
+msgstr "Technician house:"
+
+msgid "Anomaly:"
+msgstr "Anomaly:"
+
+msgid "Bandit camp:"
+msgstr "Bandit camp:"
+
+msgid "Submit flags"
+msgstr "Submit flags"
+
+msgid "Received equipment:"
+msgstr "Received equipment:"
+
+msgid "Return to map"
+msgstr "Return to map"
+
+msgid "Sydorovich"
+msgstr "Sydorovich"
+
+msgid "\"Well, rookie, did you bring something interesting? I trade flags for equipment.\""
+msgstr "\"Well, rookie, did you bring something interesting? I trade flags for equipment.\""
+
+msgid "\"For each correct flag, you'll get something useful. The more you bring, the better equipment you can choose.\""
+msgstr "\"For each correct flag, you'll get something useful. The more you bring, the better equipment you can choose.\""
+
+msgid "received!"
+msgstr "received!"
+
+# Shed location translations
+msgid "STALKER::SHED"
+msgstr "STALKER::SHED"
+
+msgid "You approach the old shed. The door is firmly locked, but local stalkers say there is a secret entrance used by smugglers. On the wall, you notice a strange terminal with a small screen. A message flashes on the screen:"
+msgstr "You approach the old shed. The door is firmly locked, but local stalkers say there is a secret entrance used by smugglers. On the wall, you notice a strange terminal with a small screen. A message flashes on the screen:"
+
+msgid "SECRET PATH NAVIGATION SYSTEM v1.0\nStatus: ACTIVE\nAccess: WAITING\n\nError: Path not found\nEnter the correct path to access..."
+msgstr "SECRET PATH NAVIGATION SYSTEM v1.0\nStatus: ACTIVE\nAccess: WAITING\n\nError: Path not found\nEnter the correct path to access..."
+
+msgid "Examine terminal"
+msgstr "Examine terminal"
+
+msgid "Search area"
+msgstr "Search area"
+
+msgid "Check notes"
+msgstr "Check notes"
+
+msgid "Terminal Examination"
+msgstr "Terminal Examination"
+
+msgid "On the terminal's case, you notice an inscription: \"PathFinder 3000. To activate the secret entrance, use the correct path through the web interface. Example: /location/shed/PATH\""
+msgstr "On the terminal's case, you notice an inscription: \"PathFinder 3000. To activate the secret entrance, use the correct path through the web interface. Example: /location/shed/PATH\""
+
+msgid "Area Search"
+msgstr "Area Search"
+
+msgid "You found nothing. You should ask the guys at the campfire, maybe they know something."
+msgstr "You found nothing. You should ask the guys at the campfire, maybe they know something."
+
+msgid "Notes Check"
+msgstr "Notes Check"
+
+msgid "In the notes of local stalkers, it is mentioned that smugglers often use standard directory names for their secret entrances. This helps them remember the paths."
+msgstr "In the notes of local stalkers, it is mentioned that smugglers often use standard directory names for their secret entrances. This helps them remember the paths."
+
+# Console page translations
+msgid "STALKER::SECRET_ENTRANCE"
+msgstr "STALKER::SECRET_ENTRANCE"
+
+msgid "SECRET_ENTRANCE"
+msgstr "SECRET ENTRANCE"
+
+msgid "SECRET PATH NAVIGATION SYSTEM v1.0"
+msgstr "SECRET PATH NAVIGATION SYSTEM v1.0"
+
+msgid "Initializing mechanism..."
+msgstr "Initializing mechanism..."
+
+msgid "Path verification"
+msgstr "Path verification"
+
+msgid "Mechanism activation"
+msgstr "Mechanism activation"
+
+msgid "Opening passage"
+msgstr "Opening passage"
+
+msgid "Secret entrance opened!"
+msgstr "Secret entrance opened!"
+
+msgid "In the cache you find a note with a flag:"
+msgstr "In the cache you find a note with a flag:"
+
+msgid "Copy flag"
+msgstr "Copy flag"
+
+msgid "Flag copied!"
+msgstr "Flag copied!"
+
+msgid "Copied!"
+msgstr "Copied!"
+
+# Common paths page translations
+msgid "STALKER::COMMON_PATHS"
+msgstr "STALKER::COMMON_PATHS"
+
+msgid "COMMON_PATHS"
+msgstr "COMMON PATHS"
+
+msgid "On an old PDA you find a list of common paths:"
+msgstr "On an old PDA you find a list of common paths:"
+
+msgid "Copy list"
+msgstr "Copy list"
+
+# Abandoned house translations
+msgid "ABANDONED HOUSE"
+msgstr "ABANDONED HOUSE"
+
+msgid "In a half-ruined house, you find an old safe with an electronic lock. The screen flashes \"S.T.A.L.K.E.R. Security System v1.0\"."
+msgstr "In a half-ruined house, you find an old safe with an electronic lock. The screen flashes \"S.T.A.L.K.E.R. Security System v1.0\"."
+
+msgid "Examine panel"
+msgstr "Examine panel"
+
+msgid "Search for clues"
+msgstr "Search for clues"
+
+msgid "Try to unlock"
+msgstr "Try to unlock"
+
+msgid "Authorization required"
+msgstr "Authorization required"
+
+msgid "Enter your credentials:"
+msgstr "Enter your credentials:"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Try"
+msgstr "Try"
+
+msgid "Return to map"
+msgstr "Return to map"
+
+msgid "Panel Examination"
+msgstr "Panel Examination"
+
+msgid "There are traces of frequent use on the panel. It seems this safe was used by an experienced stalker. Maybe check the list of common logins by the campfire?"
+msgstr "There are traces of frequent use on the panel. It seems this safe was used by an experienced stalker. Maybe check the list of common logins by the campfire?"
+
+msgid "Search for Clues"
+msgstr "Search for Clues"
+
+msgid "On the wall, there is a scratched inscription: \"Only those who understand the laws of the Zone can open this safe\""
+msgstr "On the wall, there is a scratched inscription: \"Only those who understand the laws of the Zone can open this safe\""
+
+msgid "Success!"
+msgstr "Success!"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Неправильний пароль"
+msgstr "Incorrect password"
+
+msgid "Сейф відкрито! Ви знайшли прапор:"
+msgstr "Safe opened! You found a flag:"
+
+msgid "STALKER{brut3_f0rc3_m4st3r}"
+msgstr "STALKER{brut3_f0rc3_m4st3r}"
+
+msgid "Enter login!"
+msgstr "Enter login!"
+
+msgid "Invalid credentials"
+msgstr "Invalid credentials"
+
+msgid "Enter password!"
+msgstr "Enter password!"
+
+msgid "Incorrect password"
+msgstr "Incorrect password"
+
+msgid "Safe opened! You found a flag: "
+msgstr "Safe opened! You found a flag: "
+
+# Anomaly location translations
+msgid "ANOMALY"
+msgstr "ANOMALY"
+
+msgid "A strange anomaly pulsates before you. Your PDA starts making strange sounds and showing incomprehensible data. It seems the anomaly is emitting some signals..."
+msgstr "A strange anomaly pulsates before you. Your PDA starts making strange sounds and showing incomprehensible data. It seems the anomaly is emitting some signals..."
+
+msgid "Scan anomaly"
+msgstr "Scan anomaly"
+
+msgid "Check PDA"
+msgstr "Check PDA"
+
+msgid "Try to intercept signal"
+msgstr "Try to intercept signal"
+
+msgid "PDA::Signal Interception Module"
+msgstr "PDA::Signal Interception Module"
+
+msgid "ANOMALY ANALYSIS:\n- Type: Informational\n- Activity: High\n- Status: Data transmission...\n\nNetwork activity detected...\nSignals are transmitted via GET requests...\nRecommended: use traffic interception tools"
+msgstr "ANOMALY ANALYSIS:\n- Type: Informational\n- Activity: High\n- Status: Data transmission...\n\nNetwork activity detected...\nSignals are transmitted via GET requests...\nRecommended: use traffic interception tools"
+
+msgid "Send test signal"
+msgstr "Send test signal"
+
+msgid "Activity log:"
+msgstr "Activity log:"
+
+msgid "Waiting for signal..."
+msgstr "Waiting for signal..."
+
+msgid "SIGNAL SENT"
+msgstr "SIGNAL SENT"
+
+msgid "Return to map"
+msgstr "Return to map"
+
+msgid "Anomaly Scan"
+msgstr "Anomaly Scan"
+
+msgid "The PDA shows: \"Anomaly type: Informational. It seems to be transmitting data through network requests...\""
+msgstr "The PDA shows: \"Anomaly type: Informational. It seems to be transmitting data through network requests...\""
+
+msgid "PDA Check"
+msgstr "PDA Check"
+
+msgid "Your PDA is picking up strange network traffic. The anomaly seems to be responding to GET requests."
+msgstr "Your PDA is picking up strange network traffic. The anomaly seems to be responding to GET requests."
+
+msgid "Signal Interception"
+msgstr "Signal Interception"
+
+msgid "You activate the signal interception module on your PDA."
+msgstr "You activate the signal interception module on your PDA."
+
+msgid "Signal sent..."
+msgstr "Signal sent..."
+
+msgid "Signal received! Response:"
+msgstr "Signal received! Response:"
+
+msgid "Success!"
+msgstr "Success!"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Signal intercepted! You found a flag: "
+msgstr "Signal intercepted! You found a flag: "
+
+msgid "Signal sent successfully. Check the network traffic for hidden data..."
+msgstr "Signal sent successfully. Check the network traffic for hidden data..."
+
+msgid "Signal received successfully."
+msgstr "Signal received successfully."
+
+msgid "Signal processed."
+msgstr "Signal processed."
+
+msgid "Correct flag! Sydorovich will be pleased."
+msgstr "Correct flag! Sydorovich will be pleased."
+
+msgid "Incorrect flag. Try again."
+msgstr "Incorrect flag. Try again."
+
+msgid "*Monitor flashes green* Ha! You cracked this message like a can of tushonka!"
+msgstr "*Monitor flashes green* Ha! You cracked this message like a can of tushonka!"
+
+msgid "*Monitor flashes red* Something's wrong... Maybe try a different decoder?"
+msgstr "*Monitor flashes red* Something's wrong... Maybe try a different decoder?"
+
+msgid "*Screen sparks* Ha! Well done! The encryption didn't stop you!"
+msgstr "*Screen sparks* Ha! Well done! The encryption didn't stop you!"
+
+msgid "*System shows error* Hmm... Maybe decode base64 first, then XOR? By the way, heard about CyberChef? They say it's a useful tool..."
+msgstr "*System shows error* Hmm... Maybe decode base64 first, then XOR? By the way, heard about CyberChef? They say it's a useful tool..."
+
+msgid "*PDA beeps with satisfaction* Bingo! The bandits clearly didn't expect someone to guess their password!"
+msgstr "*PDA beeps with satisfaction* Bingo! The bandits clearly didn't expect someone to guess their password!"
+
+msgid "*PDA hums disapprovingly* Not that... Maybe it's a simple word? Bandits usually don't get fancy. Try md5 hash lookup."
+msgstr "*PDA hums disapprovingly* Not that... Maybe it's a simple word? Bandits usually don't get fancy. Try md5 hash lookup."
+
+msgid "*Technician nods approvingly* Here's your reward, stalker!"
+msgstr "*Technician nods approvingly* Here's your reward, stalker!"
+
+msgid "*Technician shakes his head* Nah, finish all the challenges first, stalker."
+msgstr "*Technician shakes his head* Nah, finish all the challenges first, stalker."
+
+# Garage location translations
+msgid "Garage"
+msgstr "Garage"
+
+msgid "GARAGE"
+msgstr "GARAGE"
+
+msgid "STALKER::GARAGE"
+msgstr "STALKER::GARAGE"
+
+msgid "You enter an old garage. There's a strange car inside - it looks like it's been modified to transport something. Maybe checking it will reveal some secrets..."
+msgstr "You enter an old garage. There's a strange car inside - it looks like it's been modified to transport something. Maybe checking it will reveal some secrets..."
+
+msgid "Check car"
+msgstr "Check car"
+
+msgid "Error checking car"
+msgstr "Error checking car"
+
+msgid "Car inspection complete. Nothing unusual in plain sight..."
+msgstr "Car inspection complete. Nothing unusual in plain sight..."
+
+msgid "An experienced stalker mentions: \"When inspecting vehicles in the Zone, always check the response headers. Sometimes smugglers hide information there...\""
+msgstr "An experienced stalker mentions: \"When inspecting vehicles in the Zone, always check the response headers. Sometimes smugglers hide information there...\""
+
+msgid "Garage:"
+msgstr "Garage:"
+
+msgid "VEHICLE INSPECTION SYSTEM v1.0"
+msgstr "VEHICLE INSPECTION SYSTEM v1.0"
+
+msgid "Status: ACTIVE"
+msgstr "Status: ACTIVE"
+
+msgid "Access: GRANTED"
+msgstr "Access: GRANTED"
+
+msgid "Warning: Suspicious modifications detected..."
+msgstr "Warning: Suspicious modifications detected..."
+
+msgid "Inspect modifications"
+msgstr "Check network traffic"
+
+msgid "Scan for hidden compartments"
+msgstr "Analyze response data"
+
+msgid "The car has been heavily modified. There are traces of hidden compartments and unusual network activity..."
+msgstr "Hmm, the Network tab in Developer Tools (F12) might reveal something interesting. Smugglers often hide important data in request headers..."
+
+msgid "Scan complete. Multiple hidden compartments detected. The car seems to be transmitting data through network requests..."
+msgstr "Tools like Burp Suite or browser Network Inspector could help here. Better check the response headers for any hidden data...
+
+msgid "Vehicle Inspection"
+msgstr "Network Analysis"
+
+msgid "Scan Results"
+msgstr "Traffic Analysis"
+
+msgid "STALKER OS v1.337"
+msgstr "STALKER OS v1.337"
+
+msgid "VEHICLE INSPECTION SYSTEM v1.0"
+msgstr "VEHICLE INSPECTION SYSTEM v1.0"
+
+msgid "Status:"
+msgstr "Status:"
+
+msgid "ACTIVE"
+msgstr "ACTIVE"
+
+msgid "Access:"
+msgstr "Access:"
+
+msgid "GRANTED"
+msgstr "GRANTED"
+
+msgid "Warning:"
+msgstr "Warning:"
+
+msgid "Suspicious modifications detected..."
+msgstr "Suspicious modifications detected..."
+
+msgid "MEMORY: OK | CPU: STABLE | NETWORK: ACTIVE"
+msgstr "MEMORY: OK | CPU: STABLE | NETWORK: ACTIVE"
+
+msgid "SCANNING..."
+msgstr "SCANNING..."
+
+msgid "Vehicle Inspection"
+msgstr "Network Analysis"
+
+msgid "Scan Results"
+msgstr "Traffic Analysis"
+
+msgid "Error checking car"
+msgstr "Error checking car"
+
+msgid "The car has been heavily modified. There are traces of hidden compartments and unusual network activity..."
+msgstr "The car has been heavily modified. There are traces of hidden compartments and unusual network activity..."
+
+msgid "Scan complete. Multiple hidden compartments detected. The car seems to be transmitting data through network requests..."
+msgstr "Scan complete. Multiple hidden compartments detected. The car seems to be transmitting data through network requests..."
+
+msgid "Night vision goggles - received!"
+msgstr "Night vision goggles - received!"
+
+msgid "Night vision goggles"
+msgstr "Night vision goggles"
+
+msgid "STALKER::VENDING"
+msgstr "STALKER::VENDING"
+
+msgid "VENDING MACHINE"
+msgstr "VENDING MACHINE"
+
+msgid "STALKER VENDING MACHINE v1.0"
+msgstr "STALKER VENDING MACHINE v1.0"
+
+msgid "Status: OPERATIONAL"
+msgstr "Status: OPERATIONAL"
+
+msgid "Coupons available: 1"
+msgstr "Coupons available: 1"
+
+msgid "ITEMS AVAILABLE:"
+msgstr "ITEMS AVAILABLE:"
+
+msgid "Flag: 1 000 000 coupons"
+msgstr "Flag: 1 000 000 coupons"
+
+msgid "Buy a flag"
+msgstr "Buy a flag"
+
+msgid "Vending Machine"
+msgstr "Vending Machine"
+
+msgid "Invalid quantity"
+msgstr "Invalid quantity"
+
+msgid "Not enough coupons! You need 1 000 000 coupons to buy a flag."
+msgstr "Not enough coupons! You need 1 000 000 coupons to buy a flag."
+
+msgid "*Machine whirs* Here's your flag!"
+msgstr "*Machine whirs* Here's your flag!"
+
+msgid "Energy drink"
+msgstr "Energy drink"
+
+msgid "Energy drink - received!"
+msgstr "Energy drink - received!"
+
+msgid "Ask about the vending machine"
+msgstr "Ask about the vending machine"
+
+msgid "Vending Machine Information"
+msgstr "Vending Machine Information"
+
+msgid "The vending machine seems overpriced. Maybe you could modify the POST request parameters to get a better deal..."
+msgstr "A crafty stalker grins: \"That vending machine is ridiculously overpriced. With tools like Burp Suite, you can intercept and modify the POST request parameters. Maybe change the price to something more... reasonable.\""
+
+msgid "Vending machine:"
+msgstr "Vending machine:"
+
+msgid "You discover an old vending machine in a dimly lit corner. Its display glows with an eerie rust-colored light, showing an absurdly high price. Your PDA detects unusual network activity coming from the machine."
+msgstr "You discover an old vending machine in a dimly lit corner. Its display glows with an eerie rust-colored light, showing an absurdly high price. Your PDA detects unusual network activity coming from the machine."
+
+msgid "Examine display"
+msgstr "Examine display"
+
+msgid "Scan network activity"
+msgstr "Scan network activity"
+
+msgid "Check pricing system"
+msgstr "Check pricing system"
+
+msgid "Display Analysis"
+msgstr "Display Analysis"
+
+msgid "The vending machine's interface appears to be running on an old embedded system. The price seems to be handled by a simple POST request to the internal server. Maybe there's a way to... adjust it?"
+msgstr "The vending machine's interface appears to be running on an old embedded system. The price seems to be handled by a simple POST request to the internal server. Maybe there's a way to... adjust it?"
+
+msgid "Network Scan"
+msgstr "Network Scan"
+
+msgid "Your PDA detects that the machine processes purchase requests locally. All parameters, including price and quantity, are sent directly to the machine's server. A security-minded stalker would definitely check these requests with special tools..."
+msgstr "Your PDA detects that the machine processes purchase requests locally. All parameters, including price and quantity, are sent directly to the machine's server. A security-minded stalker would definitely check these requests with special tools..."
+
+msgid "Price Analysis"
+msgstr "Price Analysis"
+
+msgid "The pricing system seems poorly secured. The machine accepts a \"price\" parameter in its purchase request. An experienced stalker would know how to intercept and modify such requests using tools like Burp Suite..."
+msgstr "The pricing system seems poorly secured. The machine accepts a \"price\" parameter in its purchase request. An experienced stalker would know how to intercept and modify such requests using tools like Burp Suite..."
+
+msgid "\"So they caught an old stalker and interrogate him:\n\n- People say you have... an assault rifle?\n- People are lying...\n- People say you have... a machine gun?\n- Oh, people are lying...\n- People say you have... a tank?\n- Well, that's the one thing I don't have...\""
+msgstr "\"So they caught an old stalker and interrogate him:\n\n- People say you have... an assault rifle?\n- People are lying...\n- People say you have... a machine gun?\n- Oh, people are lying...\n- People say you have... a tank?\n- Well, that's the one thing I don't have...\""
+
+msgid "\"A stalker comes to the doctor. The doctor examines him and says:\n\n- This is from fatigue, this is from nervous tension, and this is from depression.\n- Thank you, doctor, thank you... Tell me, don't you have anything besides vodka?\""
+msgstr "\"A stalker comes to the doctor. The doctor examines him and says:\n\n- This is from fatigue, this is from nervous tension, and this is from depression.\n- Thank you, doctor, thank you... Tell me, don't you have anything besides vodka?\""
+
+msgid "\"A stalker meets his old buddy. And he's all beaten up, with a black eye:\n\n- Pete, what happened to you?\n- Well damn... Got attacked, beaten up, money stolen...\n- Did you remember who did it?\n- Why would I need to remember... It was my wife!\""
+msgstr "\"A stalker meets his old buddy. And he's all beaten up, with a black eye:\n\n- Pete, what happened to you?\n- Well damn... Got attacked, beaten up, money stolen...\n- Did you remember who did it?\n- Why would I need to remember... It was my wife!\""
+
+msgid "\"One stalker asks another:\n\n- Do you know which car is the most 'stalker-like'?\n- No, which one?\n- Zaporozhets!\n- Why's that?\n- Because it's reliable as a tank, and the trunk is in the front. Convenient to keep an eye on the loot!\""
+msgstr "\"One stalker asks another:\n\n- Do you know which car is the most 'stalker-like'?\n- No, which one?\n- Zaporozhets!\n- Why's that?\n- Because it's reliable as a tank, and the trunk is in the front. Convenient to keep an eye on the loot!\""
+

@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::FARMHOUSE') }}{% endblock %}
+
+{% block header %}{{ _('FARMHOUSE') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('Inside the old farmhouse, you find a wounded stalker near an old computer terminal. He is breathing heavily but trying to say something.') }}</p>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="talkToStalker()">{{ _('Talk to stalker') }}</button>
+        <button class="dialogue-option" onclick="checkTerminal()">{{ _('Check terminal') }}</button>
+        <button class="dialogue-option" onclick="lookAround()">{{ _('Look around') }}</button>
+    </div>
+</div>
+
+<div id="challenge-area" style="display: none;" class="challenge-container">
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="terminal-title">{{ _('SQLite Database Terminal') }}</span>
+            <div class="terminal-buttons">
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+            </div>
+        </div>
+        <div class="terminal-content">
+            <pre class="schema-info">{{ _('Database: treasures
+Table: treasures
+Columns: 
+  - id (INTEGER)
+  - location (TEXT)
+  - coordinates (TEXT)
+  - flag (TEXT)
+
+Enter a SELECT query to get the treasure data:') }}</pre>
+            
+            <div class="input-container">
+                <input type="text" id="sql-input" class="input-field" placeholder="{{ _('SELECT...') }}">
+                <button onclick="submitQuery()" class="submit-btn">{{ _('Execute') }}</button>
+            </div>
+
+            <div id="response-area" class="response-area">
+                <div class="response-header">{{ _('Query result:') }}</div>
+                <pre id="response-content" class="response-content">{{ _('Waiting for query...') }}</pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.terminal-container {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    background: var(--dirt);
+    padding: 10px;
+    border-bottom: 1px solid var(--rust);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: var(--paper);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--rust);
+    display: inline-block;
+}
+
+.terminal-content {
+    padding: 20px;
+    font-family: monospace;
+    color: var(--paper);
+}
+
+.schema-info {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border: 1px solid var(--rust);
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    flex-grow: 1;
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 8px 12px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--light-rust);
+}
+
+.response-area {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--rust);
+    padding: 15px;
+}
+
+.response-header {
+    color: var(--light-rust);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.response-content {
+    white-space: pre-wrap;
+    margin: 0;
+    color: #4CAF50;
+}
+
+.error-message {
+    color: #ff6b6b;
+}
+
+.success-message {
+    color: #4CAF50;
+}
+
+/* Custom Scrollbar */
+.terminal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+    background: var(--dark-dirt);
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    background: var(--rust);
+    border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--light-rust);
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const translations = {
+        talkTitle: {{ _('Talk to stalker')|tojson|safe }},
+        talkText: {{ _('*cough* In the database... coordinates and flag... Try SELECT... *cough* Look how to SELECT all from the table... *cough*')|tojson|safe }},
+        lookTitle: {{ _('Look around')|tojson|safe }},
+        lookText: {{ _('The room is dark, but the terminal is working. You can see the SQLite database interface on the monitor. Maybe try a query? You need to specify WHAT to SELECT, and FROM where to SELECT.')|tojson|safe }},
+        queryResult: {{ _('Query result:')|tojson|safe }},
+        executing: {{ _('Executing query...')|tojson|safe }},
+        error: {{ _('Error:')|tojson|safe }},
+        congrats: {{ _('Congratulations! You found the flag!')|tojson|safe }}
+    };
+
+    window.talkToStalker = function() {
+        showDialog(translations.talkTitle, translations.talkText);
+    };
+
+    window.checkTerminal = function() {
+        document.getElementById('challenge-area').style.display = 'block';
+    };
+
+    window.lookAround = function() {
+        showDialog(translations.lookTitle, translations.lookText);
+    };
+
+    window.submitQuery = function() {
+        const query = document.getElementById('sql-input').value.trim();
+        const responseContent = document.getElementById('response-content');
+        
+        responseContent.textContent = translations.executing;
+        responseContent.className = 'response-content';
+        
+        fetch('/api/submit_sql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query: query })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                if (data.flag) {
+                    responseContent.innerHTML = `${translations.queryResult}\n` +
+                        `id: ${data.id}\n` +
+                        `location: ${data.location}\n` +
+                        `coordinates: ${data.coordinates}\n` +
+                        `flag: ${data.flag}\n\n` +
+                        translations.congrats;
+                    responseContent.className = 'response-content success-message';
+                } else {
+                    responseContent.textContent = `${translations.queryResult}\n${JSON.stringify(data.data, null, 2)}`;
+                    responseContent.className = 'response-content';
+                }
+            } else {
+                responseContent.textContent = `${translations.error} ${data.message}`;
+                responseContent.className = 'response-content error-message';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            responseContent.textContent = translations.error + ' ' + error;
+            responseContent.className = 'response-content error-message';
+        });
+    };
+})();
+</script>
+{% endblock %} 

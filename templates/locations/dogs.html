@@ -1,0 +1,397 @@
+{% extends "base.html" %}
+
+{% block title %}STALKER::{{ _('DOG PACK') }}{% endblock %}
+
+{% block header %}{{ _('DOG PACK') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('You stumbled upon a pack of wild dogs. Nearby there is an observation tower, but the guard does not seem to notice you.') }}</p>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="lookAtTower()">{{ _('Look at tower') }}</button>
+        <button class="dialogue-option" onclick="checkDogs()">{{ _('Assess situation') }}</button>
+        <button class="dialogue-option" onclick="trySignal()">{{ _('Try to signal') }}</button>
+    </div>
+</div>
+
+<div id="challenge-area" style="display: none;" class="challenge-container">
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="terminal-title">{{ _('ALERT SYSTEM') }}</span>
+            <div class="terminal-buttons">
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+            </div>
+        </div>
+        <div class="terminal-content">
+            <div class="info-text">{{ _('You see a guard post ahead. The guard seems to be monitoring some kind of alert system...') }}</div>
+            
+            <div class="input-container">
+                <input type="text" id="message-input" class="input-field" placeholder="{{ _('Enter message...') }}">
+                <button onclick="sendMessage()" class="signal-btn">{{ _('Send signal') }}</button>
+            </div>
+            
+            <div id="message-display" class="message-display"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Overlay -->
+<div id="success-overlay" class="success-overlay">
+    <div class="success-content">
+        <div class="close-btn" onclick="closeSuccessDialog()">×</div>
+        <div class="success-message">
+            <div class="guard-icon"></div>
+            <div class="message-text">
+                <p class="typing-text"></p>
+            </div>
+        </div>
+        <div class="flag-container">
+            <div class="flag-header">{{ _('REWARD:') }}</div>
+            <div id="flag-text" class="flag-text"></div>
+            <button onclick="copyFlag()" class="copy-btn">{{ _('Copy') }}</button>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.terminal-container {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    background: var(--dirt);
+    padding: 10px;
+    border-bottom: 1px solid var(--rust);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: var(--paper);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--rust);
+    display: inline-block;
+}
+
+.terminal-content {
+    padding: 20px;
+    color: var(--paper);
+}
+
+.info-text {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border: 1px solid var(--rust);
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    color: #4CAF50;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    flex-grow: 1;
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 8px 12px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--light-rust);
+}
+
+.signal-btn {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.signal-btn:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+}
+
+.message-display {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--rust);
+    padding: 15px;
+    min-height: 50px;
+    margin-top: 20px;
+    font-family: monospace;
+}
+
+/* Success Overlay */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-content {
+    position: relative;
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.success-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.guard-icon {
+    width: 80px;
+    height: 80px;
+    background: url('/static/guard.png') center/cover;
+    border-radius: 50%;
+    border: 2px solid var(--rust);
+}
+
+.message-text {
+    flex-grow: 1;
+    font-size: 18px;
+    color: var(--paper);
+}
+
+.typing-text {
+    border-right: 2px solid var(--rust);
+    white-space: pre-wrap;
+    margin: 0;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.flag-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--rust);
+    padding: 20px;
+    text-align: center;
+}
+
+.flag-header {
+    color: var(--light-rust);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.flag-text {
+    font-family: monospace;
+    font-size: 24px;
+    color: #FFD700;
+    margin: 20px 0;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.copy-btn {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+}
+
+.copy-btn.copied {
+    background: #4CAF50;
+    border-color: #45a049;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--rust);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--light-rust);
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const translations = {
+        lookTitle: {{ _('Tower Examination')|tojson|safe }},
+        lookText: {{ _('The guard in the tower is looking the other way. Maybe you should get his attention with some kind of popup message?')|tojson|safe }},
+        checkTitle: {{ _('Situation Assessment')|tojson|safe }},
+        checkText: {{ _('The dogs look aggressive. Need to call for help urgently! Maybe an alert("dogs!") message would get the guard\'s attention?')|tojson|safe }},
+        guardMessage: {{ _('I heard the alarm!\nHold on, I\'m coming to help!\nAnd here\'s your reward for quick thinking!')|tojson|safe }},
+        copied: {{ _('Copied!')|tojson|safe }},
+        copy: {{ _('Copy')|tojson|safe }}
+    };
+
+    // Override the default alert to catch our specific case
+    const originalAlert = window.alert;
+    window.alert = function(message) {
+        if (message === 'dogs!') {
+            showSuccessDialog();
+        }
+        originalAlert(message);
+    };
+
+    window.lookAtTower = function() {
+        showDialog(translations.lookTitle, translations.lookText);
+    };
+
+    window.checkDogs = function() {
+        showDialog(translations.checkTitle, translations.checkText);
+    };
+
+    window.trySignal = function() {
+        document.getElementById('challenge-area').style.display = 'block';
+    };
+
+    function typeText(text, element, callback) {
+        let index = 0;
+        element.textContent = '';
+        
+        function type() {
+            if (index < text.length) {
+                element.textContent += text[index];
+                index++;
+                setTimeout(type, 50);
+            } else if (callback) {
+                callback();
+            }
+        }
+        
+        type();
+    }
+
+    window.showSuccessDialog = function() {
+        const overlay = document.getElementById('success-overlay');
+        const typingElement = overlay.querySelector('.typing-text');
+        const flagElement = document.getElementById('flag-text');
+        
+        overlay.style.display = 'flex';
+        flagElement.textContent = '';
+        
+        fetch('/api/check_flag', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                location: 'dogs',
+                flag: 'STALKER{x55_4l3rt_m4st3r}'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Start typing animation immediately
+            typeText(translations.guardMessage, typingElement, () => {
+                // After typing completes, show the flag
+                flagElement.textContent = 'STALKER{x55_4l3rt_m4st3r}';
+                flagElement.style.opacity = '1';
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Show message and flag even if API call fails
+            typeText(translations.guardMessage, typingElement, () => {
+                flagElement.textContent = 'STALKER{x55_4l3rt_m4st3r}';
+                flagElement.style.opacity = '1';
+            });
+        });
+    };
+
+    window.closeSuccessDialog = function() {
+        const overlay = document.getElementById('success-overlay');
+        overlay.style.display = 'none';
+        overlay.querySelector('.typing-text').textContent = '';
+    };
+
+    window.copyFlag = function() {
+        const flag = document.getElementById('flag-text').textContent;
+        navigator.clipboard.writeText(flag).then(() => {
+            const button = document.querySelector('.copy-btn');
+            button.classList.add('copied');
+            button.textContent = translations.copied;
+            setTimeout(() => {
+                button.classList.remove('copied');
+                button.textContent = translations.copy;
+            }, 2000);
+        });
+    };
+
+    window.sendMessage = function() {
+        const message = document.getElementById('message-input').value;
+        document.getElementById('message-display').innerHTML = message;
+    };
+
+    // Close dialog on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeSuccessDialog();
+        }
+    });
+})();
+</script>
+{% endblock %} 

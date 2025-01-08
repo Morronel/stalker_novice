@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}STALKER::{{ _('ABANDONED HOUSE') }}{% endblock %}
+
+{% block header %}{{ _('ABANDONED HOUSE') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('In a half-ruined house, you find an old safe with an electronic lock. The screen flashes "S.T.A.L.K.E.R. Security System v1.0".') }}</p>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="examineKeypad()">{{ _('Examine panel') }}</button>
+        <button class="dialogue-option" onclick="searchForClues()">{{ _('Search for clues') }}</button>
+        <button class="dialogue-option" onclick="tryUnlock()">{{ _('Try to unlock') }}</button>
+    </div>
+</div>
+
+<div id="challenge-area" style="display: none;" class="challenge-container">
+    <pre class="terminal-text">S.T.A.L.K.E.R. Security System v1.0
+===================================
+{{ _('Authorization required') }}
+{{ _('Enter your credentials:') }}</pre>
+    
+    <input type="text" id="username-input" class="input-field" placeholder="{{ _('Login') }}">
+    <input type="password" id="password-input" class="input-field" placeholder="{{ _('Password') }}">
+    <button onclick="checkCredentials()" class="submit-btn">{{ _('Try') }}</button>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.terminal-text {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    padding: 15px;
+    margin: 15px 0;
+    font-family: monospace;
+    color: var(--paper);
+    white-space: pre-wrap;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const translations = {
+        examineTitle: {{ _('Panel Examination')|tojson|safe }},
+        examineText: {{ _('There are traces of frequent use on the panel. It seems this safe was used by an experienced stalker. Maybe check the list of common logins by the campfire?')|tojson|safe }},
+        searchTitle: {{ _('Search for Clues')|tojson|safe }},
+        searchText: {{ _('On the wall, there is a scratched inscription: "Only those who understand the laws of the Zone can open this safe"')|tojson|safe }},
+        success: {{ _('Success!')|tojson|safe }},
+        error: {{ _('Error')|tojson|safe }}
+    };
+
+    window.examineKeypad = function() {
+        showDialog(translations.examineTitle, translations.examineText);
+    };
+
+    window.searchForClues = function() {
+        showDialog(translations.searchTitle, translations.searchText);
+    };
+
+    window.tryUnlock = function() {
+        document.getElementById('challenge-area').style.display = 'block';
+    };
+
+    window.checkCredentials = function() {
+        const username = document.getElementById('username-input').value.trim();
+        const password = document.getElementById('password-input').value.trim();
+        
+        fetch('/location/abandoned/safe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            showDialog(
+                data.success ? translations.success : translations.error,
+                data.message,
+                data.success ? 'success' : 'error'
+            );
+        });
+    };
+})();
+</script>
+{% endblock %} 

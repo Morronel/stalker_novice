@@ -1,0 +1,422 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::BANDIT_CAMP') }}{% endblock %}
+
+{% block header %}{{ _('BANDIT_CAMP') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('You approach the bandit camp. The guard at the entrance examines you carefully.') }}</p>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="talkToGuard()">{{ _('Talk to guard') }}</button>
+        <button class="dialogue-option" onclick="checkCookies()">{{ _('Check your "cookies"') }}</button>
+        <button class="dialogue-option" onclick="tryDisguise()">{{ _('Try to disguise as a bandit') }}</button>
+    </div>
+</div>
+
+<div id="challenge-area" style="display: none;" class="challenge-container">
+    <div class="bandit-terminal">
+        <div class="terminal-header">
+            <span class="terminal-title">{{ _('ACCESS CONTROL SYSTEM') }}</span>
+            <div class="terminal-buttons">
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+            </div>
+        </div>
+        <div class="terminal-content">
+            <div class="status-area">
+                <div class="status-label">{{ _('Current status:') }}</div>
+                <div id="current-status" class="status-value">{{ _('stalker') }}</div>
+            </div>
+            
+            <div class="guard-message">
+                <div class="guard-avatar"></div>
+                <div class="message-text">{{ _('"We only trust bandits, not stalkers. Prove that you\'re one of us."') }}</div>
+            </div>
+            
+            <button onclick="checkAccess()" class="access-btn">{{ _('Try to pass') }}</button>
+            
+            <div class="hint-text">
+                {{ _('Hint: Maybe you should check and change the cookie in developer tools (F12)') }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bandit Success Overlay -->
+<div id="bandit-success" class="success-overlay">
+    <div class="success-content">
+        <div class="close-btn" onclick="closeSuccessDialog()">×</div>
+        <div class="bandit-dialogue">
+            <div class="guard-avatar large"></div>
+            <div class="dialogue-text">
+                <p class="typing-text"></p>
+            </div>
+        </div>
+        <div class="flag-container">
+            <div class="flag-header">{{ _('REWARD:') }}</div>
+            <div id="flag-text" class="flag-text"></div>
+            <button onclick="copyFlag()" class="copy-btn">{{ _('Copy') }}</button>
+        </div>
+    </div>
+</div>
+
+<!-- Error Dialog -->
+<div id="error-dialog" class="dialog-overlay">
+    <div class="dialog-content">
+        <div class="dialog-header">{{ _('Error') }}</div>
+        <div id="error-message" class="dialog-message"></div>
+        <button onclick="closeErrorDialog()" class="dialog-button">{{ _('OK') }}</button>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.bandit-terminal {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    background: var(--dirt);
+    padding: 10px;
+    border-bottom: 1px solid var(--rust);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: var(--paper);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--rust);
+    display: inline-block;
+}
+
+.terminal-content {
+    padding: 20px;
+    color: var(--paper);
+}
+
+.status-area {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border: 1px solid var(--rust);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-label {
+    color: var(--light-rust);
+}
+
+.status-value {
+    font-family: monospace;
+    color: #4CAF50;
+}
+
+.guard-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--rust);
+}
+
+.guard-avatar {
+    width: 50px;
+    height: 50px;
+    background: url('/static/bandit.png') center/cover;
+    border-radius: 50%;
+    border: 2px solid var(--rust);
+}
+
+.guard-avatar.large {
+    width: 80px;
+    height: 80px;
+}
+
+.message-text {
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.access-btn {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.access-btn:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+}
+
+.hint-text {
+    font-size: 0.8em;
+    color: var(--light-rust);
+    text-align: center;
+    font-style: italic;
+}
+
+/* Success Overlay */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-content {
+    position: relative;
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.bandit-dialogue {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dialogue-text {
+    flex-grow: 1;
+    font-size: 18px;
+    color: var(--paper);
+}
+
+.typing-text {
+    border-right: 2px solid var(--rust);
+    white-space: pre-wrap;
+    margin: 0;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.flag-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--rust);
+    padding: 20px;
+    text-align: center;
+}
+
+.flag-header {
+    color: var(--light-rust);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.flag-text {
+    font-family: monospace;
+    font-size: 24px;
+    color: var(--paper);
+    margin-bottom: 15px;
+}
+
+.copy-btn {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--light-rust);
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--paper);
+}
+
+/* Error Dialog */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog-content {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.dialog-header {
+    color: var(--rust);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.dialog-message {
+    color: var(--paper);
+    margin-bottom: 20px;
+}
+
+.dialog-button {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 8px 20px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.3s ease;
+}
+
+.dialog-button:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function showDialog(message) {
+    const dialog = document.getElementById('error-dialog');
+    const messageEl = document.getElementById('error-message');
+    messageEl.textContent = message;
+    dialog.style.display = 'flex';
+}
+
+function closeErrorDialog() {
+    const dialog = document.getElementById('error-dialog');
+    dialog.style.display = 'none';
+}
+
+function talkToGuard() {
+    document.getElementById('challenge-area').style.display = 'block';
+}
+
+function checkCookies() {
+    showDialog("{{ _('Check your browser cookies. There might be something interesting there...') }}");
+}
+
+function tryDisguise() {
+    showDialog("{{ _('Maybe you can change your role in the cookies...') }}");
+}
+
+function checkAccess() {
+    // Get the current role from cookie
+    const cookies = document.cookie.split(';');
+    let role = 'stalker';
+    for(let cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if(name === 'role') {
+            role = value;
+        }
+    }
+
+    if(role !== 'bandit') {
+        showDialog("{{ _('Access denied. Only bandits allowed.') }}");
+        return;
+    }
+
+    fetch('/api/set_role', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            role: 'bandit'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('bandit-success').style.display = 'flex';
+            document.getElementById('flag-text').textContent = data.flag;
+            document.querySelector('.typing-text').textContent = "{{ _('Welcome to the gang, brother! Here\'s a little something for your trouble...') }}";
+        } else {
+            showDialog(data.message || "{{ _('Access denied. Only bandits allowed.') }}");
+        }
+    })
+    .catch(error => {
+        showDialog("{{ _('Something went wrong. Try again.') }}");
+    });
+}
+
+function closeSuccessDialog() {
+    document.getElementById('bandit-success').style.display = 'none';
+}
+
+function copyFlag() {
+    const flagText = document.getElementById('flag-text').textContent;
+    navigator.clipboard.writeText(flagText).then(() => {
+        showDialog("{{ _('Flag copied to clipboard!') }}");
+    });
+}
+</script>
+{% endblock %} 

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+{% set locale = get_locale() %}
+<html lang="{{ locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ _('STALKER::NOVICE') }}{% endblock %}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        :root {
+            --rust: #8B4513;
+            --dark-rust: #5C2C0C;
+            --light-rust: #D2691E;
+            --warning: #FF4500;
+            --paper: #F5DEB3;
+            --dirt: #463E3F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+        }
+
+        body {
+            background: var(--dirt);
+            color: var(--paper);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .pda-container {
+            position: relative;
+            width: min(90vw, 800px);
+            height: min(90vh, 800px);
+            background: rgba(70, 62, 63, 0.9);
+            border: 4px solid var(--rust);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 
+                inset 0 0 20px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .screen-header {
+            text-align: center;
+            color: var(--light-rust);
+            font-size: min(28px, 4vh);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid var(--rust);
+            padding-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            color: var(--paper);
+        }
+
+        .language-switcher a {
+            color: var(--paper);
+            text-decoration: none;
+            padding: 4px 8px;
+            transition: color 0.3s ease;
+        }
+
+        .language-switcher a:hover {
+            color: var(--light-rust);
+        }
+
+        .language-switcher a.active {
+            color: var(--light-rust);
+            font-weight: bold;
+        }
+
+        .screen-content {
+            flex: 1;
+            overflow-y: auto;
+            position: relative;
+            padding-right: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screen-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .screen-content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .screen-content::-webkit-scrollbar-thumb {
+            background: var(--rust);
+            border-radius: 4px;
+        }
+
+        .screen-content::-webkit-scrollbar-thumb:hover {
+            background: var(--light-rust);
+        }
+
+        .dialogue-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--rust);
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .dialogue-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dialogue-option {
+            background: var(--dark-rust);
+            color: var(--paper);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .dialogue-option:hover {
+            background: var(--rust);
+            transform: translateX(10px);
+        }
+
+        .challenge-container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--rust);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .input-field {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--rust);
+            color: var(--paper);
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            background: var(--dark-rust);
+            color: var(--paper);
+            border: 2px solid var(--rust);
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--rust);
+            transform: translateY(-2px);
+        }
+
+        /* Custom Dialog Styles */
+        .stalker-dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .stalker-dialog-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .stalker-dialog {
+            background: var(--dirt);
+            border: 3px solid var(--rust);
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.3s ease;
+            box-shadow: 
+                inset 0 0 20px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stalker-dialog-overlay.active .stalker-dialog {
+            transform: translateY(0);
+        }
+
+        .stalker-dialog-header {
+            color: var(--light-rust);
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--rust);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .stalker-dialog-content {
+            color: var(--paper);
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .stalker-dialog-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .stalker-dialog-button {
+            background: var(--dark-rust);
+            color: var(--paper);
+            border: 2px solid var(--rust);
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .stalker-dialog-button:hover {
+            background: var(--rust);
+            transform: translateY(-2px);
+        }
+
+        .stalker-dialog-button.success {
+            background: #2C5F2D;
+            border-color: #4CAF50;
+        }
+
+        .stalker-dialog-button.warning {
+            background: #8B4513;
+            border-color: #FF4500;
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--light-rust),
+                transparent
+            );
+            opacity: 0.5;
+            animation: scanLine 3s linear infinite;
+            pointer-events: none;
+        }
+
+        .noise-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVfJ92AAAACHRSTlMzMzMzMzMzM85JBgUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAwSURBVDjLY2AYBaNg8AJGJkYmRiZGBmYGFgYWBmYGNgZ2Bg4GThY4g4XhqONHwQADAImhCwMvKEgRAAAAAElFTkSuQmCC');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        @keyframes scanLine {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+    </style>
+    {% block additional_styles %}{% endblock %}
+</head>
+<body>
+    <div class="pda-container">
+        <div class="screen-header">
+            <div class="language-switcher">
+                <a href="{{ url_for('set_language', lang='en') }}" {% if locale == 'en' %}class="active"{% endif %}>EN</a> |
+                <a href="{{ url_for('set_language', lang='uk') }}" {% if locale == 'uk' %}class="active"{% endif %}>UA</a>
+            </div>
+            {% block header %}{{ _('STALKER PDA Terminal v1.0') }}{% endblock %}
+        </div>
+        
+        <div class="screen-content">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <div class="scan-line"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <!-- Custom Dialog Template -->
+    <div id="stalkerDialog" class="stalker-dialog-overlay">
+        <div class="stalker-dialog">
+            <div class="stalker-dialog-header" id="dialogTitle"></div>
+            <div class="stalker-dialog-content" id="dialogContent"></div>
+            <div class="stalker-dialog-buttons">
+                <button class="stalker-dialog-button" onclick="closeDialog()">{{ _('Got it') }}</button>
+            </div>
+            <div class="scan-line"></div>
+            <div class="noise-overlay"></div>
+        </div>
+    </div>
+
+    <script>
+        // Custom Dialog Functions
+        function showDialog(title, content, type = 'info') {
+            const dialog = document.getElementById('stalkerDialog');
+            const dialogTitle = document.getElementById('dialogTitle');
+            const dialogContent = document.getElementById('dialogContent');
+            
+            dialogTitle.textContent = title;
+            dialogContent.textContent = content;
+            
+            dialog.classList.add('active');
+            
+            // Add type-specific styling if needed
+            if (type === 'success') {
+                dialogContent.style.color = '#4CAF50';
+            } else if (type === 'error') {
+                dialogContent.style.color = '#FF4500';
+            } else {
+                dialogContent.style.color = 'var(--paper)';
+            }
+        }
+
+        function closeDialog() {
+            const dialog = document.getElementById('stalkerDialog');
+            dialog.classList.remove('active');
+        }
+
+        // Override default alert
+        window.originalAlert = window.alert;
+        window.alert = function(message) {
+            showDialog('{{ _("Message") }}', message);
+        };
+    </script>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

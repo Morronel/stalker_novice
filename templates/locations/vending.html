@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::VENDING') }}{% endblock %}
+
+{% block header %}{{ _('VENDING MACHINE') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('You discover an old vending machine in a dimly lit corner. Its display glows with an eerie rust-colored light, showing an absurdly high price. Your PDA detects unusual network activity coming from the machine.') }}</p>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="examineDisplay()">{{ _('Examine display') }}</button>
+        <button class="dialogue-option" onclick="scanNetwork()">{{ _('Scan network activity') }}</button>
+        <button class="dialogue-option" onclick="checkPricing()">{{ _('Check pricing system') }}</button>
+    </div>
+</div>
+
+<div class="dialogue-box terminal-container">
+    <pre class="terminal-text">
+{{ _('STALKER VENDING MACHINE v1.0') }}
+{{ _('Status: OPERATIONAL') }}
+{{ _('Coupons available: 1') }}
+
+{{ _('ITEMS AVAILABLE:') }}
+- {{ _('Flag: 1 000 000 coupons') }}
+    </pre>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="buyFlag()">{{ _('Buy a flag') }}</button>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+
+<script>
+function showResult(message) {
+    showDialog('{{ _('Vending Machine') }}', message);
+}
+
+function examineDisplay() {
+    showDialog('{{ _('Display Analysis') }}', 
+        {{ _('The vending machine\'s interface appears to be running on an old embedded system. The price seems to be handled by a simple POST request to the internal server. Maybe there\'s a way to... adjust it?')|tojson|safe }});
+}
+
+function scanNetwork() {
+    showDialog('{{ _('Network Scan') }}', 
+        {{ _('Your PDA detects that the machine processes purchase requests locally. All parameters, including price and quantity, are sent directly to the machine\'s server. A security-minded stalker would definitely check these requests with special tools...')|tojson|safe }});
+}
+
+function checkPricing() {
+    showDialog('{{ _('Price Analysis') }}', 
+        {{ _('The pricing system seems poorly secured. The machine accepts a "price" parameter in its purchase request. An experienced stalker would know how to intercept and modify such requests using tools like Burp Suite...')|tojson|safe }});
+}
+
+function buyFlag() {
+    fetch('/api/vending/buy', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            quantity: 1,
+            price: 1000000
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showResult(data.message + '\n\n' + data.flag);
+        } else {
+            showResult(data.message);
+        }
+    });
+}
+</script>
+
+{% block additional_styles %}
+<style>
+.terminal-container {
+    margin-top: 20px;
+}
+
+.terminal-text {
+    font-family: monospace;
+    color: var(--rust);
+    text-shadow: 0 0 5px var(--rust);
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 1px,
+        rgba(var(--rust-rgb), 0.1) 2px,
+        rgba(var(--rust-rgb), 0.1) 3px
+    );
+    pointer-events: none;
+    animation: scan 10s linear infinite;
+}
+
+@keyframes scan {
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
+}
+</style>
+{% endblock %}
+{% endblock %}

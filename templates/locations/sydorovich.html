@@ -1,0 +1,487 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::SYDOROVICH') }}{% endblock %}
+
+{% block header %}{{ _('STALKER::SYDOROVICH') }}{% endblock %}
+
+{% block content %}
+<script src="https://unpkg.com/powerglitch@latest/dist/powerglitch.min.js"></script>
+<div class="bunker-container">
+    <div class="dialogue-box">
+        <p>{{ _('You descend into Sydorovich\'s underground bunker. The trader sits at his desk, surrounded by various equipment.') }}</p>
+        
+        <div class="dialogue-options">
+            <button class="dialogue-option" onclick="talkToSydorovich()">{{ _('Talk to Sydorovich') }}</button>
+            <button class="dialogue-option" onclick="showInventory()">{{ _('Show found flags') }}</button>
+            <button class="dialogue-option" onclick="askAboutGear()">{{ _('Ask about equipment') }}</button>
+        </div>
+    </div>
+
+    <div id="flag-submission" class="challenge-container" style="display: none;">
+        <p>{{ _('Sydorovich looks at you intently:') }}</p>
+        <p>{{ _('\"Well, show me what you brought. For each correct flag, you\'ll get a piece of equipment.\"') }}</p>
+        
+        <div class="flag-list">
+            <div class="flag-item">
+                <label>{{ _('Shed:') }}</label>
+                <input type="text" class="input-field" id="shed-flag" placeholder="STALKER{...}">
+                <span id="shed-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Farmhouse:') }}</label>
+                <input type="text" class="input-field" id="farmhouse-flag" placeholder="STALKER{...}">
+                <span id="farmhouse-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Dogs:') }}</label>
+                <input type="text" class="input-field" id="dogs-flag" placeholder="STALKER{...}">
+                <span id="dogs-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Abandoned house:') }}</label>
+                <input type="text" class="input-field" id="abandoned-flag" placeholder="STALKER{...}">
+                <span id="abandoned-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Technician house:') }}</label>
+                <input type="text" class="input-field" id="technician-flag" placeholder="STALKER{...}">
+                <span id="technician-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Anomaly:') }}</label>
+                <input type="text" class="input-field" id="anomaly-flag" placeholder="STALKER{...}">
+                <span id="anomaly-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Bandit camp:') }}</label>
+                <input type="text" class="input-field" id="bandit-flag" placeholder="STALKER{...}">
+                <span id="bandit-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Garage:') }}</label>
+                <input type="text" class="input-field" id="garage-flag" placeholder="STALKER{...}">
+                <span id="garage-status" class="status"></span>
+            </div>
+            <div class="flag-item">
+                <label>{{ _('Vending machine:') }}</label>
+                <input type="text" class="input-field" id="vending-flag" placeholder="STALKER{...}">
+                <span id="vending-status" class="status"></span>
+            </div>
+        </div>
+        
+        <button onclick="submitFlags()" class="submit-btn">{{ _('Submit flags') }}</button>
+    </div>
+
+    <div id="rewards" class="dialogue-box" style="display: none;">
+        <h3>{{ _('Received equipment:') }}</h3>
+        <ul id="rewards-list"></ul>
+    </div>
+
+    <div class="map-link">
+        <a href="/map" class="submit-btn">{{ _('Return to map') }}</a>
+    </div>
+
+    <div id="finale-overlay" class="finale-overlay" style="display: none;">
+        <div class="finale-content">
+            <h1 id="finale-title" class="glitch">{{ _('CONGRATULATIONS, STALKER!') }}</h1>
+            <p class="finale-message">{{ _('You\'ve proven yourself worthy in the Zone. All equipment collected, all challenges completed.') }}</p>
+            
+            <div class="finale-dialogue">
+                <h2>{{ _('Sidorovich\'s Final Words') }}</h2>
+                <p>{{ _('Ha! I must admit, rookie, you\'ve surprised me. Not many can find all these flags. You\'ve got the mind of a real stalker - quick and sharp. The Zone needs people like you.') }}</p>
+                <p>{{ _('But remember - this was just your first test. The real challenges of the Zone lie ahead. Keep that equipment close, you\'re going to need it...') }}</p>
+            </div>
+            
+            <h2 id="finale-unlocked" class="glitch">{{ _('FINALE UNLOCKED!') }}</h2>
+            <p class="glitch">{{ _('The screen glitches and flickers...') }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.bunker-container {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding: 20px;
+    background: var(--dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.dialogue-box {
+    margin-bottom: 20px;
+}
+
+.challenge-container {
+    background: var(--dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.flag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.flag-item {
+    display: grid;
+    grid-template-columns: 150px 1fr 30px;
+    gap: 10px;
+    align-items: center;
+}
+
+.status {
+    font-size: 20px;
+    color: var(--warning);
+}
+
+.status.correct::after {
+    content: '✓';
+    color: #4CAF50;
+}
+
+.status.incorrect::after {
+    content: '✗';
+    color: var(--warning);
+}
+
+#rewards-list {
+    list-style: none;
+    padding: 0;
+}
+
+#rewards-list li {
+    padding: 5px 0;
+    color: var(--light-rust);
+    transition: all 0.3s ease;
+}
+
+#rewards-list li.new-reward {
+    color: var(--warning);
+    text-shadow: 0 0 5px var(--warning);
+    transform: scale(1.05);
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px var(--warning);
+    }
+    to {
+        text-shadow: 0 0 10px var(--warning),
+                     0 0 20px var(--warning);
+    }
+}
+
+.map-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.map-link .submit-btn {
+    display: inline-block;
+    text-decoration: none;
+    max-width: 200px;
+}
+
+/* Custom Scrollbar */
+.bunker-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bunker-container::-webkit-scrollbar-track {
+    background: var(--dark-dirt);
+}
+
+.bunker-container::-webkit-scrollbar-thumb {
+    background: var(--rust);
+    border-radius: 4px;
+}
+
+.bunker-container::-webkit-scrollbar-thumb:hover {
+    background: var(--light-rust);
+}
+
+/* Finale styles */
+.finale-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 22, 20, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.finale-content {
+    max-width: 800px;
+    padding: 2rem;
+    color: #D2691E;
+    text-align: center;
+}
+
+.finale-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #FF6B1A;
+    text-transform: uppercase;
+}
+
+.finale-unlocked {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    color: #FF6B1A;
+    text-transform: uppercase;
+}
+
+.finale-dialogue {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid #8B4513;
+    text-align: left;
+}
+
+.finale-glitch-text {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #A0522D;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const translations = {
+        received: {{ _('received!')|tojson|safe }},
+        sydorovich: {{ _('Sydorovich')|tojson|safe }},
+        rookieDialog: {{ _('\"Well, rookie, did you bring something interesting? I trade flags for equipment.\"')|tojson|safe }},
+        equipmentDialog: {{ _('\"For each correct flag, you\'ll get something useful. The more you bring, the better equipment you can choose.\"')|tojson|safe }},
+        goodJob: {{ _('Good job, stalker! Come back when you find more flags.')|tojson|safe }},
+        noFlags: {{ _('None of these flags are correct. Keep searching, stalker!')|tojson|safe }},
+        congratulations: {{ _('CONGRATULATIONS, STALKER!')|tojson|safe }},
+        provenWorthy: {{ _('You\'ve proven yourself worthy in the Zone. All equipment collected, all challenges completed.')|tojson|safe }},
+        finalWords: {{ _('Sidorovich\'s Final Words')|tojson|safe }},
+        finalSpeech: {{ _('Ha! I must admit, rookie, you\'ve surprised me. Not many can find all these flags. You\'ve got the mind of a real stalker - quick and sharp. The Zone needs people like you.')|tojson|safe }},
+        finalWarning: {{ _('But remember - this was just your first test. The real challenges of the Zone lie ahead. Keep that equipment close, you\'re going to need it...')|tojson|safe }},
+        finaleUnlocked: {{ _('FINALE UNLOCKED!')|tojson|safe }},
+        screenGlitch: {{ _('The screen glitches and flickers...')|tojson|safe }}
+    };
+
+    function checkAllFlagsCompleted(completedFlags) {
+        fetch('/api/debug_session')
+            .then(response => response.json())
+            .then(debug => {
+                console.log('Session debug:', debug);
+                console.log('Completed flags:', Object.keys(completedFlags).length);
+                console.log('Total needed:', debug.total_flags);
+                return Object.keys(completedFlags).length === debug.total_flags;
+            });
+    }
+
+    window.showFinale = function() {
+        const overlay = document.getElementById('finale-overlay');
+        overlay.style.display = 'flex';
+        
+        // Apply glitch effects with simpler configurations
+        
+
+        // Add click handler to close overlay
+        overlay.onclick = function(e) {
+            if (e.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        };
+    };
+
+    function checkAndShowFinale() {
+        fetch('/api/get_completed_flags')
+            .then(response => response.json())
+            .then(data => {
+                fetch('/api/debug_session')
+                    .then(response => response.json())
+                    .then(debug => {
+                        console.log('Checking finale:', {
+                            completed: Object.keys(data).length,
+                            total: debug.total_flags
+                        });
+                        if (Object.keys(data).length === debug.total_flags) {
+                            console.log('Showing finale!');
+                            setTimeout(showFinale, 2000);
+                        }
+                    });
+            });
+    }
+
+    window.talkToSydorovich = function() {
+        showDialog(translations.sydorovich, translations.rookieDialog);
+    };
+
+    window.showInventory = function() {
+        document.getElementById('flag-submission').style.display = 'block';
+        loadSavedFlags();
+    };
+
+    window.askAboutGear = function() {
+        showDialog(translations.sydorovich, translations.equipmentDialog);
+    };
+
+    window.submitFlags = function() {
+        const flagInputs = {
+            'shed': document.getElementById('shed-flag').value,
+            'farmhouse': document.getElementById('farmhouse-flag').value,
+            'dogs': document.getElementById('dogs-flag').value,
+            'abandoned': document.getElementById('abandoned-flag').value,
+            'technician': document.getElementById('technician-flag').value,
+            'anomaly': document.getElementById('anomaly-flag').value,
+            'bandit': document.getElementById('bandit-flag').value,
+            'garage': document.getElementById('garage-flag').value,
+            'vending': document.getElementById('vending-flag').value
+        };
+        
+        // Filter out empty flags
+        const flags = {};
+        for (const [location, flag] of Object.entries(flagInputs)) {
+            if (flag) {
+                flags[location] = flag;
+            }
+        }
+        
+        // If no flags to submit, return early
+        if (Object.keys(flags).length === 0) {
+            return;
+        }
+        
+        const rewardsList = document.getElementById('rewards-list');
+        const existingRewards = new Set(Array.from(rewardsList.children).map(li => li.textContent));
+        
+        // Submit all flags in one request
+        fetch('/api/submit_flags_bulk', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ flags })
+        })
+        .then(response => response.json())
+        .then(data => {
+            let anyNewFlags = false;
+            
+            // Process results for each flag
+            for (const [location, result] of Object.entries(data.results)) {
+                const statusElement = document.getElementById(`${location}-status`);
+                const input = document.getElementById(`${location}-flag`);
+                
+                if (result.success) {
+                    anyNewFlags = true;
+                    statusElement.className = 'status correct';
+                    input.disabled = true;
+                    
+                    const rewardText = `${result.reward} - ${translations.received}`;
+                    if (!existingRewards.has(rewardText)) {
+                        const rewardItem = document.createElement('li');
+                        rewardItem.textContent = rewardText;
+                        rewardItem.className = 'new-reward';
+                        rewardsList.appendChild(rewardItem);
+                        
+                        setTimeout(() => {
+                            rewardItem.className = '';
+                        }, 3000);
+                    }
+                } else {
+                    statusElement.className = 'status incorrect';
+                }
+            }
+            
+            // Show rewards section if we have any successful submissions
+            if (anyNewFlags) {
+                document.getElementById('rewards').style.display = 'block';
+                showDialog(translations.sydorovich, translations.goodJob);
+                
+                // Check if all flags are now submitted
+                if (data.total_submitted === 9) { // Total number of flags
+                    // Apply glitch effects with simpler configurations
+                    PowerGlitch.glitch('#finale-title', {
+                        playMode: 'always',
+                        createContainers: true,
+                        hideOverflow: false,
+                        timing: { duration: 2000 },
+                        shake: { velocity: 15, amplitudeX: 0.2 },
+                        slice: { count: 6, velocity: 15, hueRotate: true }
+                    });
+
+                    PowerGlitch.glitch('#finale-unlocked', {
+                        playMode: 'always',
+                        createContainers: true,
+                        hideOverflow: false,
+                        timing: { duration: 1500 },
+                        shake: { velocity: 20, amplitudeX: 0.15 },
+                        slice: { count: 4, velocity: 20, hueRotate: true }
+                    });
+                    
+                    // Show finale with a slight delay for dramatic effect
+                    setTimeout(showFinale, 1500);
+                }
+            } else {
+                showDialog(translations.sydorovich, translations.noFlags);
+            }
+        });
+    };
+
+    window.loadSavedFlags = function() {
+        // Only load submitted flags, as those are the ones that count for completion
+        fetch('/api/get_submitted_flags')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Loading saved flags:', data);
+                
+                const totalFlags = 9;
+                let loadedFlags = 0;
+                
+                // Clear existing rewards list
+                const rewardsList = document.getElementById('rewards-list');
+                rewardsList.innerHTML = '';
+                
+                for (const [location, info] of Object.entries(data)) {
+                    loadedFlags++;
+                    const input = document.getElementById(`${location}-flag`);
+                    const status = document.getElementById(`${location}-status`);
+                    if (input && status) {
+                        input.value = info.flag;
+                        input.disabled = true;
+                        status.className = 'status correct';
+                    }
+                    
+                    const rewardItem = document.createElement('li');
+                    rewardItem.textContent = `${info.reward} - ${translations.received}`;
+                    rewardsList.appendChild(rewardItem);
+                }
+                
+                if (Object.keys(data).length > 0) {
+                    document.getElementById('rewards').style.display = 'block';
+                }
+
+                // Show finale if all flags are submitted
+                if (loadedFlags === totalFlags) {
+                    setTimeout(showFinale, 1000);
+                }
+            });
+    };
+})();
+</script>
+<script>
+    PowerGlitch.glitch('.glitch');
+</script>>
+{% endblock %} 

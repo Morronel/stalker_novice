@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::CAMPFIRE') }}{% endblock %}
+
+{% block header %}{{ _('CAMPFIRE') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('Several stalkers are sitting by the campfire. The warm light creates a cozy atmosphere, and you can hear quiet conversations and occasional laughter.') }}</p>
+    
+    <div class="dialogue-options main-options">
+        <button class="dialogue-option" onclick="showNews()">{{ _('What\'s new in zone?') }}</button>
+        <button class="dialogue-option" onclick="showJokes()">{{ _('Does anybody know cool jokes?') }}</button>
+        <button class="dialogue-option" onclick="showAdvice()">{{ _('Guys, I need some advice') }}</button>
+    </div>
+</div>
+
+<div id="content-area">
+</div>
+
+<!-- Hidden elements with translations -->
+<div id="translations" style="display: none;" 
+    data-shed="{{ _('An old stalker says: \"There\'s something hidden in that shed. Try looking in a hidden directory. I have a list of common paths you can look at.\"') }}"
+    data-farmhouse="{{ _('An experienced stalker tells: \"There\'s a treasures table in the database. Use a simple SELECT query to get the data. You can pull all or just what you need. Your choice.\"') }}"
+    data-dogs="{{ _('A young stalker recalls: \"The guard reacts to popup messages. You know, those that appear through alert(). And he\'s afraid of dogs...\"') }}"
+    data-abandoned="{{ _('The technician by the fire mumbles: \"That safe... I have lists of common logins and passwords. Maybe something will work?\"') }}"
+    data-technician="{{ _('The old stalker smiles: \"*lowers voice* If you get stuck - look for CyberChef online. They say specialists often use this tool for working with ciphers.\"') }}"
+    data-anomaly="{{ _('An experienced stalker advises: \"Open developer tools (F12), Network tab. You can see all requests there, including hidden parameters.\"') }}"
+    data-bandits="{{ _('A seasoned stalker whispers: \"Bandits check the role through a cookie. If you change the cookie role value from stalker to bandit...\"') }}"
+    data-garage="{{ _('A stalker with a laptop mentions: \"Network traffic inspection tools are essential in the Zone. Always check response headers when dealing with suspicious vehicles.\"') }}"
+    data-vending="{{ _('A crafty stalker grins: \"That vending machine is ridiculously overpriced. With tools like Burp Suite, you can intercept and modify the POST request parameters. Maybe change the price to something more... reasonable.\"') }}">
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: block; text-decoration: none; margin-top: 20px;">{{ _('Return to map') }}</a>
+</div>
+
+<script>
+function clearContent() {
+    document.getElementById('content-area').innerHTML = '';
+}
+
+let lastNewsIndex = -1;
+let lastJokeIndex = -1;
+
+function getRandomIndex(max, lastIndex) {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * max);
+    } while (newIndex === lastIndex && max > 1);
+    return newIndex;
+}
+
+function showNews() {
+    clearContent();
+    const newsItems = [
+        {{ _('\"Did you hear? They say someone managed to hack that old vending machine near the road. Got themselves a nice prize...\"')|tojson|safe }},
+        {{ _('\"The anomaly field has been acting strange lately. More signals than usual.\"')|tojson|safe }},
+        {{ _('\"Bandits are getting craftier with their security. But their systems still have weaknesses if you know where to look.\"')|tojson|safe }},
+        {{ _('\"That garage by the old road... smugglers are using it again. Their security is all digital now.\"')|tojson|safe }}
+    ];
+    const index = getRandomIndex(newsItems.length, lastNewsIndex);
+    lastNewsIndex = index;
+    const newsHtml = `
+        <div class="dialogue-box">
+            <p>{{ _('A stalker shares a story:') }}</p>
+            <div class="news-items">
+                <div class="news-item">
+                    ${newsItems[index]}
+                </div>
+            </div>
+        </div>`;
+    document.getElementById('content-area').innerHTML = newsHtml;
+}
+
+function showJokes() {
+    clearContent();
+    const jokeItems = [
+        {{ _('\"So they caught an old stalker and interrogate him:\n\n- People say you have... an assault rifle?\n- People are lying...\n- People say you have... a machine gun?\n- Oh, people are lying...\n- People say you have... a tank?\n- Well, that\'s the one thing I don\'t have...\"')|tojson|safe }},
+        {{ _('\"A stalker comes to the doctor. The doctor examines him and says:\n\n- This is from fatigue, this is from nervous tension, and this is from depression.\n- Thank you, doctor, thank you... Tell me, don\'t you have anything besides vodka?\"')|tojson|safe }},
+        {{ _('\"A stalker meets his old buddy. And he\'s all beaten up, with a black eye:\n\n- Pete, what happened to you?\n- Well damn... Got attacked, beaten up, money stolen...\n- Did you remember who did it?\n- Why would I need to remember... It was my wife!\"')|tojson|safe }},
+        {{ _('\"One stalker asks another:\n\n- Do you know which car is the most \'stalker-like\'?\n- No, which one?\n- Zaporozhets!\n- Why\'s that?\n- Because it\'s reliable as a tank, and the trunk is in the front. Convenient to keep an eye on the loot!\"')|tojson|safe }}
+    ];
+    const index = getRandomIndex(jokeItems.length, lastJokeIndex);
+    lastJokeIndex = index;
+    const jokesHtml = `
+        <div class="dialogue-box">
+            <p>{{ _('A stalker tells a joke:') }}</p>
+            <div class="jokes-items">
+                <div class="joke-item">
+                    ${jokeItems[index].split('\n').join('<br>')}
+                </div>
+            </div>
+        </div>`;
+    document.getElementById('content-area').innerHTML = jokesHtml;
+}
+
+function showAdvice() {
+    clearContent();
+    const adviceHtml = `
+        <div class="dialogue-box">
+            <p>{{ _('The stalkers exchange knowing looks. Everyone here has their own expertise to share.') }}</p>
+            <div class="dialogue-options">
+                <button class="dialogue-option" onclick="askAboutShed()">{{ _('Ask about the shed') }}</button>
+                <button class="dialogue-option" onclick="askAboutFarmhouse()">{{ _('Ask about the farmhouse') }}</button>
+                <button class="dialogue-option" onclick="askAboutDogs()">{{ _('Ask about the dogs') }}</button>
+                <button class="dialogue-option" onclick="askAboutAbandoned()">{{ _('Ask about the abandoned house') }}</button>
+                <button class="dialogue-option" onclick="askAboutTechnician()">{{ _('Ask about the technician') }}</button>
+                <button class="dialogue-option" onclick="askAboutAnomaly()">{{ _('Ask about the anomaly') }}</button>
+                <button class="dialogue-option" onclick="askAboutBandits()">{{ _('Ask about the bandits') }}</button>
+                <button class="dialogue-option" onclick="askAboutGarage()">{{ _('Ask about the garage') }}</button>
+                <button class="dialogue-option" onclick="askAboutVending()">{{ _('Ask about the vending machine') }}</button>
+            </div>
+        </div>`;
+    document.getElementById('content-area').innerHTML = adviceHtml;
+}
+
+function showHint(text, links = []) {
+    const hintHtml = `
+        <div class="dialogue-box">
+            <p>${text}</p>
+            ${links.length > 0 ? `
+                <div class="hint-links">
+                    ${links.map(link => `<a href="${link.url}" class="dialogue-option">${link.text}</a>`).join('')}
+                </div>
+            ` : ''}
+        </div>`;
+    document.getElementById('content-area').innerHTML = hintHtml;
+}
+
+function askAboutShed() {
+    var text = {{ _('An old stalker says: "There\'s something hidden in that shed. Try looking in a hidden directory. I have a list of common paths you can look at."')|tojson|safe }};
+    var linkText = {{ _('View paths list')|tojson|safe }};
+    showHint(text, [{url: '/location/commonpaths', text: linkText}]);
+}
+
+function askAboutFarmhouse() {
+    var text = {{ _('An experienced stalker tells: "There\'s a treasures table in the database. Use a simple SELECT query to get the data. You can pull all or just what you need. Your choice."')|tojson|safe }};
+    showHint(text);
+}
+
+function askAboutDogs() {
+    var text = {{ _('A young stalker recalls: "The guard reacts to popup messages. You know, those that appear through alert(). And he\'s afraid of dogs..."')|tojson|safe }};
+    showHint(text);
+}
+
+function askAboutAbandoned() {
+    var text = {{ _('The technician by the fire mumbles: "That safe... I have lists of common logins and passwords. Maybe something will work?"')|tojson|safe }};
+    var loginText = {{ _('View logins list')|tojson|safe }};
+    var passText = {{ _('View passwords list')|tojson|safe }};
+    showHint(text, [
+        {url: '/location/commonusernames', text: loginText},
+        {url: '/location/commonpasswords', text: passText}
+    ]);
+}
+
+function askAboutTechnician() {
+    var text = {{ _('The old stalker smiles: "*lowers voice* If you get stuck - look for CyberChef online. They say specialists often use this tool for working with ciphers."')|tojson|safe }};
+    showHint(text);
+}
+
+function askAboutAnomaly() {
+    var text = {{ _('An experienced stalker advises: "Open developer tools (F12), Network tab. You can see all requests there, including hidden parameters."')|tojson|safe }};
+    showHint(text);
+}
+
+function askAboutBandits() {
+    var text = {{ _('A seasoned stalker whispers: "Bandits check the role through a cookie. If you change the cookie role value from stalker to bandit..."')|tojson|safe }};
+    showHint(text);
+}
+
+function askAboutGarage() {
+    var text = {{_('A stalker with a laptop mentions: "Network traffic inspection tools are essential in the Zone. Always check response headers when dealing with suspicious vehicles."')|tojson|safe }};
+    showHint(text);
+}
+
+function askAboutVending() {
+    var text = {{_('A crafty stalker grins: "That vending machine is ridiculously overpriced. With tools like Burp Suite, you can intercept and modify the POST request parameters. Maybe change the price to something more... reasonable."')|tojson|safe }};
+    showHint(text);
+}
+</script>
+
+{% block additional_styles %}
+<style>
+.hint-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.hint-links .dialogue-option {
+    text-decoration: none;
+    flex: 1;
+}
+
+.main-options {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.main-options .dialogue-option {
+    flex: 1;
+    max-width: 250px;
+}
+
+.news-items, .jokes-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.news-item, .joke-item {
+    background: rgba(var(--rust-rgb), 0.1);
+    padding: 15px;
+    border: 1px solid var(--rust);
+    border-radius: 4px;
+}
+
+.news-item {
+    font-style: italic;
+}
+
+.joke-item {
+    font-family: monospace;
+    position: relative;
+}
+
+.joke-item::before {
+    content: '>';
+    position: absolute;
+    left: 5px;
+    color: var(--rust);
+}
+</style>
+{% endblock %}
+{% endblock %} 

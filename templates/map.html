@@ -1,0 +1,434 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::NOVICE') }}{% endblock %}
+
+{% block header %}{{ _('STALKER::NOVICE') }}{% endblock %}
+
+{% block additional_styles %}
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--dirt);
+    color: var(--paper);
+    height: 100vh;
+    width: 100vw;
+}
+
+.pda-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen-header {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 2px solid var(--rust);
+}
+
+.interface-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+    height: calc(100vh - 50px);
+}
+
+.info-panel {
+    background: rgba(70, 62, 63, 0.9);
+    border-right: 2px solid var(--rust);
+    padding: 20px;
+}
+
+.panel-title {
+    color: var(--light-rust);
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--rust);
+    padding-bottom: 5px;
+}
+
+.info-item {
+    padding: 10px;
+    border: 1px solid var(--rust);
+    margin-bottom: 10px;
+    background: rgba(139, 69, 19, 0.1);
+}
+
+.map-container {
+    position: relative;
+    background: 
+        linear-gradient(rgba(70, 62, 63, 0.7), rgba(70, 62, 63, 0.7)),
+        url('/static/mapbackground.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.map-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(var(--rust) 1px, transparent 1px),
+        linear-gradient(90deg, var(--rust) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.location-marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    color: var(--light-rust);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 10;
+    background: rgba(70, 62, 63, 0.9);
+    border: 1px solid var(--rust);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.location-marker:hover {
+    background: rgba(139, 69, 19, 0.3);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.location-marker::before {
+    content: attr(data-icon);
+    position: absolute;
+    text-shadow: 0 0 5px var(--rust);
+}
+
+.location-label {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    white-space: nowrap;
+    color: var(--paper);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.location-marker:hover .location-label {
+    opacity: 1;
+}
+
+.coordinates {
+    position: absolute;
+    font-size: 12px;
+    color: var(--paper);
+    opacity: 0.7;
+}
+
+.coordinates.top { top: 10px; left: 50%; transform: translateX(-50%); }
+.coordinates.right { right: 10px; top: 50%; transform: translateY(-50%); }
+.coordinates.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.coordinates.left { left: 10px; top: 50%; transform: translateY(-50%); }
+
+.warning-text {
+    color: var(--warning);
+}
+
+.character-marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    color: var(--warning);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transition: none;
+}
+
+.character-marker::before {
+    content: "◈";
+    position: absolute;
+    animation: pulse 2s infinite;
+    font-weight: bold;
+}
+
+.footstep {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    color: var(--warning);
+    font-size: 12px;
+    opacity: 0.6;
+    z-index: 15;
+    animation: fadeOut 2s forwards;
+}
+
+.footstep::before {
+    content: "•";
+    position: absolute;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 0.6; }
+    100% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="interface-container">
+    <div class="info-panel">
+        <div class="panel-title">{{ _('Information') }}</div>
+        <div class="info-item">
+            <strong>{{ _('Stalker:') }}</strong> {{ session.get('stalker_name', _('Unknown')) }}
+        </div>
+        <div class="info-item">
+            <strong>{{ _('Status:') }}</strong> {{ _('Novice') }}
+        </div>
+        <div class="info-item">
+            <strong>{{ _('Location:') }}</strong> {{ _('Cordon') }}
+        </div>
+        <div class="info-item warning-text">
+            {{ _('Danger level: High') }}
+        </div>
+        
+        <div class="panel-title" style="margin-top: 30px;">{{ _('Tasks') }}</div>
+        <div class="info-item">
+            {{ _('Find flags in each location') }}
+        </div>
+        <div class="info-item">
+            {{ _('Bring them to Sidorovich') }}
+        </div>
+        <div class="info-item warning-text">
+            {{ _('Be careful with anomalies!') }}
+        </div>
+    </div>
+
+    <div class="map-container">
+        <div class="map-grid"></div>
+        
+        <div id="character" class="character-marker" style="top: 90%; left: 80%;"></div>
+        
+        <a href="{{ url_for('location', name='campfire') }}" class="location-marker" style="top: 50%; left: 50%;" data-icon="🔥">
+            <span class="location-label">{{ _('Stalkers Campfire') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='shed') }}" class="location-marker" style="top: 30%; left: 40%;" data-icon="⌯">
+            <span class="location-label">{{ _('Old Shed') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='farmhouse') }}" class="location-marker" style="top: 20%; left: 60%;" data-icon="⌸">
+            <span class="location-label">{{ _('Farmhouse') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='dogs') }}" class="location-marker" style="top: 70%; left: 30%;" data-icon="☠">
+            <span class="location-label">{{ _('Dog Pack') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='abandoned') }}" class="location-marker" style="top: 40%; left: 70%;" data-icon="☗">
+            <span class="location-label">{{ _('Abandoned House') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='technician') }}" class="location-marker" style="top: 60%; left: 60%;" data-icon="⚒">
+            <span class="location-label">{{ _('Technician House') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='anomaly') }}" class="location-marker" style="top: 80%; left: 50%;" data-icon="✺">
+            <span class="location-label">{{ _('Anomaly') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='bandit') }}" class="location-marker" style="top: 30%; left: 80%;" data-icon="⚔">
+            <span class="location-label">{{ _('Bandit Camp') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='garage') }}" class="location-marker" style="top: 70%; left: 70%;" data-icon="⌹">
+            <span class="location-label">{{ _('Garage') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='vending') }}" class="location-marker" style="top: 80%; left: 30%;" data-icon="⌸">
+            <span class="location-label">{{ _('Vending Machine') }}</span>
+        </a>
+        
+        <a href="{{ url_for('location', name='sydorovich') }}" class="location-marker" style="top: 90%; left: 80%;" data-icon="⌂">
+            <span class="location-label">{{ _('Sidorovich Bunker') }}</span>
+        </a>
+
+        <div class="coordinates top">N 51°23'47"</div>
+        <div class="coordinates right">E 30°05'12"</div>
+        <div class="coordinates bottom">N 51°23'45"</div>
+        <div class="coordinates left">E 30°05'10"</div>
+    </div>
+</div>
+
+<script>
+const character = document.getElementById('character');
+let isMoving = false;
+
+// Get last position from cookie or use default bunker position
+function getLastPosition() {
+    const positionCookie = document.cookie.split('; ').find(row => row.startsWith('lastPosition='));
+    if (positionCookie) {
+        try {
+            return JSON.parse(decodeURIComponent(positionCookie.split('=')[1]));
+        } catch (e) {
+            return { x: 80, y: 90 };
+        }
+    }
+    return { x: 80, y: 90 };
+}
+
+// Set initial character position
+const lastPosition = getLastPosition();
+character.style.left = lastPosition.x + '%';
+character.style.top = lastPosition.y + '%';
+
+// Save position to cookie
+function savePosition(x, y) {
+    const position = JSON.stringify({ x, y });
+    document.cookie = `lastPosition=${encodeURIComponent(position)}; path=/; max-age=3600`;
+}
+
+// Create footstep at position
+function createFootstep(x, y) {
+    const footstep = document.createElement('div');
+    footstep.className = 'footstep';
+    footstep.style.left = x + '%';
+    footstep.style.top = y + '%';
+    document.querySelector('.map-container').appendChild(footstep);
+    
+    // Remove footstep after animation
+    setTimeout(() => footstep.remove(), 2000);
+}
+
+document.querySelectorAll('.location-marker').forEach(marker => {
+    marker.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (isMoving) return;
+        
+        const destination = {
+            x: parseFloat(this.style.left),
+            y: parseFloat(this.style.top)
+        };
+        
+        const current = {
+            x: parseFloat(character.style.left),
+            y: parseFloat(character.style.top)
+        };
+        
+        moveCharacter(current, destination, this.href);
+    });
+});
+
+function moveCharacter(start, end, destinationUrl) {
+    isMoving = true;
+    
+    // Calculate control points for a more pronounced curve
+    const midX = (start.x + end.x) / 2;
+    const midY = (start.y + end.y) / 2;
+    
+    // Make curve more dramatic by increasing perpendicular distance
+    const perpX = -(end.y - start.y) * 0.5; // Increased from 0.3 to 0.5
+    const perpY = (end.x - start.x) * 0.5;
+    
+    // Add two control points for smoother S-curve
+    const controlPoint1 = {
+        x: start.x + (midX - start.x) * 0.5 + perpX * 0.7,
+        y: start.y + (midY - start.y) * 0.5 + perpY * 0.7
+    };
+    
+    const controlPoint2 = {
+        x: midX + (end.x - midX) * 0.5 - perpX * 0.7,
+        y: midY + (end.y - midY) * 0.5 - perpY * 0.7
+    };
+    
+    // Calculate total distance for duration
+    const distance = Math.sqrt(
+        Math.pow(end.x - start.x, 2) + 
+        Math.pow(end.y - start.y, 2)
+    );
+    
+    // Slower movement: increased base duration and multiplier
+    const duration = Math.min(Math.max(distance * 30, 1000), 3000);
+    const steps = Math.floor(duration / 20); // One step every 20ms (50 fps)
+    let currentStep = 0;
+    
+    // Clear any existing movement interval
+    if (window.movementInterval) {
+        clearInterval(window.movementInterval);
+    }
+    
+    // Calculate point on cubic Bezier curve
+    function getCubicPoint(t) {
+        const mt = 1 - t;
+        const mt2 = mt * mt;
+        const mt3 = mt2 * mt;
+        const t2 = t * t;
+        const t3 = t2 * t;
+        
+        const x = mt3 * start.x + 
+                 3 * mt2 * t * controlPoint1.x + 
+                 3 * mt * t2 * controlPoint2.x + 
+                 t3 * end.x;
+                 
+        const y = mt3 * start.y + 
+                 3 * mt2 * t * controlPoint1.y + 
+                 3 * mt * t2 * controlPoint2.y + 
+                 t3 * end.y;
+                 
+        return { x, y };
+    }
+    
+    // Move along curve with easing
+    window.movementInterval = setInterval(() => {
+        // Use easing function for smoother acceleration/deceleration
+        const easeInOut = t => t < 0.5 
+            ? 4 * t * t * t 
+            : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+            
+        const progress = easeInOut(currentStep / steps);
+        const pos = getCubicPoint(progress);
+        
+        character.style.left = pos.x + '%';
+        character.style.top = pos.y + '%';
+        
+        // Create footstep every few steps, more frequently
+        if (currentStep % 2 === 0) {
+            createFootstep(pos.x, pos.y);
+        }
+        
+        currentStep++;
+        
+        if (currentStep > steps) {
+            clearInterval(window.movementInterval);
+            savePosition(end.x, end.y);
+            isMoving = false;
+            setTimeout(() => {
+                window.location.href = destinationUrl;
+            }, 100);
+        }
+    }, 20);
+}
+</script>
+{% endblock %} 

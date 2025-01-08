@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::SHED') }}{% endblock %}
+
+{% block header %}{{ _('STALKER::SHED') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('You approach the old shed. The door is firmly locked, but local stalkers say there is a secret entrance used by smugglers. On the wall, you notice a strange terminal with a small screen. A message flashes on the screen:') }}</p>
+    
+    <pre class="terminal-text">
+{{ _('SECRET PATH NAVIGATION SYSTEM v1.0
+Status: ACTIVE
+Access: WAITING
+
+Error: Path not found
+Enter the correct path to access...') }}
+    </pre>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="examineDevice()">{{ _('Examine terminal') }}</button>
+        <button class="dialogue-option" onclick="searchArea()">{{ _('Search area') }}</button>
+        <button class="dialogue-option" onclick="checkNotes()">{{ _('Check notes') }}</button>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.terminal-text {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    padding: 15px;
+    margin: 15px 0;
+    font-family: monospace;
+    color: var(--paper);
+    white-space: pre-wrap;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const translations = {
+        examineTitle: {{ _('Terminal Examination')|tojson|safe }},
+        examineText: {{ _('On the terminal\'s case, you notice an inscription: "PathFinder 3000. To activate the secret entrance, use the correct path through the web interface. Example: /location/shed/PATH"')|tojson|safe }},
+        searchTitle: {{ _('Area Search')|tojson|safe }},
+        searchText: {{ _('You found nothing. You should ask the guys at the campfire, maybe they know something.')|tojson|safe }},
+        notesTitle: {{ _('Notes Check')|tojson|safe }},
+        notesText: {{ _('In the notes of local stalkers, it is mentioned that smugglers often use standard directory names for their secret entrances. This helps them remember the paths.')|tojson|safe }}
+    };
+
+    window.examineDevice = function() {
+        showDialog(translations.examineTitle, translations.examineText);
+    };
+
+    window.searchArea = function() {
+        showDialog(translations.searchTitle, translations.searchText);
+    };
+
+    window.checkNotes = function() {
+        showDialog(translations.notesTitle, translations.notesText);
+    };
+})();
+</script>
+{% endblock %}

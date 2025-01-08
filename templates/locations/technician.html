@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+
+{% block title %}STALKER::{{ _('TECHNICIAN HOUSE') }}{% endblock %}
+
+{% block header %}{{ _('TECHNICIAN HOUSE') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _('In the technician\'s house, you find a workbench covered with various equipment. Strange messages are flashing on the monitor screen.') }}</p>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="talkToTechnician()">{{ _('Talk to technician') }}</button>
+        <button class="dialogue-option" onclick="showChallenges()">{{ _('Start challenges') }}</button>
+        <button class="dialogue-option" onclick="showHints()">{{ _('Learn more about methods') }}</button>
+    </div>
+</div>
+
+<div id="hints-area" style="display: none;" class="challenge-container">
+    <div class="info-box">
+        <h3>{{ _('Data Processing Methods') }}</h3>
+        <div class="method-explanation">
+            <h4>{{ _('Encoding') }}</h4>
+            <p>{{ _('The process of converting data from one format to another for transmission or storage. Not intended for data protection.') }}</p>
+            <p>{{ _('Example: Base64 converts binary data to text format.') }}</p>
+        </div>
+        <div class="method-explanation">
+            <h4>{{ _('Encryption') }}</h4>
+            <p>{{ _('The process of protecting data by transforming it using a secret key. Designed to ensure confidentiality.') }}</p>
+            <p>{{ _('Example: XOR encryption uses a key to mask data.') }}</p>
+        </div>
+        <div class="method-explanation">
+            <h4>{{ _('Hashing') }}</h4>
+            <p>{{ _('One-way transformation of data into a fixed size. Cannot restore original data, can only compare hashes.') }}</p>
+            <p>{{ _('Example: MD5 creates a 32-character hash from any input data.') }}</p>
+        </div>
+    </div>
+</div>
+
+<div id="challenge-area" style="display: none;" class="challenge-container">
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="terminal-title">{{ _('CRYPTOGRAPHIC CHALLENGES') }}</span>
+            <div class="terminal-buttons">
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+            </div>
+        </div>
+        <div class="terminal-content">
+            <!-- Base64 Challenge -->
+            <div id="base64-challenge" class="challenge-section">
+                <h3>{{ _('Task 1: Base64 Decoding') }}</h3>
+                <div class="task-description">
+                    <p>{{ _('Decode this Base64 message:') }}</p>
+                    <pre class="encoded-text">U3RhbGtlcnMgYXJlIHRoZSBiZXN0IQ==</pre>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="base64-input" class="input-field" placeholder="{{ _('Enter decoded message...') }}">
+                    <button onclick="checkBase64()" class="submit-btn">{{ _('Check') }}</button>
+                </div>
+                <div id="base64-status" class="status-indicator">❔</div>
+            </div>
+
+            <!-- XOR Challenge -->
+            <div id="xor-challenge" class="challenge-section">
+                <h3>{{ _('Task 2: XOR Decryption') }}</h3>
+                <div class="task-description">
+                    <p>{{ _('Decrypt the message encrypted with XOR and encoded in base64:') }}</p>
+                    <pre class="encoded-text">{{ _('Ciphertext (base64):') }} Kzs+FDY6LzkqJDgiPDoTIiALOy4yPw==</pre>
+                    <pre class="encoded-text">{{ _('Key:') }} STLK</pre>
+                    <p class="hint">{{ _('Hint: First decode base64, then apply XOR with the key') }}</p>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="xor-input" class="input-field" placeholder="{{ _('Enter decrypted message...') }}">
+                    <button onclick="checkXOR()" class="submit-btn">{{ _('Check') }}</button>
+                </div>
+                <div id="xor-status" class="status-indicator">❔</div>
+            </div>
+
+            <!-- MD5 Challenge -->
+            <div id="md5-challenge" class="challenge-section">
+                <h3>{{ _('Task 3: MD5 Hash') }}</h3>
+                <div class="task-description">
+                    <p>{{ _('Find the word that gives this MD5 hash:') }}</p>
+                    <pre class="encoded-text">5f4dcc3b5aa765d61d8327deb882cf99</pre>
+                    <p class="hint">{{ _('Hint: This is a very common password') }}</p>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="md5-input" class="input-field" placeholder="{{ _('Enter word...') }}">
+                    <button onclick="checkMD5()" class="submit-btn">{{ _('Check') }}</button>
+                </div>
+                <div id="md5-status" class="status-indicator">❔</div>
+            </div>
+            <div id="flag-button-container" style="display: none; text-align: center; padding: 20px;">
+                <button onclick="grabFlag()" class="submit-btn grab-flag-btn">{{ _('Grab the reward') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.challenge-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.info-box {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.method-explanation {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 3px solid var(--rust);
+}
+
+.method-explanation h4 {
+    color: var(--light-rust);
+    margin: 0 0 10px 0;
+}
+
+.method-explanation p {
+    margin: 5px 0;
+    color: var(--paper);
+}
+
+.terminal-container {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    border-radius: 6px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    background: var(--dirt);
+    padding: 10px;
+    border-bottom: 1px solid var(--rust);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: var(--paper);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--rust);
+    display: inline-block;
+}
+
+.terminal-content {
+    padding: 20px;
+    color: var(--paper);
+}
+
+.challenge-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid var(--rust);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.challenge-section h3 {
+    color: var(--light-rust);
+    margin: 0 0 15px 0;
+}
+
+.task-description {
+    margin-bottom: 15px;
+}
+
+.encoded-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-left: 3px solid var(--rust);
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.input-field {
+    flex-grow: 1;
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 8px 12px;
+    font-family: monospace;
+}
+
+.submit-btn {
+    background: var(--dark-dirt);
+    border: 1px solid var(--rust);
+    color: var(--paper);
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+}
+
+.status-indicator {
+    font-size: 24px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.hint {
+    color: var(--light-rust);
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.grab-flag-btn {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    color: var(--paper);
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.grab-flag-btn:hover {
+    background: var(--dirt);
+    border-color: var(--light-rust);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const translations = {
+        talkTitle: {{ _('Talk to Technician')|tojson|safe }},
+        talkText: {{ _('The technician looks at you with interest: "Want to test your cryptography skills? I have some interesting challenges for you..."')|tojson|safe }},
+        success: {{ _('Success!')|tojson|safe }},
+        error: {{ _('Error')|tojson|safe }},
+        correct: {{ _('Correct!')|tojson|safe }},
+        incorrect: {{ _('Incorrect. Try again.')|tojson|safe }},
+        allCompleted: {{ _('All challenges completed! You can now grab your reward.')|tojson|safe }}
+    };
+
+    window.talkToTechnician = function() {
+        showDialog(translations.talkTitle, translations.talkText);
+    };
+
+    window.showChallenges = function() {
+        document.getElementById('challenge-area').style.display = 'block';
+        document.getElementById('hints-area').style.display = 'none';
+    };
+
+    window.showHints = function() {
+        document.getElementById('hints-area').style.display = 'block';
+        document.getElementById('challenge-area').style.display = 'none';
+    };
+
+    window.checkBase64 = function() {
+        const input = document.getElementById('base64-input').value.trim();
+        fetch('/api/technician/base64', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ decoded: input })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('base64-status').textContent = data.success ? '✅' : '❌';
+            showDialog(
+                data.success ? translations.success : translations.error,
+                data.message
+            );
+            checkAllChallenges();
+        });
+    };
+
+    window.checkXOR = function() {
+        const input = document.getElementById('xor-input').value.trim();
+        fetch('/api/technician/xor', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ decrypted: input })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('xor-status').textContent = data.success ? '✅' : '❌';
+            showDialog(
+                data.success ? translations.success : translations.error,
+                data.message
+            );
+            checkAllChallenges();
+        });
+    };
+
+    window.checkMD5 = function() {
+        const input = document.getElementById('md5-input').value.trim();
+        fetch('/api/technician/md5', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ word: input })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('md5-status').textContent = data.success ? '✅' : '❌';
+            showDialog(
+                data.success ? translations.success : translations.error,
+                data.message
+            );
+            checkAllChallenges();
+        });
+    };
+
+    function checkAllChallenges() {
+        const statuses = [
+            document.getElementById('base64-status').textContent,
+            document.getElementById('xor-status').textContent,
+            document.getElementById('md5-status').textContent
+        ];
+        
+        if (statuses.every(status => status === '✅')) {
+            document.getElementById('flag-button-container').style.display = 'block';
+            showDialog(translations.success, translations.allCompleted);
+        }
+    }
+
+    window.grabFlag = function() {
+        fetch('/api/technician/check_completion')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showDialog(translations.success, data.message + '\n\n' + data.flag);
+                // Save the flag
+                fetch('/api/check_flag', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        location: 'technician',
+                        flag: data.flag
+                    })
+                });
+            } else {
+                showDialog(translations.error, data.message);
+            }
+        });
+    };
+})();
+</script>
+{% endblock %} 

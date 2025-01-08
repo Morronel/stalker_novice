@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('STALKER::GARAGE') }}{% endblock %}
+
+{% block header %}{{ _('STALKER::GARAGE') }}{% endblock %}
+
+{% block content %}
+<div class="dialogue-box">
+    <p>{{ _("You enter an old garage. There's a strange car inside - it looks like it's been modified to transport something. Maybe checking it will reveal some secrets...") }}</p>
+    
+    <div class="cyber-terminal">
+        <div class="scanline"></div>
+        <div class="terminal-header">
+            <span class="blink">></span> STALKER OS v1.337
+        </div>
+        <pre class="terminal-text">
+<span class="system-text">{{ _('VEHICLE INSPECTION SYSTEM v1.0') }}</span>
+<span class="status-text">{{ _('Status:') }} <span class="active-status">{{ _('ACTIVE') }}</span></span>
+<span class="access-text">{{ _('Access:') }} <span class="granted-status">{{ _('GRANTED') }}</span></span>
+
+<span class="warning-text">{{ _('Warning:') }} {{ _('Suspicious modifications detected...') }}</span>
+        </pre>
+        <div class="terminal-footer">
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <span class="system-info">MEMORY: OK | CPU: STABLE | NETWORK: ACTIVE</span>
+        </div>
+        <div class="scan-overlay">
+            <div class="scan-line"></div>
+            <div class="scan-text">SCANNING...</div>
+        </div>
+    </div>
+    
+    <div class="dialogue-options">
+        <button class="dialogue-option" onclick="checkCar()">{{ _('Check car') }}</button>
+        <button class="dialogue-option" onclick="inspectModifications()">{{ _('Inspect modifications') }}</button>
+        <button class="dialogue-option" onclick="scanForHiddenCompartments()">{{ _('Scan for hidden compartments') }}</button>
+    </div>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    <a href="/map" class="submit-btn" style="display: inline-block; text-decoration: none; max-width: 200px;">{{ _('Return to map') }}</a>
+</div>
+
+<!-- Hidden elements with translations -->
+<div id="translations" style="display: none;" 
+    data-error="{{ _('Error checking car') }}"
+    data-inspect-title="{{ _('Vehicle Inspection') }}"
+    data-inspect="{{ _('The car has been heavily modified. There are traces of hidden compartments and unusual network activity...') }}"
+    data-scan-title="{{ _('Scan Results') }}"
+    data-scan="{{ _('Scan complete. Multiple hidden compartments detected. The car seems to be transmitting data through network requests...') }}">
+</div>
+{% endblock %}
+
+{% block additional_styles %}
+<style>
+.cyber-terminal {
+    background: var(--dark-dirt);
+    border: 2px solid var(--rust);
+    padding: 15px;
+    margin: 15px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(139, 69, 19, 0.5), 
+                inset 0 0 15px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 0.3s ease;
+}
+
+.cyber-terminal.scanning {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3),
+                inset 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.terminal-header {
+    font-family: monospace;
+    color: var(--paper);
+    border-bottom: 1px solid var(--rust);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.terminal-text {
+    font-family: monospace;
+    color: var(--paper);
+    white-space: pre-wrap;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.terminal-footer {
+    border-top: 1px solid var(--rust);
+    padding-top: 8px;
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.system-text {
+    color: var(--rust);
+    text-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+}
+
+.status-text, .access-text {
+    color: #888;
+}
+
+.active-status {
+    color: var(--rust);
+    text-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+}
+
+.granted-status {
+    color: var(--rust);
+    text-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+}
+
+.warning-text {
+    color: #ff6600;
+    text-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(139, 69, 19, 0.1);
+    opacity: 0.5;
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 3px;
+    background: #333;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-progress {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #0f0, transparent);
+    animation: loading 2s ease-in-out infinite;
+}
+
+.system-info {
+    font-family: monospace;
+    color: #666;
+    font-size: 0.8em;
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* New scanning animation styles */
+.scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.scan-overlay.active {
+    opacity: 1;
+}
+
+.scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--light-rust),
+                transparent
+            );
+            opacity: 0.5;
+            animation: scanLine 3s linear infinite;
+            pointer-events: none;
+        }
+
+.scan-overlay.active .scan-line {
+    animation: scan 1.5s ease-in-out;
+}
+
+.scan-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0f0;
+    font-family: monospace;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px #0f0;
+    opacity: 0;
+}
+
+.scan-overlay.active .scan-text {
+    animation: fade-in-out 1.5s ease-in-out;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes loading {
+    0% {
+        left: -50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes fade-in-out {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function getTranslation(key) {
+    const translations = document.getElementById('translations');
+    return translations.getAttribute('data-' + key);
+}
+
+function activateScanAnimation() {
+    const terminal = document.querySelector('.cyber-terminal');
+    const overlay = document.querySelector('.scan-overlay');
+    
+    terminal.classList.add('scanning');
+    overlay.classList.add('active');
+    
+    setTimeout(() => {
+        overlay.classList.remove('active');
+        terminal.classList.remove('scanning');
+    }, 1500);
+}
+
+function checkCar() {
+    activateScanAnimation();
+    
+    fetch('/api/garage/check', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        setTimeout(() => {
+            showDialog(getTranslation('inspect-title'), data.message);
+        }, 1500);
+    })
+    .catch(function() {
+        setTimeout(() => {
+            showDialog(getTranslation('error'), getTranslation('error'));
+        }, 1500);
+    });
+}
+
+function inspectModifications() {
+    showDialog(getTranslation('inspect-title'), getTranslation('inspect'));
+}
+
+function scanForHiddenCompartments() {
+    showDialog(getTranslation('scan-title'), getTranslation('scan'));
+}
+</script>
+{% endblock %}
