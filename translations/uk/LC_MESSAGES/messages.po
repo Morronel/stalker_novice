@@ -1,1195 +1,1754 @@
 # Ukrainian translations for STALKER CTF
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-21 12:00+0000\n"
+"POT-Creation-Date: 2025-01-13 19:49+0100\n"
 "PO-Revision-Date: 2023-12-21 12:00+0000\n"
 "Last-Translator: STALKER Team\n"
 "Language: uk\n"
 "Language-Team: uk <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
 
-msgid "STALKER::NOVICE"
-msgstr "STALKER::НОВАЧОК"
+#: app.py:195
+msgid "Error: Invalid path"
+msgstr ""
 
-msgid "STALKER PDA Terminal v1.0"
-msgstr "STALKER ПДА Термінал v1.0"
-
-msgid "STALKER::INTRODUCTION"
-msgstr "STALKER::ВСТУП"
-
-msgid "INTRODUCTION"
-msgstr "ВСТУП"
-
-msgid "Welcome to the Zone of Exclusion, stalker. You have just arrived at the Cordon - the first entry point into this dangerous territory. Your equipment is minimal, but Sidorovich, the local trader, can help... for a price."
-msgstr "Ласкаво просимо до Зони відчуження, сталкер. Ти щойно прибув до Кордону - першої точки входу в цю небезпечну територію. Твоє спорядження мінімальне, але Сидорович, місцевий торговець, може допомогти... за певну ціну."
-
-msgid "WARNING:"
-msgstr "УВАГА:"
-
-msgid "Sidorovich is interested in special \"flags\" that can be found in various locations of the Cordon. For each such flag, he is ready to exchange valuable equipment."
-msgstr "Сидорович цікавиться особливими \"прапорами\", які можна знайти в різних локаціях Кордону. За кожен такий прапор він готовий обміняти цінне спорядження."
-
-msgid "To begin your journey, enter your stalker name:"
-msgstr "Щоб розпочати свою подорож, введіть своє ім'я сталкера:"
-
-msgid "Enter stalker name..."
-msgstr "Введіть ім'я сталкера..."
-
-msgid "Enter the Zone"
-msgstr "Увійти до Зони"
-
-msgid "Radiation level"
-msgstr "Рівень радіації"
-
-msgid "System active"
-msgstr "Система активна"
-
-msgid "Danger zone"
-msgstr "Небезпечна зона"
-
-msgid "Enter"
-msgstr "Ввести"
-
-msgid "Submit"
-msgstr "Підтвердити"
-
-msgid "Cancel"
-msgstr "Скасувати"
-
-msgid "Back"
-msgstr "Назад"
-
-msgid "Next"
-msgstr "Далі"
-
-msgid "Previous"
-msgstr "Попередній"
-
-msgid "Close"
-msgstr "Закрити"
-
-msgid "Got it"
-msgstr "Зрозуміло"
-
-msgid "Message"
-msgstr "Повідомлення"
-
-msgid "Information"
-msgstr "Інформація"
-
-msgid "Stalker:"
-msgstr "Сталкер:"
-
-msgid "Unknown"
-msgstr "Невідомий"
-
-msgid "Status:"
-msgstr "Статус:"
-
-msgid "Novice"
-msgstr "Новачок"
-
-msgid "Location:"
-msgstr "Локація:"
-
-msgid "Cordon"
-msgstr "Кордон"
-
-msgid "Danger level: High"
-msgstr "Рівень небезпеки: Високий"
-
-msgid "Tasks"
-msgstr "Завдання"
-
-msgid "Find flags in each location"
-msgstr "Знайдіть прапори в кожній локації"
-
-msgid "Bring them to Sidorovich"
-msgstr "Принесіть їх Сидоровичу"
-
-msgid "Be careful with anomalies!"
-msgstr "Будьте обережні з аномаліями!"
-
-msgid "Stalkers Campfire"
-msgstr "Багаття сталкерів"
-
-msgid "Old Shed"
-msgstr "Старий сарай"
-
-msgid "Farmhouse"
-msgstr "Ферма"
-
-msgid "Dog Pack"
-msgstr "Зграя собак"
-
-msgid "Abandoned House"
-msgstr "Покинутий будинок"
-
-msgid "Technician House"
-msgstr "Будинок техніка"
-
-msgid "Anomaly"
-msgstr "Аномалія"
-
-msgid "Bandit Camp"
-msgstr "Табір бандитів"
-
-msgid "Sidorovich Bunker"
-msgstr "Бункер Сидоровича"
-
-# Dogs location translations
-msgid "DOG PACK"
-msgstr "ЗГРАЯ СОБАК"
-
-msgid "You stumbled upon a pack of wild dogs. Nearby there is an observation tower, but the guard does not seem to notice you."
-msgstr "Ви натрапили на зграю здичавілих собак. Неподалік видно спостережну вежу, але охоронець, схоже, вас не помічає."
-
-msgid "Look at tower"
-msgstr "Подивитися на вежу"
-
-msgid "Assess situation"
-msgstr "Оцінити ситуацію"
-
-msgid "Try to signal"
-msgstr "Спробувати подати сигнал"
-
-msgid "ALERT SYSTEM"
-msgstr "СИСТЕМА СИГНАЛІЗАЦІЇ"
-
-msgid "You see a guard post ahead. The guard seems to be monitoring some kind of alert system..."
-msgstr "Попереду видно пост охорони. Схоже, охоронець слідкує за якоюсь системою сигналізації..."
-
-msgid "Enter message..."
-msgstr "Введіть повідомлення..."
-
-msgid "Send signal"
-msgstr "Відправити сигнал"
-
-msgid "REWARD:"
-msgstr "НАГОРОДА:"
-
-msgid "Copy"
-msgstr "Скопіювати"
-
-msgid "Tower Examination"
-msgstr "Огляд вежі"
-
-msgid "The guard in the tower is looking the other way. Maybe you should get his attention with some kind of popup message?"
-msgstr "Охоронець на вежі дивиться в інший бік. Можливо, варто привернути його увагу якимось спливаючим повідомленням?"
-
-msgid "Situation Assessment"
-msgstr "Оцінка ситуації"
-
-msgid "The dogs look aggressive. Need to call for help urgently! Maybe an alert(\"dogs!\") message would get the guard's attention?"
-msgstr "Собаки виглядають агресивно. Потрібно терміново покликати на допомогу! Можливо, якесь повідомлення alert(\"dogs!\") приверне увагу охоронця?"
-
-msgid "I heard the alarm!\nHold on, I'm coming to help!\nAnd here's your reward for quick thinking!"
-msgstr "Я почув сигнал тривоги!\nТримайтеся, я вже біжу на допомогу!\nА ось і ваша нагорода за кмітливість!"
-
-msgid "Copied!"
-msgstr "Скопійовано!"
-
-# Campfire page translations
-msgid "STALKER::CAMPFIRE"
-msgstr "STALKER::БАГАТТЯ"
-
-msgid "CAMPFIRE"
-msgstr "БАГАТТЯ"
-
-msgid "Several stalkers are sitting by the campfire. The warm light creates a cozy atmosphere, and you can hear quiet conversations and occasional laughter."
-msgstr "Кілька сталкерів сидять біля багаття. Тепле світло створює затишну атмосферу, і ви чуєте тихі розмови та випадковий сміх."
-
-msgid "Ask about the shed"
-msgstr "Запитати про сарай"
-
-msgid "Ask about the farmhouse"
-msgstr "Запитати про ферму"
-
-msgid "Ask about the dogs"
-msgstr "Запитати про собак"
-
-msgid "Ask about the abandoned house"
-msgstr "Запитати про покинутий будинок"
-
-msgid "Ask about the technician"
-msgstr "Запитати про техніка"
-
-msgid "Ask about the anomaly"
-msgstr "Запитати про аномалію"
-
-msgid "Ask about the bandits"
-msgstr "Запитати про бандитів"
-
-msgid "Ask about the garage"
-msgstr "Запитати про гараж"
-
-msgid "Garage Information"
-msgstr "Інформація про гараж"
-
-msgid "A stalker with a laptop mentions: \"Network traffic inspection tools are essential in the Zone. Always check response headers when dealing with suspicious vehicles.\""
-msgstr "Сталкер з ноутбуком зауважує: \"Інструменти перевірки мережевого трафіку необхідні в Зоні. Завжди перевіряйте заголовки відповідей, коли маєте справу з підозрілим транспортом.\""
-
-msgid "Return to map"
-msgstr "Повернутися до карти"
-
-msgid "An old stalker says: \"There's something hidden in that shed. Try looking in a hidden directory. I have a list of common paths you can look at.\""
-msgstr "Старий сталкер каже: \"В тому сараї є щось приховане. Спробуй пошукати в прихованій директорії. У мене є список поширених шляхів, можеш глянути.\""
-
-msgid "View paths list"
-msgstr "Подивитися список шляхів"
-
-msgid "An experienced stalker tells: \"There's a treasures table in the database. Use a simple SELECT query to get the data. You can pull all or just what you need. Your choice.\""
-msgstr "Досвідчений сталкер розповідає: \"В базі даних є таблиця treasures. Використай простий SELECT-запит, щоб отримати дані. Можеш тягнути всі, можеш тягнути тільки потрібні. Вибір за тобою.\""
-
-msgid "A young stalker recalls: \"The guard reacts to popup messages. You know, those that appear through alert(). And he's afraid of dogs...\""
-msgstr "Молодий сталкер згадує: \"Охоронець реагує на спливаючі повідомлення. Знаєш, такі, що з'являються через alert(). А ще він боїться собак...\""
-
-msgid "The technician by the fire mumbles: \"That safe... I have lists of common logins and passwords. Maybe something will work?\""
-msgstr "Технік біля багаття бурмоче: \"Той сейф... У мене є списки поширених логінів та паролів. Може, щось підійде?\""
-
-msgid "View logins list"
-msgstr "Подивитися список логінів"
-
-msgid "View passwords list"
-msgstr "Подивитися список паролів"
-
-msgid "The old stalker smiles: \"*lowers voice* If you get stuck - look for CyberChef online. They say specialists often use this tool for working with ciphers.\""
-msgstr "Старий сталкер посміхається: \"*понижує голос* Якщо застрягнеш - пошукай в інтернеті CyberChef. Кажуть, спеціалісти часто користуються цим інструментом для роботи з шифрами.\""
-
-msgid "An experienced stalker advises: \"Open developer tools (F12), Network tab. You can see all requests there, including hidden parameters.\""
-msgstr "Досвідчений сталкер радить: \"Відкрий інструменти розробника (F12), вкладку Network. Там можна побачити всі запити, включаючи приховані параметри.\""
-
-msgid "A seasoned stalker whispers: \"Bandits check the role through a cookie. If you change the cookie role value from stalker to bandit...\""
-msgstr "Бувалий сталкер шепоче: \"Бандити перевіряють роль через cookie. Якщо змінити значення cookie role з stalker на bandit...\""
-
-# Sydorovich bunker translations
-msgid "STALKER::SYDOROVICH"
-msgstr "STALKER::БУНКЕР СИДОРОВИЧА"
-
-msgid "STALKER::BUNKER"
-msgstr "STALKER::БУНКЕР"
-
-msgid "You descend into Sydorovich's underground bunker. The trader sits at his desk, surrounded by various equipment."
-msgstr "Ви спускаєтесь в підземний бункер Сидоровича. Торговець сидить за своїм столом, оточений різноманітним спорядженням."
-
-msgid "Talk to Sydorovich"
-msgstr "Поговорити з Сидоровичем"
-
-msgid "Show found flags"
-msgstr "Показати знайдені прапори"
-
-msgid "Ask about equipment"
-msgstr "Запитати про спорядження"
-
-msgid "Sydorovich looks at you intently:"
-msgstr "Сидорович уважно дивиться на вас:"
-
-msgid "\"Well, show me what you brought. For each correct flag, you'll get a piece of equipment.\""
-msgstr "\"Ну, показуй, що приніс. За кожен правильний прапор отримаєш частину спорядження.\""
-
-msgid "Shed:"
-msgstr "Сарай:"
-
-msgid "Farmhouse:"
-msgstr "Ферма:"
-
-msgid "Dogs:"
-msgstr "Собаки:"
-
-msgid "Abandoned house:"
-msgstr "Покинутий будинок:"
-
-msgid "Technician house:"
-msgstr "Будинок техніка:"
-
-msgid "Anomaly:"
-msgstr "Аномалія:"
-
-msgid "Bandit camp:"
-msgstr "Табір бандитів:"
-
-msgid "Submit flags"
-msgstr "Здати прапори"
-
-msgid "Received equipment:"
-msgstr "Отримане спорядження:"
-
-msgid "Return to map"
-msgstr "Повернутися до карти"
-
-msgid "Sydorovich"
-msgstr "Сидорович"
-
-msgid "\"Well, rookie, did you bring something interesting? I trade flags for equipment.\""
-msgstr "\"Ну що, новачок, приніс щось цікаве? Я міняю прапори на спорядження.\""
-
-msgid "\"For each correct flag, you'll get something useful. The more you bring, the better equipment you can choose.\""
-msgstr "\"За кожен правильний прапор отримаєш щось корисне. Чим більше принесеш, тим краще спорядження зможеш вибрати.\""
-
-msgid "received!"
-msgstr "отримано!"
-
-# Shed location translations
-msgid "STALKER::SHED"
-msgstr "STALKER::САРАЙ"
-
-msgid "You approach the old shed. The door is firmly locked, but local stalkers say there is a secret entrance used by smugglers. On the wall, you notice a strange terminal with a small screen. A message flashes on the screen:"
-msgstr "Ви підходите до старого сараю. Двері міцно замкнені, але місцеві сталкери подейкують, що тут є таємний вхід, яким користуються контрабандисти. На стіні ви помічаєте дивний термінал з маленьким екраном. На екрані блимає повідомлення:"
-
-msgid "SECRET PATH NAVIGATION SYSTEM v1.0\nStatus: ACTIVE\nAccess: WAITING\n\nError: Path not found\nEnter the correct path to access..."
-msgstr "СИСТЕМА НАВІГАЦІЇ ТАЄМНИМИ ШЛЯХАМИ v1.0\nСтатус: АКТИВНА\nДоступ: ЧІКУЄТЬСЯ\n\nПомилка: Шлях не знайдено\nВведіть правильний шлях для доступу..."
-
-msgid "Examine terminal"
-msgstr "Оглянути термінал"
-
-msgid "Search area"
-msgstr "Обшукати територію"
-
-msgid "Check notes"
-msgstr "Перевірити записи"
-
-msgid "Terminal Examination"
-msgstr "Огляд терміналу"
-
-msgid "On the terminal's case, you notice an inscription: \"PathFinder 3000. To activate the secret entrance, use the correct path through the web interface. Example: /location/shed/PATH\""
-msgstr "На корпусі терміналу ви помічаєте напис: \"PathFinder 3000. Для активації таємного входу використовуйте правильний шлях через веб-інтерфейс. Наприклад: /location/shed/ШЛЯХ\""
-
-msgid "Area Search"
-msgstr "Обшук території"
-
-msgid "You found nothing. You should ask the guys at the campfire, maybe they know something."
-msgstr "Ви нічого не знайшли. Треба буде спитати в хлопців біля вогнища, може вони знають щось."
-
-msgid "Notes Check"
-msgstr "Перевірка записів"
-
-msgid "In the notes of local stalkers, it is mentioned that smugglers often use standard directory names for their secret entrances. This helps them remember the paths."
-msgstr "В записах місцевих сталкерів згадується, що контрабандисти часто використовують стандартні назви директорій для своїх таємних входів. Це допомагає їм запам'ятовувати шляхи."
-
-# Console page translations
-msgid "STALKER::SECRET_ENTRANCE"
-msgstr "STALKER::ТАЄМНИЙ ВХІД"
-
-msgid "SECRET_ENTRANCE"
-msgstr "ТАЄМНИЙ ВХІД"
-
-msgid "SECRET PATH NAVIGATION SYSTEM v1.0"
-msgstr "СИСТЕМА НАВІГАЦІЇ ТАЄМНИМИ ШЛЯХАМИ v1.0"
-
-msgid "Initializing mechanism..."
-msgstr "Ініціалізація механізму..."
-
-msgid "Path verification"
-msgstr "Перевірка шляху"
-
-msgid "Mechanism activation"
-msgstr "Активація механізму"
-
-msgid "Opening passage"
-msgstr "Відкриття проходу"
-
-msgid "Secret entrance opened!"
-msgstr "Таємний вхід відкрито!"
-
-msgid "In the cache you find a note with a flag:"
-msgstr "В схованці ви знаходите записку з прапорм:"
-
-msgid "Copy flag"
-msgstr "Скопіювати прапор"
-
-msgid "Flag copied!"
-msgstr "Прапор скопійовано!"
-
-msgid "Copied!"
-msgstr "Скопійовано!"
-
-msgid "Return to map"
-msgstr "Повернутися до карти"
-
-# Common paths page translations
-msgid "STALKER::COMMON_PATHS"
-msgstr "STALKER::ПОШИРЕНІ ШЛЯХИ"
-
-msgid "COMMON_PATHS"
-msgstr "ПОШИРЕНІ ШЛЯХИ"
-
-msgid "On an old PDA you find a list of common paths:"
-msgstr "На старому ПДА ви знаходите список поширених шляхів:"
-
-msgid "Copy list"
-msgstr "Копіювати список"
-
-# Common passwords page translations
-msgid "STALKER::COMMON_PASSWORDS"
-msgstr "STALKER::ПОШИРЕНІ ПАРОЛІ"
-
-msgid "COMMON_PASSWORDS"
-msgstr "ПОШИРЕНІ ПАРОЛІ"
-
-msgid "On an old PDA you find a list of common passwords:"
-msgstr "На старому ПДА ви знаходите список поширених паролів:"
-
-# Common usernames page translations
-msgid "STALKER::COMMON_USERNAMES"
-msgstr "STALKER::ПОШИРЕНІ ЛОГІНИ"
-
-msgid "COMMON_USERNAMES"
-msgstr "ПОШИРЕНІ ЛОГІНИ"
-
-msgid "On an old PDA you find a list of common usernames:"
-msgstr "На старому ПДА ви знаходить список поширених логінів:"
-
-# Farmhouse page translations
-msgid "STALKER::FARMHOUSE"
-msgstr "STALKER::ФЕРМА"
-
-msgid "FARMHOUSE"
-msgstr "ФЕРМА"
-
-msgid "Inside the old farmhouse, you find a wounded stalker near an old computer terminal. He is breathing heavily but trying to say something."
-msgstr "Всередині старої ферми ви знаходите пораненого сталкера біля старого комп'ютерного терміналу. Він важко дихає, але намагається щось сказати."
-
-msgid "Talk to stalker"
-msgstr "Поговорити зі сталкером"
-
-msgid "Check terminal"
-msgstr "Оглянути термінал"
-
-msgid "Look around"
-msgstr "Оглянути приміщення"
-
-msgid "SQLite Database Terminal"
-msgstr "SQLite Database Terminal"
-
-msgid "Database: treasures\nTable: treasures\nColumns: \n  - id (INTEGER)\n  - location (TEXT)\n  - coordinates (TEXT)\n  - flag (TEXT)\n\nEnter a SELECT query to get the treasure data:"
-msgstr "База даних: treasures\nТаблиця: treasures\nКолонки: \n  - id (INTEGER)\n  - location (TEXT)\n  - coordinates (TEXT)\n  - flag (TEXT)\n\nВведіть SELECT запит, щоб отримати дані про скарб:"
-
-msgid "SELECT..."
-msgstr "SELECT..."
-
-msgid "Execute"
-msgstr "Виконати"
-
-msgid "Query result:"
-msgstr "Результат запиту:"
-
-msgid "Waiting for query..."
-msgstr "Очікую запит..."
-
-msgid "*cough* In the database... coordinates and flag... Try SELECT... *cough* Look how to SELECT all from the table... *cough*"
-msgstr "*кашель* В базі даних... координати та прапор... Спробуй SELECT... *кашель* Подивись як вивеси SELECTом всю таблицю... *кашель*"
-
-msgid "The room is dark, but the terminal is working. You can see the SQLite database interface on the monitor. Maybe try a query? You need to specify WHAT to SELECT, and FROM where to SELECT."
-msgstr "В кімнаті темно, але термінал працює. На моніторі видно інтерфейс бази даних SQLite. Можливо, варто спробувати зробити запит? Треба вказати ЩО ми SELECTимо, і ЗВІДКИ ми SELECTимо."
-
-msgid "Executing query..."
-msgstr "Виконую запит..."
-
-msgid "Error:"
-msgstr "Помилка:"
-
-msgid "Congratulations! You found the flag!"
-msgstr "Вітаємо! Ви знайшли прапор!"
-
-# Bandit camp page translations
-msgid "STALKER::BANDIT_CAMP"
-msgstr "STALKER::ТАБІР БАНДИТІВ"
-
-msgid "BANDIT_CAMP"
-msgstr "ТАБІР БАНДИТІВ"
-
-msgid "You approach the bandit camp. The guard at the entrance examines you carefully."
-msgstr "Ви підходите до табору бандитів. Охоронець на вході пильно вас розлядає."
-
-msgid "Talk to guard"
-msgstr "Поговорити з охоронцем"
-
-msgid "Check your \"cookies\""
-msgstr "Перевірити ваші \"печеньки\""
-
-msgid "Try to disguise as a bandit"
-msgstr "Спробувати прикинутися бандитом"
-
-msgid "ACCESS CONTROL SYSTEM"
-msgstr "СИСТЕМА КОНТРОЛЮ ДОСТУПУ"
-
-msgid "Current status:"
-msgstr "Поточний статус:"
-
-msgid "stalker"
-msgstr "сталкер"
-
-msgid "\"We only trust bandits, not stalkers. Prove that you're one of us.\""
-msgstr "\"Ми довіряємо тільки бандитам, а не сталкерам. Доведи, що ти свій.\""
-
-msgid "Try to pass"
-msgstr "Спробувати пройти"
-
-msgid "Hint: Maybe you should check and change the cookie in developer tools (F12)"
-msgstr "Підказка: Можливо, варто перевірити та змінити cookie в інструментах розробника (F12)"
-
-msgid "REWARD:"
-msgstr "НАГОРОДА:"
-
-msgid "Copy"
-msgstr "Скопіювати"
-
-msgid "Guard: \"This area is for our people only. And you clearly don't look like a bandit...\""
-msgstr "Охоронець: \"Тут тільки для наших. А ти явно не схожий на бандита...\""
-
-msgid "Disguise"
-msgstr "Маскування"
-
-msgid "Maybe there's a way to change how the system identifies you... Try checking your \"cookies\"."
-msgstr "Мжливо, є спосіб змінити те, як система вас ідентифікує... Спробуйте перевірити ваї \"печеньки\"."
-
-msgid "Access denied"
-msgstr "Відмова в доступі"
-
-msgid "Guard: \"You're not a bandit! Get out of here!\""
-msgstr "Охоронець: \"Ти не бандит! Геть звідси!\""
-
-msgid "Error"
-msgstr "Помилка"
-
-msgid "Connection error with server."
-msgstr "Помилка з'єднання з сервером."
-
-msgid "Something went wrong while getting the reward."
-msgstr "Щось пішло не так при отриманні нагороди."
-
-msgid "Ha! You're clever, I see...\nGood that you proved you're one of us.\nHere's your reward, brother!"
-msgstr "Ха! А ти хитрий, я бачу...\nДобре, що ти довів, що ти свій.\nТримай нагороду, браток!"
-
-# Abandoned house translations
-msgid "ABANDONED HOUSE"
-msgstr "ПОКИНУТИЙ БУДИНОК"
-
-msgid "In a half-ruined house, you find an old safe with an electronic lock. The screen flashes \"S.T.A.L.K.E.R. Security System v1.0\"."
-msgstr "У напівзруйнованому будинку ви знаходите сарй сейф з електроннм замком. На екрані блимає \"S.T.A.L.K.E.R. Security System v1.0\"."
-
-msgid "Examine panel"
-msgstr "Оглянути панель"
-
-msgid "Search for clues"
-msgstr "Пошукати підказки"
-
-msgid "Try to unlock"
-msgstr "Спробувати відкрити"
-
-msgid "Authorization required"
-msgstr "Потрібна авторизація"
-
-msgid "Enter your credentials:"
-msgstr "Введіть ваші дані:"
-
-msgid "Login"
-msgstr "Логін"
-
-msgid "Password"
-msgstr "Пароль"
-
-msgid "Try"
-msgstr "Спробувати"
-
-msgid "Return to map"
-msgstr "Повернутися до карти"
-
-msgid "Panel Examination"
-msgstr "Огляд панелі"
-
-msgid "There are traces of frequent use on the panel. It seems this safe was used by an experienced stalker. Maybe check the list of common logins by the campfire?"
-msgstr "На панелі видно сліди частого використання. Схоже, цим сейфом користувався досвідчений сталкер. Може, варто перевірити список поширених логінів біля багаття?"
-
-msgid "Search for Clues"
-msgstr "Пошук підказок"
-
-msgid "On the wall, there is a scratched inscription: \"Only those who understand the laws of the Zone can open this safe\""
-msgstr "На стіні є видряпаний напис: \"Тільки ті, хто розуміє закони Зони, можуть відкрити цей сейф\""
-
-msgid "Success!"
-msgstr "Успіх!"
-
-msgid "Error"
-msgstr "Помилка"
-
-msgid "Неправильний пароль"
-msgstr "Неправильний пароль"
-
-msgid "Сейф відкрито! Ви знайшли прапор:"
-msgstr "Сейф відкрито! Ви знайшли прапор:"
-
-msgid "STALKER{brut3_f0rc3_m4st3r}"
-msgstr "STALKER{brut3_f0rc3_m4st3r}"
-
-msgid "Enter login!"
-msgstr "Введіть логін!"
-
-msgid "Invalid credentials"
-msgstr "Невірні облікові дані"
-
-msgid "Enter password!"
-msgstr "Введіть пароль!"
-
-msgid "Incorrect password"
-msgstr "Неправильний пароль"
-
-msgid "Safe opened! You found a flag: "
-msgstr "Сейф відкрито! Ви знайшли прапор: "
-
-# Anomaly location translations
-msgid "ANOMALY"
-msgstr "АНОМАЛІЯ"
-
-msgid "A strange anomaly pulsates before you. Your PDA starts making strange sounds and showing incomprehensible data. It seems the anomaly is emitting some signals..."
-msgstr "Перед вами пульсує дивна аномалія. Ваш ПДА починає видавати дивні звуки та показувати незрозумілі дані. Схоже, аномалія випромінює якісь сигнали..."
-
-msgid "Scan anomaly"
-msgstr "Сканувати аномалію"
-
-msgid "Check PDA"
-msgstr "Перевірити ПДА"
-
-msgid "Try to intercept signal"
-msgstr "Спробувати перехопити сигнал"
-
-msgid "PDA::Signal Interception Module"
-msgstr "ПДА::Модуль перехоплення сигналів"
-
-msgid "ANOMALY ANALYSIS:\n- Type: Informational\n- Activity: High\n- Status: Data transmission...\n\nNetwork activity detected...\nSignals are transmitted via GET requests...\nRecommended: use traffic interception tools"
-msgstr "АНАЛІЗ АНОМАЛІЇ:\n- Тип: Інформаційна\n- Активність: Висока\n- Статус: Передача даних...\n\nВиявлено мережеву активність...\nСигнали передаються через GET-запити...\nРекомендовано: використовувати інструменти перехоплення трафіку"
-
-msgid "Send test signal"
-msgstr "Надіслати тестовий сигнал"
-
-msgid "Activity log:"
-msgstr "Журнал активності:"
-
-msgid "Waiting for signal..."
-msgstr "Очікування сигналу..."
-
-msgid "SIGNAL SENT"
-msgstr "СИГНАЛ НАДІСЛАНО"
-
-msgid "Return to map"
-msgstr "Повернутися до карти"
-
-msgid "Anomaly Scan"
-msgstr "Сканування аномалії"
-
-msgid "The PDA shows: \"Anomaly type: Informational. It seems to be transmitting data through network requests...\""
-msgstr "ПДА показує: \"Тип аномалії: Інформаційна. Схоже, вона передає дані через мережеві запити...\""
-
-msgid "PDA Check"
-msgstr "Перевірка ПДА"
-
-msgid "Your PDA is picking up strange network traffic. The anomaly seems to be responding to GET requests."
-msgstr "Ваш ПДА фіксує дивний мережевий трафік. Схоже, аномалія реагує на GET-запити."
-
-msgid "Signal Interception"
-msgstr "Перехоплення сигналу"
-
-msgid "You activate the signal interception module on your PDA."
-msgstr "Ви активуєте модуль перехоплення сигналів на вашому ПДА."
-
-msgid "Signal sent..."
-msgstr "Сигнал надслано..."
-
-msgid "Signal received! Response:"
-msgstr "Сигнал отримано! Відповідь:"
-
-msgid "Success!"
-msgstr "Успіх!"
-
-msgid "Error"
-msgstr "Помилка"
-
-msgid "Signal intercepted! You found a flag: "
-msgstr "Сигнал перехоплено! Ви знайшли прапор: "
-
-msgid "Signal sent successfully. Check the network traffic for hidden data..."
-msgstr "Сигнал успішно надіслано. Перевірте мережевий трафік на наявність прихованих даних..."
-
+#: app.py:212
 msgid "Signal received successfully."
 msgstr "Сигнал успішно отримано."
 
+#: app.py:213
+msgid "anomalyreward"
+msgstr ""
+
+#: app.py:217
 msgid "Signal processed."
 msgstr "Сигнал оброблено."
 
-msgid "Correct flag! Sydorovich will be pleased."
-msgstr "Правильний прапор! Сидорович буде задоволений."
+#: app.py:228 app.py:509 app.py:570
+msgid "Correct flag! Here's your reward, stalker."
+msgstr ""
 
+#: app.py:229 app.py:244 app.py:510 app.py:525 app.py:571
+msgid "reward"
+msgstr ""
+
+#: app.py:233 app.py:514 app.py:576
 msgid "Incorrect flag. Try again."
 msgstr "Неправильний прапор. Спробуйте ще раз."
 
-msgid "*Monitor flashes green* Ha! You cracked this message like a can of tushonka!"
-msgstr "*Монітор блимає зеленим* Ха! Ти розкусив це повідомлення як консерву тушонки!"
+#: app.py:257
+msgid "Error: Forbidden SQL operations"
+msgstr ""
 
+#: app.py:264
+msgid "Error: Only SELECT queries are allowed"
+msgstr ""
+
+#: app.py:278
+msgid "Query executed successfully, but no results found"
+msgstr ""
+
+#: app.py:327
+msgid "Enter login!"
+msgstr "Введіть логін!"
+
+#: app.py:333
+msgid "Invalid credentials"
+msgstr "Невірні облікові дані"
+
+#: app.py:339
+msgid "Enter password!"
+msgstr "Введіть пароль!"
+
+#: app.py:345
+msgid "Incorrect password"
+msgstr "Неправильний пароль"
+
+#: app.py:351
+msgid "Safe opened! You found a flag: "
+msgstr "Сейф відкрито! Ви знайшли прапор: "
+
+#: app.py:368
+msgid ""
+"*Monitor flashes green* Ha! You cracked this message like a can of "
+"tushonka!"
+msgstr ""
+"*Монітор блимає зеленим* Ха! Ти розкусив це повідомлення як консерву "
+"тушонки!"
+
+#: app.py:375
 msgid "*Monitor flashes red* Something's wrong... Maybe try a different decoder?"
 msgstr "*Монітор блимає червоним* Щось не те... Може спробуєш інший декодер?"
 
+#: app.py:399
 msgid "*Screen sparks* Ha! Well done! The encryption didn't stop you!"
 msgstr "*Екран іскрить* Ха! А ти молодець! Шифрування тебе не спинило!"
 
-msgid "*System shows error* Hmm... Maybe decode base64 first, then XOR? By the way, heard about CyberChef? They say it's a useful tool..."
-msgstr "*Система видає помилку* Хм... Може спочатку декодувати base64, а потім вже XOR? О речі, чу про CyberChef? Кажуть, корисна штука..."
+#: app.py:406
+msgid ""
+"*System shows error* Hmm... Maybe decode base64 first, then XOR? By the "
+"way, heard about CyberChef? They say it's a useful tool..."
+msgstr ""
+"*Система видає помилку* Хм... Може спочатку декодувати base64, а потім "
+"вже XOR? О речі, чу про CyberChef? Кажуть, корисна штука..."
 
-msgid "*PDA beeps with satisfaction* Bingo! The bandits clearly didn't expect someone to guess their password!"
-msgstr "*ПДА пищить від задоволення* Бінго! Бандити явно не очікували, що хтось вгадає їх пароль!"
+#: app.py:420
+msgid ""
+"*PDA beeps with satisfaction* Bingo! The bandits clearly didn't expect "
+"someone to guess their password!"
+msgstr ""
+"*ПДА пищить від задоволення* Бінго! Бандити явно не очікували, що хтось "
+"вгадає їх пароль!"
 
-msgid "*PDA hums disapprovingly* Not that... Maybe it's a simple word? Bandits usually don't get fancy. Try md5 hash lookup."
-msgstr "*ПДА невдоволено гуде* Не те... Може це якесь просте слово? Бандити зазвичай не заморочуються. Спробуй md5 hash lookup."
+#: app.py:425
+msgid ""
+"*PDA hums disapprovingly* Not that... Maybe it's a simple word? Bandits "
+"usually don't get fancy. Try md5 hash lookup."
+msgstr ""
+"*ПДА невдоволено гуде* Не те... Може це якесь просте слово? Бандити "
+"зазвичай не заморочуються. Спробуй md5 hash lookup."
 
+#: app.py:439
 msgid "*Technician nods approvingly* Here's your reward, stalker!"
 msgstr "*Технік задоволено киває* Ось твоя винагорода, сталкере!"
 
-msgid "*Technician shakes his head* Nah, finish all the challenges first, stalker."
-msgstr "*Технік хитає головою* Е-е, ні, спочатку закінчи всі випробування, сталкере."
+#: app.py:443
+msgid ""
+"*Technician shakes his head* Nah, finish all the challenges first, "
+"stalker."
+msgstr ""
+"*Технік хитає головою* Е-е, ні, спочатку закінчи всі випробування, "
+"сталкере."
 
-msgid "TECHNICIAN HOUSE"
-msgstr "БУДИНОК ТЕХНІКА"
+#: app.py:451
+msgid "Signal sent successfully. Check the network traffic for hidden data..."
+msgstr ""
+"Сигнал успішно надіслано. Перевірте мережевий трафік на наявність "
+"прихованих даних..."
 
-msgid "In the technician's house, you find a workbench covered with various equipment. Strange messages are flashing on the monitor screen."
-msgstr "В будинку техніка ви знаходите верстк, заставлений різним обладнанням. На екрані монітора блимають дивні повідомлення."
-
-msgid "Talk to technician"
-msgstr "Поговорити з техніком"
-
-msgid "Start challenges"
-msgstr "Почати випробування"
-
-msgid "Learn more about methods"
-msgstr "Дізнатися більше про методи"
-
-msgid "Data Processing Methods"
-msgstr "Методи обробки даних"
-
-msgid "Encoding"
-msgstr "Кодування"
-
-msgid "The process of converting data from one format to another for transmission or storage. Not intended for data protection."
-msgstr "Процес перетворення даних з одного формату в інший для передачі або зберігання. Не приначений для захисту даних."
-
-msgid "Example: Base64 converts binary data to text format."
-msgstr "Приклад: Base64 перетворює бінарні дані в текстовий формат."
-
-msgid "Encryption"
-msgstr "Шифрування"
-
-msgid "The process of protecting data by transforming it using a secret key. Designed to ensure confidentiality."
-msgstr "Процес захисту даних шляхом їх перетворення за допомогою секретного ключа. Призначений для забезпечення конфіденційності."
-
-msgid "Example: XOR encryption uses a key to mask data."
-msgstr "Приклад: XOR шифрування використовує ключ для маскування даних."
-
-msgid "Hashing"
-msgstr "Хешування"
-
-msgid "One-way transformation of data into a fixed size. Cannot restore original data, can only compare hashes."
-msgstr "Одностороннє перетворення даних у фіксований розмір. Неможливо відновити оригінальні дані, можна тільки порівнювати хеші."
-
-msgid "Example: MD5 creates a 32-character hash from any input data."
-msgstr "Приклад: MD5 створює 32-символьний хеш з будь-яких вхідних даних."
-
-msgid "CRYPTOGRAPHIC CHALLENGES"
-msgstr "КРИПТОГРАФІЧНІ ВИПРОБУВАННЯ"
-
-msgid "Task 1: Base64 Decoding"
-msgstr "Завдання 1: Base64 Декодування"
-
-msgid "Decode this Base64 message:"
-msgstr "Декодуйте це Base64 повідомлення:"
-
-msgid "Enter decoded message..."
-msgstr "Введіть декодоване повідомлення..."
-
-msgid "Check"
-msgstr "Перевірити"
-
-msgid "Task 2: XOR Decryption"
-msgstr "Завдання 2: XOR Дешифрування"
-
-msgid "Decrypt the message encrypted with XOR and encoded in base64:"
-msgstr "Розшифруйте повідомлення, зашифроване XOR та закодоване в base64:"
-
-msgid "Ciphertext (base64):"
-msgstr "Шифротекст (base64):"
-
-msgid "Key:"
-msgstr "Ключ:"
-
-msgid "Hint: First decode base64, then apply XOR with the key"
-msgstr "Підказка: Спочатку декодуйте base64, потім застосуйте XOR з ключем"
-
-msgid "Enter decrypted message..."
-msgstr "Введіть розшифроване повідомлення..."
-
-msgid "Task 3: MD5 Hash"
-msgstr "Завдання 3: MD5 хеш"
-
-msgid "Find the word that gives this MD5 hash:"
-msgstr "Знайдіть слово, яке дає цей MD5 хеш:"
-
-msgid "Hint: This is a very common password"
-msgstr "Підказка: Це дуже поширений пароль"
-
-msgid "Enter word..."
-msgstr "Введіть слово..."
-
-msgid "Grab the reward"
-msgstr "Отримати нагороду"
-
-msgid "Talk to Technician"
-msgstr "Розмова з техніком"
-
-msgid "The technician looks at you with interest: \"Want to test your cryptography skills? I have some interesting challenges for you...\""
-msgstr "Технік дивиться на вас із зацікавленням: \"Хочеш перевірити свої навички в криптографії? У мене є для тебе цікаві випробування...\""
-
-msgid "Correct!"
-msgstr "Правильно!"
-
-msgid "Incorrect. Try again."
-msgstr "Неправильно. Спробуйте ще раз."
-
-msgid "All challenges completed! You can now grab your reward."
-msgstr "Всі випробування пройдені! Тепер ви можете отримати свою нагороду."
-
-# Garage location translations
-msgid "Garage"
-msgstr "Гараж"
-
-msgid "GARAGE"
-msgstr "ГАРАЖ"
-
-msgid "STALKER::GARAGE"
-msgstr "STALKER::ГАРАЖ"
-
-msgid "You enter an old garage. There's a strange car inside - it looks like it's been modified to transport something. Maybe checking it will reveal some secrets..."
-msgstr "Ви заходите в старий гараж. Всередині стоїть дивна машина - схоже, її модифікували для перевезення чогось. Можливо, огляд виявить якісь секрети..."
-
-msgid "Check car"
-msgstr "Оглянути машину"
-
-msgid "Error checking car"
-msgstr "Помилка при огляді машини"
-
+#: app.py:466
 msgid "Car inspection complete. Nothing unusual in plain sight..."
 msgstr "Огляд машини завершено. На перший погляд нічого незвичайного..."
 
-msgid "An experienced stalker mentions: \"When inspecting vehicles in the Zone, always check the response headers. Sometimes smugglers hide information there...\""
-msgstr "Досвідчений сталкер згадує: \"Коли оглядаєш транспорт в Зоні, завжди перевіряй заголовки відповіді. Іноді контрабандисти ховають там інформацію...\""
-
-msgid "Garage:"
-msgstr "Гараж:"
-
-msgid "VEHICLE INSPECTION SYSTEM v1.0"
-msgstr "СИСТЕМА ОГЛЯДУ ТРАНСПОРТУ v1.0"
-
-msgid "Status: ACTIVE"
-msgstr "Статус: АКТИВНА"
-
-msgid "Access: GRANTED"
-msgstr "Доступ: НАДАНО"
-
-msgid "Warning: Suspicious modifications detected..."
-msgstr "Увага: Виявлено підозрілі модифікації..."
-
-msgid "Inspect modifications"
-msgstr "Перевірити мережевий трафік"
-
-msgid "Scan for hidden compartments"
-msgstr "Аналізувати дані відповіді"
-
-msgid "The car has been heavily modified. There are traces of hidden compartments and unusual network activity..."
-msgstr "Машина сильно модифікована. Є сліди прихованих відсіків та незвична мережева активність..."
-
-msgid "Scan complete. Multiple hidden compartments detected. The car seems to be transmitting data through network requests..."
-msgstr "Сканування завершено. Виявлено кілька прихованих відсіків. Схоже, машина передає дані через мережеві запити..."
-
-msgid "STALKER OS v1.337"
-msgstr "STALKER OS v1.337"
-
-msgid "VEHICLE INSPECTION SYSTEM v1.0"
-msgstr "СИСТЕМА ОГЛЯДУ ТРАНСПОРТУ v1.0"
-
-msgid "Status:"
-msgstr "Статус:"
-
-msgid "ACTIVE"
-msgstr "АКТИВНА"
-
-msgid "Access:"
-msgstr "Доступ:"
-
-msgid "GRANTED"
-msgstr "НАДАНО"
-
-msgid "Warning:"
-msgstr "Увага:"
-
-msgid "Suspicious modifications detected..."
-msgstr "Виявлено підозрілі модифікації..."
-
-msgid "MEMORY: OK | CPU: STABLE | NETWORK: ACTIVE"
-msgstr "ПАМ'ЯТЬ: ОК | ЦП: СТАБІЛЬНИЙ | МЕРЕЖА: АКТИВНА"
-
-msgid "SCANNING..."
-msgstr "СКАНУВАННЯ..."
-
-msgid "Vehicle Inspection"
-msgstr "Аналіз мережі"
-
-msgid "Scan Results"
-msgstr "Аналіз трафіку"
-
-msgid "Error checking car"
-msgstr "Помилка при огляді машини"
-
-msgid "The car has been heavily modified. There are traces of hidden compartments and unusual network activity..."
-msgstr "Машина сильно модифікована. Є сліди прихованих відсіків та незвична мережева активність..."
-
-msgid "Scan complete. Multiple hidden compartments detected. The car seems to be transmitting data through network requests..."
-msgstr "Сканування завершено. Виявлено кілька прихованих відсіків. Схоже, машина передає дані через мережеві запити..."
-
-msgid "Night vision goggles - received!"
-msgstr "Прилад нічного бачення - отримано!"
-
-msgid "Night vision goggles"
-msgstr "Прилад нічного бачення"
-
-msgid "STALKER::VENDING"
-msgstr "STALKER::АВТОМАТ"
-
-msgid "VENDING MACHINE"
-msgstr "ТОРГОВИЙ АВТОМАТ"
-
-msgid "STALKER VENDING MACHINE v1.0"
-msgstr "СТАЛКЕР ТОРГОВИЙ АВТОМАТ v1.0"
-
-msgid "Status: OPERATIONAL"
-msgstr "Статус: ПРАЦЮЄ"
-
-msgid "Coupons available: 1"
-msgstr "Доступно купонів: 1"
-
-msgid "ITEMS AVAILABLE:"
-msgstr "ДОСТУПНІ ТОВАРИ:"
-
-msgid "Flag: 1 000 000 coupons"
-msgstr "Прапор: 1 000 000 купонів"
-
-msgid "Buy a flag"
-msgstr "Купити прапор"
-
-msgid "Vending Machine"
-msgstr "Торговий автомат"
-
+#: app.py:481
 msgid "Invalid quantity"
 msgstr "Невірна кількість"
 
+#: app.py:488
 msgid "Not enough coupons! You need 1 000 000 coupons to buy a flag."
 msgstr "Недостатньо купонів! Вам потрібно 1 000 000 купонів, щоб купити прапор."
 
+#: app.py:494
 msgid "*Machine whirs* Here's your flag!"
 msgstr "*Автомат гуде* Ось ваш прапор!"
 
-msgid "Energy drink"
-msgstr "Енергетичний напій"
+#: app.py:540
+msgid "Role changed successfully"
+msgstr ""
 
-msgid "Energy drink - received!"
-msgstr "Енергетичний напій - отримано!"
+#: app.py:546
+msgid "Invalid role"
+msgstr ""
 
-msgid "Ask about the vending machine"
-msgstr "Запитати про торговий автомат"
+#: templates/base.html:7 templates/map.html:3 templates/map.html:5
+msgid "STALKER::NOVICE"
+msgstr "STALKER::НОВАЧОК"
 
-msgid "Vending Machine Information"
-msgstr "Інформація про торговий автомат"
+#: templates/base.html:312
+msgid "STALKER PDA Terminal v1.0"
+msgstr "STALKER ПДА Термінал v1.0"
 
-msgid "The vending machine seems overpriced. Maybe you could modify the POST request parameters to get a better deal..."
-msgstr "Торговий автомат здається надто дорогим. Можливо, варто змінити параметри POST-запиту, щоб отримати кращу ціну..."
+#: templates/base.html:329
+msgid "Got it"
+msgstr "Зрозуміло"
 
-msgid "Vending machine:"
-msgstr "Торговий автомат:"
+#: templates/base.html:366
+msgid "Message"
+msgstr "Повідомлення"
 
-msgid "A crafty stalker grins: \"That vending machine is ridiculously overpriced. With tools like Burp Suite, you can intercept and modify the POST request parameters. Maybe change the price to something more... reasonable.\""
-msgstr "Хитрий сталкер посміхається: \"Цей торговий автомат просто грабіжницькі ціни має. За допомогою таких інструментів як Burp Suite, можна перехопити та змінити параметри POST-запиту. Може, змінимо іну на щось більш... прийнятне.\""
+#: templates/index.html:3
+msgid "STALKER::INTRODUCTION"
+msgstr "STALKER::ВСТУП"
 
-msgid "You discover an old vending machine in a dimly lit corner. Its display glows with an eerie rust-colored light, showing an absurdly high price. Your PDA detects unusual network activity coming from the machine."
-msgstr "Ви знаходите старий торговий автомат у тьмяно освітленому кутку. Його дисплей світиться моторошним іржавим світлом, показуючи абсурдно високу ціну. Ваш ПДА виявляє незвичну мережеву активність від автомата."
+#: templates/index.html:7
+msgid "INTRODUCTION"
+msgstr "ВСТУП"
 
-msgid "Examine display"
-msgstr "Оглянути дисплей"
+#: templates/index.html:13
+msgid ""
+"Welcome to the Zone of Exclusion, stalker. You have just arrived at the "
+"Cordon - the first entry point into this dangerous territory. Your "
+"equipment is minimal, but Sidorovich, the local trader, can help... for a"
+" price."
+msgstr ""
+"Ласкаво просимо до Зони відчуження, сталкер. Ти щойно прибув до Кордону -"
+" першої точки входу в цю небезпечну територію. Твоє спорядження "
+"мінімальне, але Сидорович, місцевий торговець, може допомогти... за певну"
+" ціну."
 
-msgid "Scan network activity"
-msgstr "Сканувати мережеву активність"
+#: templates/index.html:17
+msgid "WARNING:"
+msgstr "УВАГА:"
 
-msgid "Check pricing system"
-msgstr "Перевірити систему цін"
+#: templates/index.html:17
+msgid ""
+"Sidorovich is interested in special \"flags\" that can be found in "
+"various locations of the Cordon. For each such flag, he is ready to "
+"exchange valuable equipment."
+msgstr ""
+"Сидорович цікавиться особливими \"прапорами\", які можна знайти в різних "
+"локаціях Кордону. За кожен такий прапор він готовий обміняти цінне "
+"спорядження."
 
-msgid "Display Analysis"
-msgstr "Аналіз дисплея"
+#: templates/index.html:21
+msgid "To begin your journey, enter your stalker name:"
+msgstr "Щоб розпочати свою подорож, введіть своє ім'я сталкера:"
 
-msgid "The vending machine's interface appears to be running on an old embedded system. The price seems to be handled by a simple POST request to the internal server. Maybe there's a way to... adjust it?"
-msgstr "Схоже, що інтерфейс торгового автомата працює на старій вбудованій системі. Ціна, здається, обробляється простим POST-запитом до внутрішнього сервера. Можливо, є спосіб... підкоригувати її?"
+#: templates/index.html:24
+msgid "Enter stalker name..."
+msgstr "Введіть ім'я сталкера..."
 
-msgid "Network Scan"
-msgstr "Сканування мережі"
+#: templates/index.html:25
+msgid "Enter the Zone"
+msgstr "Увійти до Зони"
 
-msgid "Your PDA detects that the machine processes purchase requests locally. All parameters, including price and quantity, are sent directly to the machine's server. A security-minded stalker would definitely check these requests with special tools..."
-msgstr "Ваш ПДА виявляє, що автомат обробляє запити на покупку локально. Всі параметри, включаючи ціну та кількість, надсилаються безпосередньо на сервер автомата. Досвідчений сталкер обов'язково перевірив би ці запити спеціальними інструментами..."
+#: templates/index.html:39
+msgid "Radiation level"
+msgstr "Рівень радіації"
 
-msgid "Price Analysis"
-msgstr "Аналіз цін"
+#: templates/index.html:47
+msgid "System active"
+msgstr "Система активна"
 
-msgid "The pricing system seems poorly secured. The machine accepts a \"price\" parameter in its purchase request. An experienced stalker would know how to intercept and modify such requests using tools like Burp Suite..."
-msgstr "Система цін здається погано захищеною. Автомат рямає параметр \"price\" у запиті на покупку. Досвідчений сталкер знав би, як перехопити та змінити такі запити за допомогою інструментів на кшталт Burp Suite..."
+#: templates/index.html:51
+msgid "Danger zone"
+msgstr "Небезпечна зона"
 
-msgid "Several stalkers are sitting by the campfire. The warm light creates a cozy atmosphere, and you can hear quiet conversations and occasional laughter."
-msgstr "Кілька сталкерів сидять біля багаття. Тепле світло створює затишну атмосферу, і ви чуєте тихі розмови та випадковий сміх."
+#: templates/map.html:203
+msgid "Information"
+msgstr "Інформація"
 
+#: templates/map.html:205
+msgid "Stalker:"
+msgstr "Сталкер:"
+
+#: templates/map.html:205
+msgid "Unknown"
+msgstr "Невідомий"
+
+#: templates/locations/garage.html:18 templates/map.html:208
+msgid "Status:"
+msgstr "Статус:"
+
+#: templates/map.html:208
+msgid "Novice"
+msgstr "Новачок"
+
+#: templates/map.html:211
+msgid "Location:"
+msgstr "Локація:"
+
+#: templates/map.html:211
+msgid "Cordon"
+msgstr "Кордон"
+
+#: templates/map.html:214
+msgid "Danger level: High"
+msgstr "Рівень небезпеки: Високий"
+
+#: templates/map.html:217
+msgid "Tasks"
+msgstr "Завдання"
+
+#: templates/map.html:219
+msgid "Find flags in each location"
+msgstr "Знайдіть прапори в кожній локації"
+
+#: templates/map.html:222
+msgid "Bring them to Sidorovich"
+msgstr "Принесіть їх Сидоровичу"
+
+#: templates/map.html:225
+msgid "Be careful with anomalies!"
+msgstr "Будьте обережні з аномаліями!"
+
+#: templates/map.html:235
+msgid "Stalkers Campfire"
+msgstr "Багаття сталкерів"
+
+#: templates/map.html:239
+msgid "Old Shed"
+msgstr "Старий сарай"
+
+#: templates/map.html:243
+msgid "Farmhouse"
+msgstr "Ферма"
+
+#: templates/map.html:247
+msgid "Dog Pack"
+msgstr "Зграя собак"
+
+#: templates/map.html:251
+msgid "Abandoned House"
+msgstr "Покинутий будинок"
+
+#: templates/map.html:255
+msgid "Technician House"
+msgstr "Будинок техніка"
+
+#: templates/map.html:259
+msgid "Anomaly"
+msgstr "Аномалія"
+
+#: templates/map.html:263
+msgid "Bandit Camp"
+msgstr "Табір бандитів"
+
+# Garage location translations
+#: templates/map.html:267
+msgid "Garage"
+msgstr "Гараж"
+
+#: templates/locations/vending.html:39 templates/map.html:271
+msgid "Vending Machine"
+msgstr "Торговий автомат"
+
+#: templates/map.html:275
+msgid "Sidorovich Bunker"
+msgstr "Бункер Сидоровича"
+
+# Abandoned house translations
+#: templates/locations/abandoned.html:3 templates/locations/abandoned.html:5
+msgid "ABANDONED HOUSE"
+msgstr "ПОКИНУТИЙ БУДИНОК"
+
+#: templates/locations/abandoned.html:9
+msgid ""
+"In a half-ruined house, you find an old safe with an electronic lock. The"
+" screen flashes \"S.T.A.L.K.E.R. Security System v1.0\"."
+msgstr ""
+"У напівзруйнованому будинку ви знаходите сарй сейф з електроннм замком. "
+"На екрані блимає \"S.T.A.L.K.E.R. Security System v1.0\"."
+
+#: templates/locations/abandoned.html:12
+msgid "Examine panel"
+msgstr "Оглянути панель"
+
+#: templates/locations/abandoned.html:13
+msgid "Search for clues"
+msgstr "Пошукати підказки"
+
+#: templates/locations/abandoned.html:14
+msgid "Try to unlock"
+msgstr "Спробувати відкрити"
+
+#: templates/locations/abandoned.html:21
+msgid "Authorization required"
+msgstr "Потрібна авторизація"
+
+#: templates/locations/abandoned.html:22
+msgid "Enter your credentials:"
+msgstr "Введіть ваші дані:"
+
+#: templates/locations/abandoned.html:24
+msgid "Login"
+msgstr "Логін"
+
+#: templates/locations/abandoned.html:25
+msgid "Password"
+msgstr "Пароль"
+
+#: templates/locations/abandoned.html:26
+msgid "Try"
+msgstr "Спробувати"
+
+#: templates/locations/abandoned.html:30 templates/locations/anomaly.html:60
+#: templates/locations/bandit.html:76 templates/locations/campfire.html:35
+#: templates/locations/commonpasswords.html:83
+#: templates/locations/commonpaths.html:193
+#: templates/locations/commonusernames.html:66
+#: templates/locations/console.html:32 templates/locations/dogs.html:60
+#: templates/locations/farmhouse.html:53 templates/locations/garage.html:43
+#: templates/locations/shed.html:28 templates/locations/sydorovich.html:81
+#: templates/locations/technician.html:102 templates/locations/vending.html:34
+msgid "Return to map"
+msgstr "Повернутися до карти"
+
+#: templates/locations/abandoned.html:52
+msgid "Panel Examination"
+msgstr "Огляд панелі"
+
+#: templates/locations/abandoned.html:53
+msgid ""
+"There are traces of frequent use on the panel. It seems this safe was "
+"used by an experienced stalker. Maybe check the list of common logins by "
+"the campfire?"
+msgstr ""
+"На панелі видно сліди частого використання. Схоже, цим сейфом "
+"користувався досвідчений сталкер. Може, варто перевірити список поширених"
+" логінів біля багаття?"
+
+#: templates/locations/abandoned.html:54
+msgid "Search for Clues"
+msgstr "Пошук підказок"
+
+#: templates/locations/abandoned.html:55
+msgid ""
+"On the wall, there is a scratched inscription: \"Only those who "
+"understand the laws of the Zone can open this safe\""
+msgstr ""
+"На стіні є видряпаний напис: \"Тільки ті, хто розуміє закони Зони, можуть"
+" відкрити цей сейф\""
+
+#: templates/locations/abandoned.html:56
+#: templates/locations/technician.html:273
+msgid "Success!"
+msgstr "Успіх!"
+
+#: templates/locations/abandoned.html:57 templates/locations/bandit.html:69
+#: templates/locations/technician.html:274
+msgid "Error"
+msgstr "Помилка"
+
+# Anomaly location translations
+#: templates/locations/anomaly.html:3 templates/locations/anomaly.html:5
+msgid "ANOMALY"
+msgstr "АНОМАЛІЯ"
+
+#: templates/locations/anomaly.html:9
+msgid ""
+"A strange anomaly pulsates before you. Your PDA starts making strange "
+"sounds and showing incomprehensible data. It seems the anomaly is "
+"emitting some signals..."
+msgstr ""
+"Перед вами пульсує дивна аномалія. Ваш ПДА починає видавати дивні звуки "
+"та показувати незрозумілі дані. Схоже, аномалія випромінює якісь "
+"сигнали..."
+
+#: templates/locations/anomaly.html:12
+msgid "Scan anomaly"
+msgstr "Сканувати аномалію"
+
+#: templates/locations/anomaly.html:13
+msgid "Check PDA"
+msgstr "Перевірити ПДА"
+
+#: templates/locations/anomaly.html:14
+msgid "Try to intercept signal"
+msgstr "Спробувати перехопити сигнал"
+
+#: templates/locations/anomaly.html:21
+msgid "PDA::Signal Interception Module"
+msgstr "ПДА::Модуль перехоплення сигналів"
+
+#: templates/locations/anomaly.html:29
+msgid ""
+"ANOMALY ANALYSIS:\n"
+"- Type: Informational\n"
+"- Activity: High\n"
+"- Status: Data transmission...\n"
+"\n"
+"Network activity detected...\n"
+"Signals are transmitted via GET requests...\n"
+"Recommended: use traffic interception tools"
+msgstr ""
+"АНАЛІЗ АНОМАЛІЇ:\n"
+"- Тип: Інформаційна\n"
+"- Активність: Висока\n"
+"- Статус: Передача даних...\n"
+"\n"
+"Виявлено мережеву активність...\n"
+"Сигнали передаються через GET-запити...\n"
+"Рекомендовано: використовувати інструменти перехоплення трафіку"
+
+#: templates/locations/anomaly.html:39
+msgid "Send test signal"
+msgstr "Надіслати тестовий сигнал"
+
+#: templates/locations/anomaly.html:46
+msgid "Activity log:"
+msgstr "Журнал активності:"
+
+#: templates/locations/anomaly.html:47 templates/locations/anomaly.html:319
+msgid "Waiting for signal..."
+msgstr "Очікування сигналу..."
+
+#: templates/locations/anomaly.html:56
+msgid "SIGNAL SENT"
+msgstr "СИГНАЛ НАДІСЛАНО"
+
+#: templates/locations/anomaly.html:260
+msgid "Anomaly Scan"
+msgstr "Сканування аномалії"
+
+#: templates/locations/anomaly.html:261
+msgid ""
+"The PDA shows: \"Anomaly type: Informational. It seems to be transmitting"
+" data through network requests...\""
+msgstr ""
+"ПДА показує: \"Тип аномалії: Інформаційна. Схоже, вона передає дані через"
+" мережеві запити...\""
+
+#: templates/locations/anomaly.html:267
+msgid "PDA Check"
+msgstr "Перевірка ПДА"
+
+#: templates/locations/anomaly.html:268
+msgid ""
+"Your PDA is picking up strange network traffic. The anomaly seems to be "
+"responding to GET requests."
+msgstr ""
+"Ваш ПДА фіксує дивний мережевий трафік. Схоже, аномалія реагує на "
+"GET-запити."
+
+#: templates/locations/anomaly.html:293
+msgid "Signal sent..."
+msgstr "Сигнал надслано..."
+
+#: templates/locations/anomaly.html:308
+msgid "Signal received! Response:"
+msgstr "Сигнал отримано! Відповідь:"
+
+# Bandit camp page translations
+#: templates/locations/bandit.html:3
+msgid "STALKER::BANDIT_CAMP"
+msgstr "STALKER::ТАБІР БАНДИТІВ"
+
+#: templates/locations/bandit.html:5
+msgid "BANDIT_CAMP"
+msgstr "ТАБІР БАНДИТІВ"
+
+#: templates/locations/bandit.html:9
+msgid ""
+"You approach the bandit camp. The guard at the entrance examines you "
+"carefully."
+msgstr "Ви підходите до табору бандитів. Охоронець на вході пильно вас розлядає."
+
+#: templates/locations/bandit.html:12
+msgid "Talk to guard"
+msgstr "Поговорити з охоронцем"
+
+#: templates/locations/bandit.html:13
+msgid "Check your \"cookies\""
+msgstr "Перевірити ваші \"печеньки\""
+
+#: templates/locations/bandit.html:14
+msgid "Try to disguise as a bandit"
+msgstr "Спробувати прикинутися бандитом"
+
+#: templates/locations/bandit.html:21
+msgid "ACCESS CONTROL SYSTEM"
+msgstr "СИСТЕМА КОНТРОЛЮ ДОСТУПУ"
+
+#: templates/locations/bandit.html:30
+msgid "Current status:"
+msgstr "Поточний статус:"
+
+#: templates/locations/bandit.html:31
+msgid "stalker"
+msgstr "сталкер"
+
+#: templates/locations/bandit.html:36
+msgid "\"We only trust bandits, not stalkers. Prove that you're one of us.\""
+msgstr "\"Ми довіряємо тільки бандитам, а не сталкерам. Доведи, що ти свій.\""
+
+#: templates/locations/bandit.html:39
+msgid "Try to pass"
+msgstr "Спробувати пройти"
+
+#: templates/locations/bandit.html:42
+msgid ""
+"Hint: Maybe you should check and change the cookie in developer tools "
+"(F12)"
+msgstr ""
+"Підказка: Можливо, варто перевірити та змінити cookie в інструментах "
+"розробника (F12)"
+
+#: templates/locations/bandit.html:59 templates/locations/dogs.html:52
+msgid "REWARD:"
+msgstr "НАГОРОДА:"
+
+#: templates/locations/bandit.html:61 templates/locations/dogs.html:54
+#: templates/locations/dogs.html:287
+msgid "Copy"
+msgstr "Скопіювати"
+
+#: templates/locations/bandit.html:71
+msgid "OK"
+msgstr ""
+
+#: templates/locations/bandit.html:364
+msgid "Check your browser cookies. There might be something interesting there..."
+msgstr "Перевір куки браузера. Там може бути щось цікаве..."
+
+#: templates/locations/bandit.html:368
+msgid "Maybe you can change your role in the cookies..."
+msgstr "Може, ти можеш змінити свою роль у куках..."
+
+#: templates/locations/bandit.html:383 templates/locations/bandit.html:403
+msgid "Access denied. Only bandits allowed."
+msgstr "Доступ заборонено. Тільки для бандитів."
+
+#: templates/locations/bandit.html:401
+msgid ""
+"Welcome to the gang, brother! Here's a little something for your "
+"trouble..."
+msgstr "Ласкаво просимо до банди, брате! Ось тобі дещо за твої старання..."
+
+#: templates/locations/bandit.html:407
+msgid "Something went wrong. Try again."
+msgstr ""
+
+#: templates/locations/bandit.html:418
+msgid "Flag copied to clipboard!"
+msgstr ""
+
+# Campfire page translations
+#: templates/locations/campfire.html:3
+msgid "STALKER::CAMPFIRE"
+msgstr "STALKER::БАГАТТЯ"
+
+#: templates/locations/campfire.html:5
+msgid "CAMPFIRE"
+msgstr "БАГАТТЯ"
+
+#: templates/locations/campfire.html:9
+msgid ""
+"Several stalkers are sitting by the campfire. The warm light creates a "
+"cozy atmosphere, and you can hear quiet conversations and occasional "
+"laughter."
+msgstr ""
+"Кілька сталкерів сидять біля багаття. Тепле світло створює затишну "
+"атмосферу, і ви чуєте тихі розмови та випадковий сміх."
+
+#: templates/locations/campfire.html:12
 msgid "What's new in zone?"
 msgstr "Що нового в зоні?"
 
+#: templates/locations/campfire.html:13
 msgid "Does anybody know cool jokes?"
 msgstr "Хто знає круті жарти?"
 
+#: templates/locations/campfire.html:14
 msgid "Guys, I need some advice"
 msgstr "Хлопці, потрібна порада"
 
-msgid "The stalkers exchange knowing looks. Everyone here has their own expertise to share."
-msgstr "Сталкери обмінюються розуміючими поглядами. Кожен тут має чим поділитися."
+#: templates/locations/campfire.html:23 templates/locations/campfire.html:132
+msgid ""
+"An old stalker says: \"There's something hidden in that shed. Try looking"
+" in a hidden directory. I have a list of common paths you can look at.\""
+msgstr ""
+"Старий сталкер каже: \"В тому сараї є щось приховане. Спробуй пошукати в "
+"прихованій директорії. У мене є список поширених шляхів, можеш глянути.\""
 
-msgid "The stalkers share the latest stories from around the Zone:"
-msgstr "Сталкери діляться останніми історіями з Зони:"
+#: templates/locations/campfire.html:24 templates/locations/campfire.html:138
+msgid ""
+"An experienced stalker tells: \"There's a treasures table in the "
+"database. Use a simple SELECT query to get the data. You can pull all or "
+"just what you need. Your choice.\""
+msgstr ""
+"Досвідчений сталкер розповідає: \"В базі даних є таблиця treasures. "
+"Використай простий SELECT-запит, щоб отримати дані. Можеш тягнути всі, "
+"можеш тягнути тільки потрібні. Вибір за тобою.\""
 
-msgid "\"Did you hear? They say someone managed to hack that old vending machine near the road. Got themselves a nice prize...\""
-msgstr "\"Чули? Кажуть, хтось зламав той старий автомат біля дороги. Отримав непогану нагороду...\""
+#: templates/locations/campfire.html:25 templates/locations/campfire.html:143
+msgid ""
+"A young stalker recalls: \"The guard reacts to popup messages. You know, "
+"those that appear through alert(). And he's afraid of dogs...\""
+msgstr ""
+"Молодий сталкер згадує: \"Охоронець реагує на спливаючі повідомлення. "
+"Знаєш, такі, що з'являються через alert(). А ще він боїться собак...\""
 
-msgid "\"The anomaly field has been acting strange lately. More signals than usual.\""
-msgstr "\"Аномальне поле останнім часом дивно себе поводить. Більше сигналів, ніж зазвичай.\""
+#: templates/locations/campfire.html:26 templates/locations/campfire.html:148
+msgid ""
+"The technician by the fire mumbles: \"That safe... I have lists of common"
+" logins and passwords. Maybe something will work?\""
+msgstr ""
+"Технік біля багаття бурмоче: \"Той сейф... У мене є списки поширених "
+"логінів та паролів. Може, щось підійде?\""
 
-msgid "\"Bandits are getting craftier with their security. But their systems still have weaknesses if you know where to look.\""
-msgstr "\"Бандити стають хитрішими зі своєю безпекою. Але їхні системи все ще мають слабкі місця, якщо знати, де шукати.\""
+#: templates/locations/campfire.html:27 templates/locations/campfire.html:158
+msgid ""
+"The old stalker smiles: \"*lowers voice* If you get stuck - look for "
+"CyberChef online. They say specialists often use this tool for working "
+"with ciphers.\""
+msgstr ""
+"Старий сталкер посміхається: \"*понижує голос* Якщо застрягнеш - пошукай "
+"в інтернеті CyberChef. Кажуть, спеціалісти часто користуються цим "
+"інструментом для роботи з шифрами.\""
 
-msgid "\"That garage by the old road... smugglers are using it again. Their security is all digital now.\""
-msgstr "\"Той гараж біля старої дороги... контрабандисти знову його використовують. Їхня безпека тепер повністю цифрова.\""
+#: templates/locations/campfire.html:28 templates/locations/campfire.html:163
+msgid ""
+"An experienced stalker advises: \"Open developer tools (F12), Network "
+"tab. You can see all requests there, including hidden parameters.\""
+msgstr ""
+"Досвідчений сталкер радить: \"Відкрий інструменти розробника (F12), "
+"вкладку Network. Там можна побачити всі запити, включаючи приховані "
+"параметри.\""
 
-msgid "The stalkers share their favorite Zone humor:"
-msgstr "Сталкери діляться своїми улюбленими жартами про Зону:"
+#: templates/locations/campfire.html:29 templates/locations/campfire.html:168
+msgid ""
+"A seasoned stalker whispers: \"Bandits check the role through a cookie. "
+"If you change the cookie role value from stalker to bandit...\""
+msgstr ""
+"Бувалий сталкер шепоче: \"Бандити перевіряють роль через cookie. Якщо "
+"змінити значення cookie role з stalker на bandit...\""
 
-msgid "\"Why did the rookie bring a keyboard to an anomaly field? He heard you could hack artifacts!\""
-msgstr "\"Чому новачок приніс клавіатуру в аномальне поле? Він чу, що можна хакнути артефакти!\""
+#: templates/locations/campfire.html:30 templates/locations/campfire.html:173
+msgid ""
+"A stalker with a laptop mentions: \"Network traffic inspection tools are "
+"essential in the Zone. Always check response headers when dealing with "
+"suspicious vehicles.\""
+msgstr ""
+"Сталкер з ноутбуком зауважує: \"Інструменти перевірки мережевого трафіку "
+"необхідні в Зоні. Завжди перевіряйте заголовки відповідей, коли маєте "
+"справу з підозрілим транспортом.\""
 
-msgid "\"What's a stalker's favorite programming language? C-Zone!\""
-msgstr "\"Яка улюблена мова програмування сталкера? C-Zone!\""
+#: templates/locations/campfire.html:31 templates/locations/campfire.html:178
+msgid ""
+"A crafty stalker grins: \"That vending machine is ridiculously "
+"overpriced. With tools like Burp Suite, you can intercept and modify the "
+"POST request parameters. Maybe change the price to something more... "
+"reasonable.\""
+msgstr ""
+"Хитрий сталкер посміхається: \"Цей торговий автомат просто грабіжницькі "
+"ціни має. За допомогою таких інструментів як Burp Suite, можна перехопити"
+" та змінити параметри POST-запиту. Може, змінимо іну на щось більш... "
+"прийнятне.\""
 
-msgid "\"How many stalkers does it take to fix a bug? None, they just call it a new anomaly!\""
-msgstr "\"Скільки сталкерів потрібно, щоб виправити баг? Жодного, вони просто називають це новою аномалією!\""
+#: templates/locations/campfire.html:57
+msgid ""
+"\"Did you hear? They say someone managed to hack that old vending machine"
+" near the road. Got themselves a nice prize...\""
+msgstr ""
+"\"Чули? Кажуть, хтось зламав той старий автомат біля дороги. Отримав "
+"непогану нагороду...\""
 
-msgid "\"What did the stalker say when his PDA crashed? Blyat, not again!\""
-msgstr "\"Що сказав сталкер, коли його КПК завис? Блін, знову!\""
+#: templates/locations/campfire.html:58
+msgid ""
+"\"The anomaly field has been acting strange lately. More signals than "
+"usual.\""
+msgstr ""
+"\"Аномальне поле останнім часом дивно себе поводить. Більше сигналів, ніж"
+" зазвичай.\""
 
-msgid "Back to conversation"
-msgstr "Повернутися до розмови"
+#: templates/locations/campfire.html:59
+msgid ""
+"\"Bandits are getting craftier with their security. But their systems "
+"still have weaknesses if you know where to look.\""
+msgstr ""
+"\"Бандити стають хитрішими зі своєю безпекою. Але їхні системи все ще "
+"мають слабкі місця, якщо знати, де шукати.\""
 
+#: templates/locations/campfire.html:60
+msgid ""
+"\"That garage by the old road... smugglers are using it again. Their "
+"security is all digital now.\""
+msgstr ""
+"\"Той гараж біля старої дороги... контрабандисти знову його "
+"використовують. Їхня безпека тепер повністю цифрова.\""
+
+#: templates/locations/campfire.html:66
 msgid "A stalker shares a story:"
 msgstr "Сталкер ділиться історією:"
 
+#: templates/locations/campfire.html:79
+msgid ""
+"\"So they caught an old stalker and interrogate him:\n"
+"\n"
+"- People say you have... an assault rifle?\n"
+"- People are lying...\n"
+"- People say you have... a machine gun?\n"
+"- Oh, people are lying...\n"
+"- People say you have... a tank?\n"
+"- Well, that's the one thing I don't have...\""
+msgstr ""
+"\"Зловили, значить, старого сталкера й допитують:\n"
+"\n"
+"— Люди кажуть, у вас… автомат є?\n"
+"— Брешуть люди...\n"
+"— Люди кажуть, у вас… кулемет є?\n"
+"— Ой, брешуть люди...\n"
+"— Люди кажуть, у вас… танк є?\n"
+"— Ех, от чого нема — того нема…\""
+
+#: templates/locations/campfire.html:80
+msgid ""
+"\"A stalker comes to the doctor. The doctor examines him and says:\n"
+"\n"
+"- This is from fatigue, this is from nervous tension, and this is from "
+"depression.\n"
+"- Thank you, doctor, thank you... Tell me, don't you have anything "
+"besides vodka?\""
+msgstr ""
+"\"Приходить, значить, сталкер до лікаря. Лікар оглянув його й каже:\n"
+"\n"
+"— Оце — від втоми, оце — від нервового напруження, а це — від депресії.\n"
+"— Дякую, докторе, дякую… Скажіть, а у вас, крім горілки, нічого немає?\""
+
+#: templates/locations/campfire.html:81
+msgid ""
+"\"A stalker meets his old buddy. And he's all beaten up, with a black "
+"eye:\n"
+"\n"
+"- Pete, what happened to you?\n"
+"- Well damn... Got attacked, beaten up, money stolen...\n"
+"- Did you remember who did it?\n"
+"- Why would I need to remember... It was my wife!\""
+msgstr ""
+"\"Зустрічає сталкер свого давнього кореша. А той увесь пом'ятий, синяк "
+"під оком:\n"
+"\n"
+"— Петю, що з тобою?\n"
+"— Та блін… Напали, відлупцювали, гроші забрали…\n"
+"— Ти їх хоч запам'ятав?\n"
+"— А нащо її запам'ятовувати… Дружину то!\""
+
+#: templates/locations/campfire.html:82
+msgid ""
+"\"One stalker asks another:\n"
+"\n"
+"- Do you know which car is the most 'stalker-like'?\n"
+"- No, which one?\n"
+"- Zaporozhets!\n"
+"- Why's that?\n"
+"- Because it's reliable as a tank, and the trunk is in the front. "
+"Convenient to keep an eye on the loot!\""
+msgstr ""
+"\"Один сталкер запитує в іншого:\n"
+"\n"
+"— А знаєш, яка машина найбільш \"сталкерська\"?\n"
+"— Ні, яка?\n"
+"— Запорожець!\n"
+"— Чого так?\n"
+"— Бо надійний, як танк, і багажник спереду. За хабаром зручно "
+"приглядати!\""
+
+#: templates/locations/campfire.html:88
 msgid "A stalker tells a joke:"
 msgstr "Сталкер розповідає жарт:"
 
-msgid "\"So they caught an old stalker and interrogate him:\n\n- People say you have... an assault rifle?\n- People are lying...\n- People say you have... a machine gun?\n- Oh, people are lying...\n- People say you have... a tank?\n- Well, that's the one thing I don't have...\""
-msgstr "\"Зловили, значить, старого сталкера й допитують:\n\n— Люди кажуть, у вас… автомат є?\n— Брешуть люди...\n— Люди кажуть, у вас… кулемет є?\n— Ой, брешуть люди...\n— Люди кажуть, у вас… танк є?\n— Ех, от чого нема — того нема…\""
+#: templates/locations/campfire.html:102
+msgid ""
+"The stalkers exchange knowing looks. Everyone here has their own "
+"expertise to share."
+msgstr "Сталкери обмінюються розуміючими поглядами. Кожен тут має чим поділитися."
 
-msgid "\"A stalker comes to the doctor. The doctor examines him and says:\n\n- This is from fatigue, this is from nervous tension, and this is from depression.\n- Thank you, doctor, thank you... Tell me, don't you have anything besides vodka?\""
-msgstr "\"Приходить, значить, сталкер до лікаря. Лікар оглянув його й каже:\n\n— Оце — від втоми, оце — від нервового напруження, а це — від депресії.\n— Дякую, докторе, дякую… Скажіть, а у вас, крім горілки, нічого немає?\""
+#: templates/locations/campfire.html:104
+msgid "Ask about the shed"
+msgstr "Запитати про сарай"
 
-msgid "\"A stalker meets his old buddy. And he's all beaten up, with a black eye:\n\n- Pete, what happened to you?\n- Well damn... Got attacked, beaten up, money stolen...\n- Did you remember who did it?\n- Why would I need to remember... It was my wife!\""
-msgstr "\"Зустрічає сталкер свого давнього кореша. А той увесь пом'ятий, синяк під оком:\n\n— Петю, що з тобою?\n— Та блін… Напали, відлупцювали, гроші забрали…\n— Ти їх хоч запам'ятав?\n— А нащо її запам'ятовувати… Дружину то!\""
+#: templates/locations/campfire.html:105
+msgid "Ask about the farmhouse"
+msgstr "Запитати про ферму"
 
-msgid "\"One stalker asks another:\n\n- Do you know which car is the most 'stalker-like'?\n- No, which one?\n- Zaporozhets!\n- Why's that?\n- Because it's reliable as a tank, and the trunk is in the front. Convenient to keep an eye on the loot!\""
-msgstr "\"Один сталкер запитує в іншого:\n\n— А знаєш, яка машина найбільш \"сталкерська\"?\n— Ні, яка?\n— Запорожець!\n— Чого так?\n— Бо надійний, як танк, і багажник спереду. За хабаром зручно приглядати!\""
+#: templates/locations/campfire.html:106
+msgid "Ask about the dogs"
+msgstr "Запитати про собак"
 
-msgid "Detector"
-msgstr "Детектор"
+#: templates/locations/campfire.html:107
+msgid "Ask about the abandoned house"
+msgstr "Запитати про покинутий будинок"
 
-msgid "Medkit"
-msgstr "Аптечка"
+#: templates/locations/campfire.html:108
+msgid "Ask about the technician"
+msgstr "Запитати про техніка"
 
-msgid "Bandages"
-msgstr "Бинти"
+#: templates/locations/campfire.html:109
+msgid "Ask about the anomaly"
+msgstr "Запитати про аномалію"
 
-msgid "Antirad"
-msgstr "Антирад"
+#: templates/locations/campfire.html:110
+msgid "Ask about the bandits"
+msgstr "Запитати про бандитів"
 
-msgid "Toolkit"
-msgstr "Набір інструментів"
+#: templates/locations/campfire.html:111
+msgid "Ask about the garage"
+msgstr "Запитати про гараж"
 
-msgid "Protection suit"
-msgstr "Захисний костюм"
+#: templates/locations/campfire.html:112
+msgid "Ask about the vending machine"
+msgstr "Запитати про торговий автомат"
 
-msgid "Weapon"
-msgstr "Зброя"
+#: templates/locations/campfire.html:133
+msgid "View paths list"
+msgstr "Подивитися список шляхів"
 
-msgid "Night vision goggles"
-msgstr "Прилад нічного бачення"
+#: templates/locations/campfire.html:149
+msgid "View logins list"
+msgstr "Подивитися список логінів"
 
-msgid "Energy drink"
-msgstr "Енергетичний напій"
+#: templates/locations/campfire.html:150
+msgid "View passwords list"
+msgstr "Подивитися список паролів"
 
-msgid "Detector - received!"
-msgstr "Детектор - отримано!"
+# Common passwords page translations
+#: templates/locations/commonpasswords.html:3
+msgid "STALKER::COMMON_PASSWORDS"
+msgstr "STALKER::ПОШИРЕНІ ПАРОЛІ"
 
-msgid "Medkit - received!"
-msgstr "Аптечка - отримано!"
+#: templates/locations/commonpasswords.html:5
+msgid "COMMON_PASSWORDS"
+msgstr "ПОШИРЕНІ ПАРОЛІ"
 
-msgid "Bandages - received!"
-msgstr "Бинти - отримано!"
+#: templates/locations/commonpasswords.html:9
+msgid "On an old PDA you find a list of common passwords:"
+msgstr "На старому ПДА ви знаходите список поширених паролів:"
 
-msgid "Antirad - received!"
-msgstr "Антирад - отримано!"
+#: templates/locations/commonpasswords.html:12
+#: templates/locations/commonpasswords.html:175
+#: templates/locations/commonpaths.html:12
+#: templates/locations/commonpaths.html:285
+#: templates/locations/commonusernames.html:12
+#: templates/locations/commonusernames.html:158
+msgid "Copy list"
+msgstr "Копіювати список"
 
-msgid "Toolkit - received!"
-msgstr "Набір інструментів - отримано!"
+#: templates/locations/commonpasswords.html:174
+#: templates/locations/commonpaths.html:284
+#: templates/locations/commonusernames.html:157
+#: templates/locations/dogs.html:286
+msgid "Copied!"
+msgstr "Скопійовано!"
 
-msgid "Protection suit - received!"
-msgstr "Захисний костюм - отримано!"
+# Common paths page translations
+#: templates/locations/commonpaths.html:3
+msgid "STALKER::COMMON_PATHS"
+msgstr "STALKER::ПОШИРЕНІ ШЛЯХИ"
 
-msgid "Weapon - received!"
-msgstr "Зброя - отримано!"
+#: templates/locations/commonpaths.html:5
+msgid "COMMON_PATHS"
+msgstr "ПОШИРЕНІ ШЛЯХИ"
 
-msgid "Night vision goggles - received!"
-msgstr "Прилад нічного бачення - отримано!"
+#: templates/locations/commonpaths.html:9
+msgid "On an old PDA you find a list of common paths:"
+msgstr "На старому ПДА ви знаходите список поширених шляхів:"
 
-msgid "Energy drink - received!"
-msgstr "Енергетичний напій - отримано!"
+# Common usernames page translations
+#: templates/locations/commonusernames.html:3
+msgid "STALKER::COMMON_USERNAMES"
+msgstr "STALKER::ПОШИРЕНІ ЛОГІНИ"
 
-msgid "Good job, stalker! Come back when you find more flags."
-msgstr "Молодець, сталкер! Повертайся, коли знайдеш більше прапорів."
+#: templates/locations/commonusernames.html:5
+msgid "COMMON_USERNAMES"
+msgstr "ПОШИРЕНІ ЛОГІНИ"
 
+#: templates/locations/commonusernames.html:9
+msgid "On an old PDA you find a list of common usernames:"
+msgstr "На старому ПДА ви знаходить список поширених логінів:"
+
+# Console page translations
+#: templates/locations/console.html:3
+msgid "STALKER::SECRET_ENTRANCE"
+msgstr "STALKER::ТАЄМНИЙ ВХІД"
+
+#: templates/locations/console.html:5
+msgid "SECRET_ENTRANCE"
+msgstr "ТАЄМНИЙ ВХІД"
+
+#: templates/locations/console.html:10
+msgid "SECRET PATH NAVIGATION SYSTEM v1.0"
+msgstr "СИСТЕМА НАВІГАЦІЇ ТАЄМНИМИ ШЛЯХАМИ v1.0"
+
+#: templates/locations/console.html:18
+msgid "Initializing mechanism..."
+msgstr "Ініціалізація механізму..."
+
+#: templates/locations/console.html:19
+msgid "Path verification"
+msgstr "Перевірка шляху"
+
+#: templates/locations/console.html:20
+msgid "Mechanism activation"
+msgstr "Активація механізму"
+
+#: templates/locations/console.html:21
+msgid "Opening passage"
+msgstr "Відкриття проходу"
+
+#: templates/locations/console.html:22
+msgid "Secret entrance opened!"
+msgstr "Таємний вхід відкрито!"
+
+#: templates/locations/console.html:23
+msgid "In the cache you find a note with a flag:"
+msgstr "В схованці ви знаходите записку з прапорм:"
+
+#: templates/locations/console.html:26 templates/locations/console.html:226
+msgid "Copy flag"
+msgstr "Скопіювати прапор"
+
+# Dogs location translations
+#: templates/locations/dogs.html:3 templates/locations/dogs.html:5
+msgid "DOG PACK"
+msgstr "ЗГРАЯ СОБАК"
+
+#: templates/locations/dogs.html:9
+msgid ""
+"You stumbled upon a pack of wild dogs. Nearby there is an observation "
+"tower, but the guard does not seem to notice you."
+msgstr ""
+"Ви натрапили на зграю здичавілих собак. Неподалік видно спостережну вежу,"
+" але охоронець, схоже, вас не помічає."
+
+#: templates/locations/dogs.html:12
+msgid "Look at tower"
+msgstr "Подивитися на вежу"
+
+#: templates/locations/dogs.html:13
+msgid "Assess situation"
+msgstr "Оцінити ситуацію"
+
+#: templates/locations/dogs.html:14
+msgid "Try to signal"
+msgstr "Спробувати подати сигнал"
+
+#: templates/locations/dogs.html:21
+msgid "ALERT SYSTEM"
+msgstr "СИСТЕМА СИГНАЛІЗАЦІЇ"
+
+#: templates/locations/dogs.html:29
+msgid ""
+"You see a guard post ahead. The guard seems to be monitoring some kind of"
+" alert system..."
+msgstr ""
+"Попереду видно пост охорони. Схоже, охоронець слідкує за якоюсь системою "
+"сигналізації..."
+
+#: templates/locations/dogs.html:32
+msgid "Enter message..."
+msgstr "Введіть повідомлення..."
+
+#: templates/locations/dogs.html:33
+msgid "Send signal"
+msgstr "Відправити сигнал"
+
+#: templates/locations/dogs.html:281
+msgid "Tower Examination"
+msgstr "Огляд вежі"
+
+#: templates/locations/dogs.html:282
+msgid ""
+"The guard in the tower is looking the other way. Maybe you should get his"
+" attention with some kind of popup message?"
+msgstr ""
+"Охоронець на вежі дивиться в інший бік. Можливо, варто привернути його "
+"увагу якимось спливаючим повідомленням?"
+
+#: templates/locations/dogs.html:283
+msgid "Situation Assessment"
+msgstr "Оцінка ситуації"
+
+#: templates/locations/dogs.html:284
+msgid ""
+"The dogs look aggressive. Need to call for help urgently! Maybe an "
+"alert(\"dogs!\") message would get the guard's attention?"
+msgstr ""
+"Собаки виглядають агресивно. Потрібно терміново покликати на допомогу! "
+"Можливо, якесь повідомлення alert(\"dogs!\") приверне увагу охоронця?"
+
+#: templates/locations/dogs.html:285
+msgid ""
+"I heard the alarm!\n"
+"Hold on, I'm coming to help!\n"
+"And here's your reward for quick thinking!"
+msgstr ""
+"Я почув сигнал тривоги!\n"
+"Тримайтеся, я вже біжу на допомогу!\n"
+"А ось і ваша нагорода за кмітливість!"
+
+# Farmhouse page translations
+#: templates/locations/farmhouse.html:3
+msgid "STALKER::FARMHOUSE"
+msgstr "STALKER::ФЕРМА"
+
+#: templates/locations/farmhouse.html:5
+msgid "FARMHOUSE"
+msgstr "ФЕРМА"
+
+#: templates/locations/farmhouse.html:9
+msgid ""
+"Inside the old farmhouse, you find a wounded stalker near an old computer"
+" terminal. He is breathing heavily but trying to say something."
+msgstr ""
+"Всередині старої ферми ви знаходите пораненого сталкера біля старого "
+"комп'ютерного терміналу. Він важко дихає, але намагається щось сказати."
+
+#: templates/locations/farmhouse.html:12 templates/locations/farmhouse.html:181
+msgid "Talk to stalker"
+msgstr "Поговорити зі сталкером"
+
+#: templates/locations/farmhouse.html:13
+msgid "Check terminal"
+msgstr "Оглянути термінал"
+
+#: templates/locations/farmhouse.html:14 templates/locations/farmhouse.html:183
+msgid "Look around"
+msgstr "Оглянути приміщення"
+
+#: templates/locations/farmhouse.html:21
+msgid "SQLite Database Terminal"
+msgstr "SQLite Database Terminal"
+
+#: templates/locations/farmhouse.html:29
+msgid ""
+"Database: treasures\n"
+"Table: treasures\n"
+"Columns: \n"
+"  - id (INTEGER)\n"
+"  - location (TEXT)\n"
+"  - coordinates (TEXT)\n"
+"  - flag (TEXT)\n"
+"\n"
+"Enter a SELECT query to get the treasure data:"
+msgstr ""
+"База даних: treasures\n"
+"Таблиця: treasures\n"
+"Колонки: \n"
+"  - id (INTEGER)\n"
+"  - location (TEXT)\n"
+"  - coordinates (TEXT)\n"
+"  - flag (TEXT)\n"
+"\n"
+"Введіть SELECT запит, щоб отримати дані про скарб:"
+
+#: templates/locations/farmhouse.html:40
+msgid "SELECT..."
+msgstr "SELECT..."
+
+#: templates/locations/farmhouse.html:41
+msgid "Execute"
+msgstr "Виконати"
+
+#: templates/locations/farmhouse.html:45 templates/locations/farmhouse.html:185
+msgid "Query result:"
+msgstr "Результат запиту:"
+
+#: templates/locations/farmhouse.html:46
+msgid "Waiting for query..."
+msgstr "Очікую запит..."
+
+#: templates/locations/farmhouse.html:182
+msgid ""
+"*cough* In the database... coordinates and flag... Try SELECT... *cough* "
+"Look how to SELECT all from the table... *cough*"
+msgstr ""
+"*кашель* В базі даних... координати та прапор... Спробуй SELECT... "
+"*кашель* Подивись як вивеси SELECTом всю таблицю... *кашель*"
+
+#: templates/locations/farmhouse.html:184
+msgid ""
+"The room is dark, but the terminal is working. You can see the SQLite "
+"database interface on the monitor. Maybe try a query? You need to specify"
+" WHAT to SELECT, and FROM where to SELECT."
+msgstr ""
+"В кімнаті темно, але термінал працює. На моніторі видно інтерфейс бази "
+"даних SQLite. Можливо, варто спробувати зробити запит? Треба вказати ЩО "
+"ми SELECTимо, і ЗВІДКИ ми SELECTимо."
+
+#: templates/locations/farmhouse.html:186
+msgid "Executing query..."
+msgstr "Виконую запит..."
+
+#: templates/locations/farmhouse.html:187
+msgid "Error:"
+msgstr "Помилка:"
+
+#: templates/locations/farmhouse.html:188
+msgid "Congratulations! You found the flag!"
+msgstr "Вітаємо! Ви знайшли прапор!"
+
+#: templates/locations/garage.html:3 templates/locations/garage.html:5
+msgid "STALKER::GARAGE"
+msgstr "STALKER::ГАРАЖ"
+
+#: templates/locations/garage.html:9
+msgid ""
+"You enter an old garage. There's a strange car inside - it looks like "
+"it's been modified to transport something. Maybe checking it will reveal "
+"some secrets..."
+msgstr ""
+"Ви заходите в старий гараж. Всередині стоїть дивна машина - схоже, її "
+"модифікували для перевезення чогось. Можливо, огляд виявить якісь "
+"секрети..."
+
+#: templates/locations/garage.html:17
+msgid "VEHICLE INSPECTION SYSTEM v1.0"
+msgstr "СИСТЕМА ОГЛЯДУ ТРАНСПОРТУ v1.0"
+
+#: templates/locations/garage.html:18
+msgid "ACTIVE"
+msgstr "АКТИВНА"
+
+#: templates/locations/garage.html:19
+msgid "Access:"
+msgstr "Доступ:"
+
+#: templates/locations/garage.html:19
+msgid "GRANTED"
+msgstr "НАДАНО"
+
+#: templates/locations/garage.html:21
+msgid "Warning:"
+msgstr "Увага:"
+
+#: templates/locations/garage.html:21
+msgid "Suspicious modifications detected..."
+msgstr "Виявлено підозрілі модифікації..."
+
+#: templates/locations/garage.html:36
+msgid "Check car"
+msgstr "Оглянути машину"
+
+#: templates/locations/garage.html:37
+msgid "Inspect modifications"
+msgstr "Перевірити мережевий трафік"
+
+#: templates/locations/garage.html:38
+msgid "Scan for hidden compartments"
+msgstr "Аналізувати дані відповіді"
+
+#: templates/locations/garage.html:48
+msgid "Error checking car"
+msgstr "Помилка при огляді машини"
+
+#: templates/locations/garage.html:49
+msgid "Vehicle Inspection"
+msgstr "Аналіз мережі"
+
+#: templates/locations/garage.html:50
+msgid ""
+"The car has been heavily modified. There are traces of hidden "
+"compartments and unusual network activity..."
+msgstr ""
+"Машина сильно модифікована. Є сліди прихованих відсіків та незвична "
+"мережева активність..."
+
+#: templates/locations/garage.html:51
+msgid "Scan Results"
+msgstr "Аналіз трафіку"
+
+#: templates/locations/garage.html:52
+msgid ""
+"Scan complete. Multiple hidden compartments detected. The car seems to be"
+" transmitting data through network requests..."
+msgstr ""
+"Сканування завершено. Виявлено кілька прихованих відсіків. Схоже, машина "
+"передає дані через мережеві запити..."
+
+# Shed location translations
+#: templates/locations/shed.html:3 templates/locations/shed.html:5
+msgid "STALKER::SHED"
+msgstr "STALKER::САРАЙ"
+
+#: templates/locations/shed.html:9
+msgid ""
+"You approach the old shed. The door is firmly locked, but local stalkers "
+"say there is a secret entrance used by smugglers. On the wall, you notice"
+" a strange terminal with a small screen. A message flashes on the screen:"
+msgstr ""
+"Ви підходите до старого сараю. Двері міцно замкнені, але місцеві сталкери"
+" подейкують, що тут є таємний вхід, яким користуються контрабандисти. На "
+"стіні ви помічаєте дивний термінал з маленьким екраном. На екрані блимає "
+"повідомлення:"
+
+#: templates/locations/shed.html:12
+msgid ""
+"SECRET PATH NAVIGATION SYSTEM v1.0\n"
+"Status: ACTIVE\n"
+"Access: WAITING\n"
+"\n"
+"Error: Path not found\n"
+"Enter the correct path to access..."
+msgstr ""
+"СИСТЕМА НАВІГАЦІЇ ТАЄМНИМИ ШЛЯХАМИ v1.0\n"
+"Статус: АКТИВНА\n"
+"Доступ: ЧІКУЄТЬСЯ\n"
+"\n"
+"Помилка: Шлях не знайдено\n"
+"Введіть правильний шлях для доступу..."
+
+#: templates/locations/shed.html:21
+msgid "Examine terminal"
+msgstr "Оглянути термінал"
+
+#: templates/locations/shed.html:22
+msgid "Search area"
+msgstr "Обшукати територію"
+
+#: templates/locations/shed.html:23
+msgid "Check notes"
+msgstr "Перевірити записи"
+
+#: templates/locations/shed.html:50
+msgid "Terminal Examination"
+msgstr "Огляд терміналу"
+
+#: templates/locations/shed.html:51
+msgid ""
+"On the terminal's case, you notice an inscription: \"PathFinder 3000. To "
+"activate the secret entrance, use the correct path through the web "
+"interface. Example: /location/shed/PATH\""
+msgstr ""
+"На корпусі терміналу ви помічаєте напис: \"PathFinder 3000. Для активації"
+" таємного входу використовуйте правильний шлях через веб-інтерфейс. "
+"Наприклад: /location/shed/ШЛЯХ\""
+
+#: templates/locations/shed.html:52
+msgid "Area Search"
+msgstr "Обшук території"
+
+#: templates/locations/shed.html:53
+msgid ""
+"You found nothing. You should ask the guys at the campfire, maybe they "
+"know something."
+msgstr ""
+"Ви нічого не знайшли. Треба буде спитати в хлопців біля вогнища, може "
+"вони знають щось."
+
+#: templates/locations/shed.html:54
+msgid "Notes Check"
+msgstr "Перевірка записів"
+
+#: templates/locations/shed.html:55
+msgid ""
+"In the notes of local stalkers, it is mentioned that smugglers often use "
+"standard directory names for their secret entrances. This helps them "
+"remember the paths."
+msgstr ""
+"В записах місцевих сталкерів згадується, що контрабандисти часто "
+"використовують стандартні назви директорій для своїх таємних входів. Це "
+"допомагає їм запам'ятовувати шляхи."
+
+# Sydorovich bunker translations
+#: templates/locations/sydorovich.html:3 templates/locations/sydorovich.html:5
+msgid "STALKER::SYDOROVICH"
+msgstr "STALKER::БУНКЕР СИДОРОВИЧА"
+
+#: templates/locations/sydorovich.html:11
+msgid ""
+"You descend into Sydorovich's underground bunker. The trader sits at his "
+"desk, surrounded by various equipment."
+msgstr ""
+"Ви спускаєтесь в підземний бункер Сидоровича. Торговець сидить за своїм "
+"столом, оточений різноманітним спорядженням."
+
+#: templates/locations/sydorovich.html:14
+msgid "Talk to Sydorovich"
+msgstr "Поговорити з Сидоровичем"
+
+#: templates/locations/sydorovich.html:15
+msgid "Show found flags"
+msgstr "Показати знайдені прапори"
+
+#: templates/locations/sydorovich.html:16
+msgid "Ask about equipment"
+msgstr "Запитати про спорядження"
+
+#: templates/locations/sydorovich.html:21
+msgid "Sydorovich looks at you intently:"
+msgstr "Сидорович уважно дивиться на вас:"
+
+#: templates/locations/sydorovich.html:22
+msgid ""
+"\"Well, show me what you brought. For each correct flag, you'll get a "
+"piece of equipment.\""
+msgstr ""
+"\"Ну, показуй, що приніс. За кожен правильний прапор отримаєш частину "
+"спорядження.\""
+
+#: templates/locations/sydorovich.html:26
+msgid "Shed:"
+msgstr "Сарай:"
+
+#: templates/locations/sydorovich.html:31
+msgid "Farmhouse:"
+msgstr "Ферма:"
+
+#: templates/locations/sydorovich.html:36
+msgid "Dogs:"
+msgstr "Собаки:"
+
+#: templates/locations/sydorovich.html:41
+msgid "Abandoned house:"
+msgstr "Покинутий будинок:"
+
+#: templates/locations/sydorovich.html:46
+msgid "Technician house:"
+msgstr "Будинок техніка:"
+
+#: templates/locations/sydorovich.html:51
+msgid "Anomaly:"
+msgstr "Аномалія:"
+
+#: templates/locations/sydorovich.html:56
+msgid "Bandit camp:"
+msgstr "Табір бандитів:"
+
+#: templates/locations/sydorovich.html:61
+msgid "Garage:"
+msgstr "Гараж:"
+
+#: templates/locations/sydorovich.html:66
+msgid "Vending machine:"
+msgstr "Торговий автомат:"
+
+#: templates/locations/sydorovich.html:72
+msgid "Submit flags"
+msgstr "Здати прапори"
+
+#: templates/locations/sydorovich.html:76
+msgid "Received equipment:"
+msgstr "Отримане спорядження:"
+
+#: templates/locations/sydorovich.html:86
+#: templates/locations/sydorovich.html:274
 msgid "CONGRATULATIONS, STALKER!"
 msgstr "ВІТАЄМО, СТАЛКЕР!"
 
-msgid "You've proven yourself worthy in the Zone. All equipment collected, all challenges completed."
-msgstr "Ти довів свою гідність в Зоні. Все спорядження зібрано, всі випробування пройдено."
+#: templates/locations/sydorovich.html:87
+#: templates/locations/sydorovich.html:275
+msgid ""
+"You've proven yourself worthy in the Zone. All equipment collected, all "
+"challenges completed."
+msgstr ""
+"Ти довів свою гідність в Зоні. Все спорядження зібрано, всі випробування "
+"пройдено."
 
+#: templates/locations/sydorovich.html:90
+#: templates/locations/sydorovich.html:276
 msgid "Sidorovich's Final Words"
 msgstr "Останні слова Сидоровича"
 
-msgid "Ha! I must admit, rookie, you've surprised me. Not many can find all these flags. You've got the mind of a real stalker - quick and sharp. The Zone needs people like you."
-msgstr "Ха! Мушу визнати, новачок, ти мене здивував. Не багато хто може знайти всі ці прапори. У тебе розум справжнього сталкера - швидкий та гострий. Зоні потрібні такі люди, як ти."
+#: templates/locations/sydorovich.html:91
+#: templates/locations/sydorovich.html:277
+msgid ""
+"Ha! I must admit, rookie, you've surprised me. Not many can find all "
+"these flags. You've got the mind of a real stalker - quick and sharp. The"
+" Zone needs people like you."
+msgstr ""
+"Ха! Мушу визнати, новачок, ти мене здивував. Не багато хто може знайти "
+"всі ці прапори. У тебе розум справжнього сталкера - швидкий та гострий. "
+"Зоні потрібні такі люди, як ти."
 
-msgid "But remember - this was just your first test. The real challenges of the Zone lie ahead. Keep that equipment close, you're going to need it..."
-msgstr "Але пам'ятай - це було лише твоє перше випробування. Справжні виклики Зони ще попереду. Тримай це спорядження при собі, воно тобі знадобиться..."
+#: templates/locations/sydorovich.html:92
+#: templates/locations/sydorovich.html:278
+msgid ""
+"But remember - this was just your first test. The real challenges of the "
+"Zone lie ahead. Keep that equipment close, you're going to need it..."
+msgstr ""
+"Але пам'ятай - це було лише твоє перше випробування. Справжні виклики "
+"Зони ще попереду. Тримай це спорядження при собі, воно тобі "
+"знадобиться..."
 
+#: templates/locations/sydorovich.html:95
+#: templates/locations/sydorovich.html:279
 msgid "FINALE UNLOCKED!"
 msgstr "ФІНАЛ ВІДКРИТО!"
 
+#: templates/locations/sydorovich.html:96
+#: templates/locations/sydorovich.html:280
 msgid "The screen glitches and flickers..."
 msgstr "Екран мерехтить та спотворюється..."
+
+#: templates/locations/sydorovich.html:268
+msgid "received!"
+msgstr "отримано!"
+
+#: templates/locations/sydorovich.html:269
+msgid "Sydorovich"
+msgstr "Сидорович"
+
+#: templates/locations/sydorovich.html:270
+msgid ""
+"\"Well, rookie, did you bring something interesting? I trade flags for "
+"equipment.\""
+msgstr "\"Ну що, новачок, приніс щось цікаве? Я міняю прапори на спорядження.\""
+
+#: templates/locations/sydorovich.html:271
+msgid ""
+"\"For each correct flag, you'll get something useful. The more you bring,"
+" the better equipment you can choose.\""
+msgstr ""
+"\"За кожен правильний прапор отримаєш щось корисне. Чим більше принесеш, "
+"тим краще спорядження зможеш вибрати.\""
+
+#: templates/locations/sydorovich.html:272
+msgid "Good job, stalker! Come back when you find more flags."
+msgstr "Молодець, сталкер! Повертайся, коли знайдеш більше прапорів."
+
+#: templates/locations/sydorovich.html:273
+msgid "None of these flags are correct. Keep searching, stalker!"
+msgstr ""
+
+#: templates/locations/technician.html:3 templates/locations/technician.html:5
+msgid "TECHNICIAN HOUSE"
+msgstr "БУДИНОК ТЕХНІКА"
+
+#: templates/locations/technician.html:9
+msgid ""
+"In the technician's house, you find a workbench covered with various "
+"equipment. Strange messages are flashing on the monitor screen."
+msgstr ""
+"В будинку техніка ви знаходите верстк, заставлений різним обладнанням. На"
+" екрані монітора блимають дивні повідомлення."
+
+#: templates/locations/technician.html:12
+msgid "Talk to technician"
+msgstr "Поговорити з техніком"
+
+#: templates/locations/technician.html:13
+msgid "Start challenges"
+msgstr "Почати випробування"
+
+#: templates/locations/technician.html:14
+msgid "Learn more about methods"
+msgstr "Дізнатися більше про методи"
+
+#: templates/locations/technician.html:20
+msgid "Data Processing Methods"
+msgstr "Методи обробки даних"
+
+#: templates/locations/technician.html:22
+msgid "Encoding"
+msgstr "Кодування"
+
+#: templates/locations/technician.html:23
+msgid ""
+"The process of converting data from one format to another for "
+"transmission or storage. Not intended for data protection."
+msgstr ""
+"Процес перетворення даних з одного формату в інший для передачі або "
+"зберігання. Не приначений для захисту даних."
+
+#: templates/locations/technician.html:24
+msgid "Example: Base64 converts binary data to text format."
+msgstr "Приклад: Base64 перетворює бінарні дані в текстовий формат."
+
+#: templates/locations/technician.html:27
+msgid "Encryption"
+msgstr "Шифрування"
+
+#: templates/locations/technician.html:28
+msgid ""
+"The process of protecting data by transforming it using a secret key. "
+"Designed to ensure confidentiality."
+msgstr ""
+"Процес захисту даних шляхом їх перетворення за допомогою секретного "
+"ключа. Призначений для забезпечення конфіденційності."
+
+#: templates/locations/technician.html:29
+msgid "Example: XOR encryption uses a key to mask data."
+msgstr "Приклад: XOR шифрування використовує ключ для маскування даних."
+
+#: templates/locations/technician.html:32
+msgid "Hashing"
+msgstr "Хешування"
+
+#: templates/locations/technician.html:33
+msgid ""
+"One-way transformation of data into a fixed size. Cannot restore original"
+" data, can only compare hashes."
+msgstr ""
+"Одностороннє перетворення даних у фіксований розмір. Неможливо відновити "
+"оригінальні дані, можна тільки порівнювати хеші."
+
+#: templates/locations/technician.html:34
+msgid "Example: MD5 creates a 32-character hash from any input data."
+msgstr "Приклад: MD5 створює 32-символьний хеш з будь-яких вхідних даних."
+
+#: templates/locations/technician.html:42
+msgid "CRYPTOGRAPHIC CHALLENGES"
+msgstr "КРИПТОГРАФІЧНІ ВИПРОБУВАННЯ"
+
+#: templates/locations/technician.html:52
+msgid "Task 1: Base64 Decoding"
+msgstr "Завдання 1: Base64 Декодування"
+
+#: templates/locations/technician.html:54
+msgid "Decode this Base64 message:"
+msgstr "Декодуйте це Base64 повідомлення:"
+
+#: templates/locations/technician.html:58
+msgid "Enter decoded message..."
+msgstr "Введіть декодоване повідомлення..."
+
+#: templates/locations/technician.html:59
+#: templates/locations/technician.html:75
+#: templates/locations/technician.html:90
+msgid "Check"
+msgstr "Перевірити"
+
+#: templates/locations/technician.html:66
+msgid "Task 2: XOR Decryption"
+msgstr "Завдання 2: XOR Дешифрування"
+
+#: templates/locations/technician.html:68
+msgid "Decrypt the message encrypted with XOR and encoded in base64:"
+msgstr "Розшифруйте повідомлення, зашифроване XOR та закодоване в base64:"
+
+#: templates/locations/technician.html:69
+msgid "Ciphertext (base64):"
+msgstr "Шифротекст (base64):"
+
+#: templates/locations/technician.html:70
+msgid "Key:"
+msgstr "Ключ:"
+
+#: templates/locations/technician.html:71
+msgid "Hint: First decode base64, then apply XOR with the key"
+msgstr "Підказка: Спочатку декодуйте base64, потім застосуйте XOR з ключем"
+
+#: templates/locations/technician.html:74
+msgid "Enter decrypted message..."
+msgstr "Введіть розшифроване повідомлення..."
+
+#: templates/locations/technician.html:82
+msgid "Task 3: MD5 Hash"
+msgstr "Завдання 3: MD5 хеш"
+
+#: templates/locations/technician.html:84
+msgid "Find the word that gives this MD5 hash:"
+msgstr "Знайдіть слово, яке дає цей MD5 хеш:"
+
+#: templates/locations/technician.html:86
+msgid "Hint: This is a very common password"
+msgstr "Підказка: Це дуже поширений пароль"
+
+#: templates/locations/technician.html:89
+msgid "Enter word..."
+msgstr "Введіть слово..."
+
+#: templates/locations/technician.html:95
+msgid "Grab the reward"
+msgstr "Отримати нагороду"
+
+#: templates/locations/technician.html:271
+msgid "Talk to Technician"
+msgstr "Розмова з техніком"
+
+#: templates/locations/technician.html:272
+msgid ""
+"The technician looks at you with interest: \"Want to test your "
+"cryptography skills? I have some interesting challenges for you...\""
+msgstr ""
+"Технік дивиться на вас із зацікавленням: \"Хочеш перевірити свої навички "
+"в криптографії? У мене є для тебе цікаві випробування...\""
+
+#: templates/locations/technician.html:275
+msgid "Correct!"
+msgstr "Правильно!"
+
+#: templates/locations/technician.html:276
+msgid "Incorrect. Try again."
+msgstr "Неправильно. Спробуйте ще раз."
+
+#: templates/locations/technician.html:277
+msgid "All challenges completed! You can now grab your reward."
+msgstr "Всі випробування пройдені! Тепер ви можете отримати свою нагороду."
+
+#: templates/locations/vending.html:3
+msgid "STALKER::VENDING"
+msgstr "STALKER::АВТОМАТ"
+
+#: templates/locations/vending.html:5
+msgid "VENDING MACHINE"
+msgstr "ТОРГОВИЙ АВТОМАТ"
+
+#: templates/locations/vending.html:9
+msgid ""
+"You discover an old vending machine in a dimly lit corner. Its display "
+"glows with an eerie rust-colored light, showing an absurdly high price. "
+"Your PDA detects unusual network activity coming from the machine."
+msgstr ""
+"Ви знаходите старий торговий автомат у тьмяно освітленому кутку. Його "
+"дисплей світиться моторошним іржавим світлом, показуючи абсурдно високу "
+"ціну. Ваш ПДА виявляє незвичну мережеву активність від автомата."
+
+#: templates/locations/vending.html:12
+msgid "Examine display"
+msgstr "Оглянути дисплей"
+
+#: templates/locations/vending.html:13
+msgid "Scan network activity"
+msgstr "Сканувати мережеву активність"
+
+#: templates/locations/vending.html:14
+msgid "Check pricing system"
+msgstr "Перевірити систему цін"
+
+#: templates/locations/vending.html:20
+msgid "STALKER VENDING MACHINE v1.0"
+msgstr "СТАЛКЕР ТОРГОВИЙ АВТОМАТ v1.0"
+
+#: templates/locations/vending.html:21
+msgid "Status: OPERATIONAL"
+msgstr "Статус: ПРАЦЮЄ"
+
+#: templates/locations/vending.html:22
+msgid "Coupons available: 1"
+msgstr "Доступно купонів: 1"
+
+#: templates/locations/vending.html:24
+msgid "ITEMS AVAILABLE:"
+msgstr "ДОСТУПНІ ТОВАРИ:"
+
+#: templates/locations/vending.html:25
+msgid "Flag: 1 000 000 coupons"
+msgstr "Прапор: 1 000 000 купонів"
+
+#: templates/locations/vending.html:29
+msgid "Buy a flag"
+msgstr "Купити прапор"
+
+#: templates/locations/vending.html:43
+msgid "Display Analysis"
+msgstr "Аналіз дисплея"
+
+#: templates/locations/vending.html:44
+msgid ""
+"The vending machine's interface appears to be running on an old embedded "
+"system. The price seems to be handled by a simple POST request to the "
+"internal server. Maybe there's a way to... adjust it?"
+msgstr ""
+"Схоже, що інтерфейс торгового автомата працює на старій вбудованій "
+"системі. Ціна, здається, обробляється простим POST-запитом до "
+"внутрішнього сервера. Можливо, є спосіб... підкоригувати її?"
+
+#: templates/locations/vending.html:48
+msgid "Network Scan"
+msgstr "Сканування мережі"
+
+#: templates/locations/vending.html:49
+msgid ""
+"Your PDA detects that the machine processes purchase requests locally. "
+"All parameters, including price and quantity, are sent directly to the "
+"machine's server. A security-minded stalker would definitely check these "
+"requests with special tools..."
+msgstr ""
+"Ваш ПДА виявляє, що автомат обробляє запити на покупку локально. Всі "
+"параметри, включаючи ціну та кількість, надсилаються безпосередньо на "
+"сервер автомата. Досвідчений сталкер обов'язково перевірив би ці запити "
+"спеціальними інструментами..."
+
+#: templates/locations/vending.html:53
+msgid "Price Analysis"
+msgstr "Аналіз цін"
+
+#: templates/locations/vending.html:54
+msgid ""
+"The pricing system seems poorly secured. The machine accepts a \"price\" "
+"parameter in its purchase request. An experienced stalker would know how "
+"to intercept and modify such requests using tools like Burp Suite..."
+msgstr ""
+"Система цін здається погано захищеною. Автомат рямає параметр \"price\" у"
+" запиті на покупку. Досвідчений сталкер знав би, як перехопити та змінити"
+" такі запити за допомогою інструментів на кшталт Burp Suite..."
 

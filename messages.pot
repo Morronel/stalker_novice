@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2024 ORGANIZATION
+# Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-21 20:06+0100\n"
+"POT-Creation-Date: 2025-01-13 19:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,4 +16,1535 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+
+#: app.py:195
+msgid "Error: Invalid path"
+msgstr ""
+
+#: app.py:212
+msgid "Signal received successfully."
+msgstr ""
+
+#: app.py:213
+msgid "anomalyreward"
+msgstr ""
+
+#: app.py:217
+msgid "Signal processed."
+msgstr ""
+
+#: app.py:228 app.py:509 app.py:570
+msgid "Correct flag! Here's your reward, stalker."
+msgstr ""
+
+#: app.py:229 app.py:244 app.py:510 app.py:525 app.py:571
+msgid "reward"
+msgstr ""
+
+#: app.py:233 app.py:514 app.py:576
+msgid "Incorrect flag. Try again."
+msgstr ""
+
+#: app.py:257
+msgid "Error: Forbidden SQL operations"
+msgstr ""
+
+#: app.py:264
+msgid "Error: Only SELECT queries are allowed"
+msgstr ""
+
+#: app.py:278
+msgid "Query executed successfully, but no results found"
+msgstr ""
+
+#: app.py:327
+msgid "Enter login!"
+msgstr ""
+
+#: app.py:333
+msgid "Invalid credentials"
+msgstr ""
+
+#: app.py:339
+msgid "Enter password!"
+msgstr ""
+
+#: app.py:345
+msgid "Incorrect password"
+msgstr ""
+
+#: app.py:351
+msgid "Safe opened! You found a flag: "
+msgstr ""
+
+#: app.py:368
+msgid ""
+"*Monitor flashes green* Ha! You cracked this message like a can of "
+"tushonka!"
+msgstr ""
+
+#: app.py:375
+msgid "*Monitor flashes red* Something's wrong... Maybe try a different decoder?"
+msgstr ""
+
+#: app.py:399
+msgid "*Screen sparks* Ha! Well done! The encryption didn't stop you!"
+msgstr ""
+
+#: app.py:406
+msgid ""
+"*System shows error* Hmm... Maybe decode base64 first, then XOR? By the "
+"way, heard about CyberChef? They say it's a useful tool..."
+msgstr ""
+
+#: app.py:420
+msgid ""
+"*PDA beeps with satisfaction* Bingo! The bandits clearly didn't expect "
+"someone to guess their password!"
+msgstr ""
+
+#: app.py:425
+msgid ""
+"*PDA hums disapprovingly* Not that... Maybe it's a simple word? Bandits "
+"usually don't get fancy. Try md5 hash lookup."
+msgstr ""
+
+#: app.py:439
+msgid "*Technician nods approvingly* Here's your reward, stalker!"
+msgstr ""
+
+#: app.py:443
+msgid ""
+"*Technician shakes his head* Nah, finish all the challenges first, "
+"stalker."
+msgstr ""
+
+#: app.py:451
+msgid "Signal sent successfully. Check the network traffic for hidden data..."
+msgstr ""
+
+#: app.py:466
+msgid "Car inspection complete. Nothing unusual in plain sight..."
+msgstr ""
+
+#: app.py:481
+msgid "Invalid quantity"
+msgstr ""
+
+#: app.py:488
+msgid "Not enough coupons! You need 1 000 000 coupons to buy a flag."
+msgstr ""
+
+#: app.py:494
+msgid "*Machine whirs* Here's your flag!"
+msgstr ""
+
+#: app.py:540
+msgid "Role changed successfully"
+msgstr ""
+
+#: app.py:546
+msgid "Invalid role"
+msgstr ""
+
+#: templates/base.html:7 templates/map.html:3 templates/map.html:5
+msgid "STALKER::NOVICE"
+msgstr ""
+
+#: templates/base.html:312
+msgid "STALKER PDA Terminal v1.0"
+msgstr ""
+
+#: templates/base.html:329
+msgid "Got it"
+msgstr ""
+
+#: templates/base.html:366
+msgid "Message"
+msgstr ""
+
+#: templates/index.html:3
+msgid "STALKER::INTRODUCTION"
+msgstr ""
+
+#: templates/index.html:7
+msgid "INTRODUCTION"
+msgstr ""
+
+#: templates/index.html:13
+msgid ""
+"Welcome to the Zone of Exclusion, stalker. You have just arrived at the "
+"Cordon - the first entry point into this dangerous territory. Your "
+"equipment is minimal, but Sidorovich, the local trader, can help... for a"
+" price."
+msgstr ""
+
+#: templates/index.html:17
+msgid "WARNING:"
+msgstr ""
+
+#: templates/index.html:17
+msgid ""
+"Sidorovich is interested in special \"flags\" that can be found in "
+"various locations of the Cordon. For each such flag, he is ready to "
+"exchange valuable equipment."
+msgstr ""
+
+#: templates/index.html:21
+msgid "To begin your journey, enter your stalker name:"
+msgstr ""
+
+#: templates/index.html:24
+msgid "Enter stalker name..."
+msgstr ""
+
+#: templates/index.html:25
+msgid "Enter the Zone"
+msgstr ""
+
+#: templates/index.html:39
+msgid "Radiation level"
+msgstr ""
+
+#: templates/index.html:47
+msgid "System active"
+msgstr ""
+
+#: templates/index.html:51
+msgid "Danger zone"
+msgstr ""
+
+#: templates/map.html:203
+msgid "Information"
+msgstr ""
+
+#: templates/map.html:205
+msgid "Stalker:"
+msgstr ""
+
+#: templates/map.html:205
+msgid "Unknown"
+msgstr ""
+
+#: templates/locations/garage.html:18 templates/map.html:208
+msgid "Status:"
+msgstr ""
+
+#: templates/map.html:208
+msgid "Novice"
+msgstr ""
+
+#: templates/map.html:211
+msgid "Location:"
+msgstr ""
+
+#: templates/map.html:211
+msgid "Cordon"
+msgstr ""
+
+#: templates/map.html:214
+msgid "Danger level: High"
+msgstr ""
+
+#: templates/map.html:217
+msgid "Tasks"
+msgstr ""
+
+#: templates/map.html:219
+msgid "Find flags in each location"
+msgstr ""
+
+#: templates/map.html:222
+msgid "Bring them to Sidorovich"
+msgstr ""
+
+#: templates/map.html:225
+msgid "Be careful with anomalies!"
+msgstr ""
+
+#: templates/map.html:235
+msgid "Stalkers Campfire"
+msgstr ""
+
+#: templates/map.html:239
+msgid "Old Shed"
+msgstr ""
+
+#: templates/map.html:243
+msgid "Farmhouse"
+msgstr ""
+
+#: templates/map.html:247
+msgid "Dog Pack"
+msgstr ""
+
+#: templates/map.html:251
+msgid "Abandoned House"
+msgstr ""
+
+#: templates/map.html:255
+msgid "Technician House"
+msgstr ""
+
+#: templates/map.html:259
+msgid "Anomaly"
+msgstr ""
+
+#: templates/map.html:263
+msgid "Bandit Camp"
+msgstr ""
+
+#: templates/map.html:267
+msgid "Garage"
+msgstr ""
+
+#: templates/locations/vending.html:39 templates/map.html:271
+msgid "Vending Machine"
+msgstr ""
+
+#: templates/map.html:275
+msgid "Sidorovich Bunker"
+msgstr ""
+
+#: templates/locations/abandoned.html:3 templates/locations/abandoned.html:5
+msgid "ABANDONED HOUSE"
+msgstr ""
+
+#: templates/locations/abandoned.html:9
+msgid ""
+"In a half-ruined house, you find an old safe with an electronic lock. The"
+" screen flashes \"S.T.A.L.K.E.R. Security System v1.0\"."
+msgstr ""
+
+#: templates/locations/abandoned.html:12
+msgid "Examine panel"
+msgstr ""
+
+#: templates/locations/abandoned.html:13
+msgid "Search for clues"
+msgstr ""
+
+#: templates/locations/abandoned.html:14
+msgid "Try to unlock"
+msgstr ""
+
+#: templates/locations/abandoned.html:21
+msgid "Authorization required"
+msgstr ""
+
+#: templates/locations/abandoned.html:22
+msgid "Enter your credentials:"
+msgstr ""
+
+#: templates/locations/abandoned.html:24
+msgid "Login"
+msgstr ""
+
+#: templates/locations/abandoned.html:25
+msgid "Password"
+msgstr ""
+
+#: templates/locations/abandoned.html:26
+msgid "Try"
+msgstr ""
+
+#: templates/locations/abandoned.html:30 templates/locations/anomaly.html:60
+#: templates/locations/bandit.html:76 templates/locations/campfire.html:35
+#: templates/locations/commonpasswords.html:83
+#: templates/locations/commonpaths.html:193
+#: templates/locations/commonusernames.html:66
+#: templates/locations/console.html:32 templates/locations/dogs.html:60
+#: templates/locations/farmhouse.html:53 templates/locations/garage.html:43
+#: templates/locations/shed.html:28 templates/locations/sydorovich.html:81
+#: templates/locations/technician.html:102 templates/locations/vending.html:34
+msgid "Return to map"
+msgstr ""
+
+#: templates/locations/abandoned.html:52
+msgid "Panel Examination"
+msgstr ""
+
+#: templates/locations/abandoned.html:53
+msgid ""
+"There are traces of frequent use on the panel. It seems this safe was "
+"used by an experienced stalker. Maybe check the list of common logins by "
+"the campfire?"
+msgstr ""
+
+#: templates/locations/abandoned.html:54
+msgid "Search for Clues"
+msgstr ""
+
+#: templates/locations/abandoned.html:55
+msgid ""
+"On the wall, there is a scratched inscription: \"Only those who "
+"understand the laws of the Zone can open this safe\""
+msgstr ""
+
+#: templates/locations/abandoned.html:56
+#: templates/locations/technician.html:273
+msgid "Success!"
+msgstr ""
+
+#: templates/locations/abandoned.html:57 templates/locations/bandit.html:69
+#: templates/locations/technician.html:274
+msgid "Error"
+msgstr ""
+
+#: templates/locations/anomaly.html:3 templates/locations/anomaly.html:5
+msgid "ANOMALY"
+msgstr ""
+
+#: templates/locations/anomaly.html:9
+msgid ""
+"A strange anomaly pulsates before you. Your PDA starts making strange "
+"sounds and showing incomprehensible data. It seems the anomaly is "
+"emitting some signals..."
+msgstr ""
+
+#: templates/locations/anomaly.html:12
+msgid "Scan anomaly"
+msgstr ""
+
+#: templates/locations/anomaly.html:13
+msgid "Check PDA"
+msgstr ""
+
+#: templates/locations/anomaly.html:14
+msgid "Try to intercept signal"
+msgstr ""
+
+#: templates/locations/anomaly.html:21
+msgid "PDA::Signal Interception Module"
+msgstr ""
+
+#: templates/locations/anomaly.html:29
+msgid ""
+"ANOMALY ANALYSIS:\n"
+"- Type: Informational\n"
+"- Activity: High\n"
+"- Status: Data transmission...\n"
+"\n"
+"Network activity detected...\n"
+"Signals are transmitted via GET requests...\n"
+"Recommended: use traffic interception tools"
+msgstr ""
+
+#: templates/locations/anomaly.html:39
+msgid "Send test signal"
+msgstr ""
+
+#: templates/locations/anomaly.html:46
+msgid "Activity log:"
+msgstr ""
+
+#: templates/locations/anomaly.html:47 templates/locations/anomaly.html:319
+msgid "Waiting for signal..."
+msgstr ""
+
+#: templates/locations/anomaly.html:56
+msgid "SIGNAL SENT"
+msgstr ""
+
+#: templates/locations/anomaly.html:260
+msgid "Anomaly Scan"
+msgstr ""
+
+#: templates/locations/anomaly.html:261
+msgid ""
+"The PDA shows: \"Anomaly type: Informational. It seems to be transmitting"
+" data through network requests...\""
+msgstr ""
+
+#: templates/locations/anomaly.html:267
+msgid "PDA Check"
+msgstr ""
+
+#: templates/locations/anomaly.html:268
+msgid ""
+"Your PDA is picking up strange network traffic. The anomaly seems to be "
+"responding to GET requests."
+msgstr ""
+
+#: templates/locations/anomaly.html:293
+msgid "Signal sent..."
+msgstr ""
+
+#: templates/locations/anomaly.html:308
+msgid "Signal received! Response:"
+msgstr ""
+
+#: templates/locations/bandit.html:3
+msgid "STALKER::BANDIT_CAMP"
+msgstr ""
+
+#: templates/locations/bandit.html:5
+msgid "BANDIT_CAMP"
+msgstr ""
+
+#: templates/locations/bandit.html:9
+msgid ""
+"You approach the bandit camp. The guard at the entrance examines you "
+"carefully."
+msgstr ""
+
+#: templates/locations/bandit.html:12
+msgid "Talk to guard"
+msgstr ""
+
+#: templates/locations/bandit.html:13
+msgid "Check your \"cookies\""
+msgstr ""
+
+#: templates/locations/bandit.html:14
+msgid "Try to disguise as a bandit"
+msgstr ""
+
+#: templates/locations/bandit.html:21
+msgid "ACCESS CONTROL SYSTEM"
+msgstr ""
+
+#: templates/locations/bandit.html:30
+msgid "Current status:"
+msgstr ""
+
+#: templates/locations/bandit.html:31
+msgid "stalker"
+msgstr ""
+
+#: templates/locations/bandit.html:36
+msgid "\"We only trust bandits, not stalkers. Prove that you're one of us.\""
+msgstr ""
+
+#: templates/locations/bandit.html:39
+msgid "Try to pass"
+msgstr ""
+
+#: templates/locations/bandit.html:42
+msgid ""
+"Hint: Maybe you should check and change the cookie in developer tools "
+"(F12)"
+msgstr ""
+
+#: templates/locations/bandit.html:59 templates/locations/dogs.html:52
+msgid "REWARD:"
+msgstr ""
+
+#: templates/locations/bandit.html:61 templates/locations/dogs.html:54
+#: templates/locations/dogs.html:287
+msgid "Copy"
+msgstr ""
+
+#: templates/locations/bandit.html:71
+msgid "OK"
+msgstr ""
+
+#: templates/locations/bandit.html:364
+msgid "Check your browser cookies. There might be something interesting there..."
+msgstr ""
+
+#: templates/locations/bandit.html:368
+msgid "Maybe you can change your role in the cookies..."
+msgstr ""
+
+#: templates/locations/bandit.html:383 templates/locations/bandit.html:403
+msgid "Access denied. Only bandits allowed."
+msgstr ""
+
+#: templates/locations/bandit.html:401
+msgid ""
+"Welcome to the gang, brother! Here's a little something for your "
+"trouble..."
+msgstr ""
+
+#: templates/locations/bandit.html:407
+msgid "Something went wrong. Try again."
+msgstr ""
+
+#: templates/locations/bandit.html:418
+msgid "Flag copied to clipboard!"
+msgstr ""
+
+#: templates/locations/campfire.html:3
+msgid "STALKER::CAMPFIRE"
+msgstr ""
+
+#: templates/locations/campfire.html:5
+msgid "CAMPFIRE"
+msgstr ""
+
+#: templates/locations/campfire.html:9
+msgid ""
+"Several stalkers are sitting by the campfire. The warm light creates a "
+"cozy atmosphere, and you can hear quiet conversations and occasional "
+"laughter."
+msgstr ""
+
+#: templates/locations/campfire.html:12
+msgid "What's new in zone?"
+msgstr ""
+
+#: templates/locations/campfire.html:13
+msgid "Does anybody know cool jokes?"
+msgstr ""
+
+#: templates/locations/campfire.html:14
+msgid "Guys, I need some advice"
+msgstr ""
+
+#: templates/locations/campfire.html:23 templates/locations/campfire.html:132
+msgid ""
+"An old stalker says: \"There's something hidden in that shed. Try looking"
+" in a hidden directory. I have a list of common paths you can look at.\""
+msgstr ""
+
+#: templates/locations/campfire.html:24 templates/locations/campfire.html:138
+msgid ""
+"An experienced stalker tells: \"There's a treasures table in the "
+"database. Use a simple SELECT query to get the data. You can pull all or "
+"just what you need. Your choice.\""
+msgstr ""
+
+#: templates/locations/campfire.html:25 templates/locations/campfire.html:143
+msgid ""
+"A young stalker recalls: \"The guard reacts to popup messages. You know, "
+"those that appear through alert(). And he's afraid of dogs...\""
+msgstr ""
+
+#: templates/locations/campfire.html:26 templates/locations/campfire.html:148
+msgid ""
+"The technician by the fire mumbles: \"That safe... I have lists of common"
+" logins and passwords. Maybe something will work?\""
+msgstr ""
+
+#: templates/locations/campfire.html:27 templates/locations/campfire.html:158
+msgid ""
+"The old stalker smiles: \"*lowers voice* If you get stuck - look for "
+"CyberChef online. They say specialists often use this tool for working "
+"with ciphers.\""
+msgstr ""
+
+#: templates/locations/campfire.html:28 templates/locations/campfire.html:163
+msgid ""
+"An experienced stalker advises: \"Open developer tools (F12), Network "
+"tab. You can see all requests there, including hidden parameters.\""
+msgstr ""
+
+#: templates/locations/campfire.html:29 templates/locations/campfire.html:168
+msgid ""
+"A seasoned stalker whispers: \"Bandits check the role through a cookie. "
+"If you change the cookie role value from stalker to bandit...\""
+msgstr ""
+
+#: templates/locations/campfire.html:30 templates/locations/campfire.html:173
+msgid ""
+"A stalker with a laptop mentions: \"Network traffic inspection tools are "
+"essential in the Zone. Always check response headers when dealing with "
+"suspicious vehicles.\""
+msgstr ""
+
+#: templates/locations/campfire.html:31 templates/locations/campfire.html:178
+msgid ""
+"A crafty stalker grins: \"That vending machine is ridiculously "
+"overpriced. With tools like Burp Suite, you can intercept and modify the "
+"POST request parameters. Maybe change the price to something more... "
+"reasonable.\""
+msgstr ""
+
+#: templates/locations/campfire.html:57
+msgid ""
+"\"Did you hear? They say someone managed to hack that old vending machine"
+" near the road. Got themselves a nice prize...\""
+msgstr ""
+
+#: templates/locations/campfire.html:58
+msgid ""
+"\"The anomaly field has been acting strange lately. More signals than "
+"usual.\""
+msgstr ""
+
+#: templates/locations/campfire.html:59
+msgid ""
+"\"Bandits are getting craftier with their security. But their systems "
+"still have weaknesses if you know where to look.\""
+msgstr ""
+
+#: templates/locations/campfire.html:60
+msgid ""
+"\"That garage by the old road... smugglers are using it again. Their "
+"security is all digital now.\""
+msgstr ""
+
+#: templates/locations/campfire.html:66
+msgid "A stalker shares a story:"
+msgstr ""
+
+#: templates/locations/campfire.html:79
+msgid ""
+"\"So they caught an old stalker and interrogate him:\n"
+"\n"
+"- People say you have... an assault rifle?\n"
+"- People are lying...\n"
+"- People say you have... a machine gun?\n"
+"- Oh, people are lying...\n"
+"- People say you have... a tank?\n"
+"- Well, that's the one thing I don't have...\""
+msgstr ""
+
+#: templates/locations/campfire.html:80
+msgid ""
+"\"A stalker comes to the doctor. The doctor examines him and says:\n"
+"\n"
+"- This is from fatigue, this is from nervous tension, and this is from "
+"depression.\n"
+"- Thank you, doctor, thank you... Tell me, don't you have anything "
+"besides vodka?\""
+msgstr ""
+
+#: templates/locations/campfire.html:81
+msgid ""
+"\"A stalker meets his old buddy. And he's all beaten up, with a black "
+"eye:\n"
+"\n"
+"- Pete, what happened to you?\n"
+"- Well damn... Got attacked, beaten up, money stolen...\n"
+"- Did you remember who did it?\n"
+"- Why would I need to remember... It was my wife!\""
+msgstr ""
+
+#: templates/locations/campfire.html:82
+msgid ""
+"\"One stalker asks another:\n"
+"\n"
+"- Do you know which car is the most 'stalker-like'?\n"
+"- No, which one?\n"
+"- Zaporozhets!\n"
+"- Why's that?\n"
+"- Because it's reliable as a tank, and the trunk is in the front. "
+"Convenient to keep an eye on the loot!\""
+msgstr ""
+
+#: templates/locations/campfire.html:88
+msgid "A stalker tells a joke:"
+msgstr ""
+
+#: templates/locations/campfire.html:102
+msgid ""
+"The stalkers exchange knowing looks. Everyone here has their own "
+"expertise to share."
+msgstr ""
+
+#: templates/locations/campfire.html:104
+msgid "Ask about the shed"
+msgstr ""
+
+#: templates/locations/campfire.html:105
+msgid "Ask about the farmhouse"
+msgstr ""
+
+#: templates/locations/campfire.html:106
+msgid "Ask about the dogs"
+msgstr ""
+
+#: templates/locations/campfire.html:107
+msgid "Ask about the abandoned house"
+msgstr ""
+
+#: templates/locations/campfire.html:108
+msgid "Ask about the technician"
+msgstr ""
+
+#: templates/locations/campfire.html:109
+msgid "Ask about the anomaly"
+msgstr ""
+
+#: templates/locations/campfire.html:110
+msgid "Ask about the bandits"
+msgstr ""
+
+#: templates/locations/campfire.html:111
+msgid "Ask about the garage"
+msgstr ""
+
+#: templates/locations/campfire.html:112
+msgid "Ask about the vending machine"
+msgstr ""
+
+#: templates/locations/campfire.html:133
+msgid "View paths list"
+msgstr ""
+
+#: templates/locations/campfire.html:149
+msgid "View logins list"
+msgstr ""
+
+#: templates/locations/campfire.html:150
+msgid "View passwords list"
+msgstr ""
+
+#: templates/locations/commonpasswords.html:3
+msgid "STALKER::COMMON_PASSWORDS"
+msgstr ""
+
+#: templates/locations/commonpasswords.html:5
+msgid "COMMON_PASSWORDS"
+msgstr ""
+
+#: templates/locations/commonpasswords.html:9
+msgid "On an old PDA you find a list of common passwords:"
+msgstr ""
+
+#: templates/locations/commonpasswords.html:12
+#: templates/locations/commonpasswords.html:175
+#: templates/locations/commonpaths.html:12
+#: templates/locations/commonpaths.html:285
+#: templates/locations/commonusernames.html:12
+#: templates/locations/commonusernames.html:158
+msgid "Copy list"
+msgstr ""
+
+#: templates/locations/commonpasswords.html:174
+#: templates/locations/commonpaths.html:284
+#: templates/locations/commonusernames.html:157
+#: templates/locations/dogs.html:286
+msgid "Copied!"
+msgstr ""
+
+#: templates/locations/commonpaths.html:3
+msgid "STALKER::COMMON_PATHS"
+msgstr ""
+
+#: templates/locations/commonpaths.html:5
+msgid "COMMON_PATHS"
+msgstr ""
+
+#: templates/locations/commonpaths.html:9
+msgid "On an old PDA you find a list of common paths:"
+msgstr ""
+
+#: templates/locations/commonusernames.html:3
+msgid "STALKER::COMMON_USERNAMES"
+msgstr ""
+
+#: templates/locations/commonusernames.html:5
+msgid "COMMON_USERNAMES"
+msgstr ""
+
+#: templates/locations/commonusernames.html:9
+msgid "On an old PDA you find a list of common usernames:"
+msgstr ""
+
+#: templates/locations/console.html:3
+msgid "STALKER::SECRET_ENTRANCE"
+msgstr ""
+
+#: templates/locations/console.html:5
+msgid "SECRET_ENTRANCE"
+msgstr ""
+
+#: templates/locations/console.html:10
+msgid "SECRET PATH NAVIGATION SYSTEM v1.0"
+msgstr ""
+
+#: templates/locations/console.html:18
+msgid "Initializing mechanism..."
+msgstr ""
+
+#: templates/locations/console.html:19
+msgid "Path verification"
+msgstr ""
+
+#: templates/locations/console.html:20
+msgid "Mechanism activation"
+msgstr ""
+
+#: templates/locations/console.html:21
+msgid "Opening passage"
+msgstr ""
+
+#: templates/locations/console.html:22
+msgid "Secret entrance opened!"
+msgstr ""
+
+#: templates/locations/console.html:23
+msgid "In the cache you find a note with a flag:"
+msgstr ""
+
+#: templates/locations/console.html:26 templates/locations/console.html:226
+msgid "Copy flag"
+msgstr ""
+
+#: templates/locations/dogs.html:3 templates/locations/dogs.html:5
+msgid "DOG PACK"
+msgstr ""
+
+#: templates/locations/dogs.html:9
+msgid ""
+"You stumbled upon a pack of wild dogs. Nearby there is an observation "
+"tower, but the guard does not seem to notice you."
+msgstr ""
+
+#: templates/locations/dogs.html:12
+msgid "Look at tower"
+msgstr ""
+
+#: templates/locations/dogs.html:13
+msgid "Assess situation"
+msgstr ""
+
+#: templates/locations/dogs.html:14
+msgid "Try to signal"
+msgstr ""
+
+#: templates/locations/dogs.html:21
+msgid "ALERT SYSTEM"
+msgstr ""
+
+#: templates/locations/dogs.html:29
+msgid ""
+"You see a guard post ahead. The guard seems to be monitoring some kind of"
+" alert system..."
+msgstr ""
+
+#: templates/locations/dogs.html:32
+msgid "Enter message..."
+msgstr ""
+
+#: templates/locations/dogs.html:33
+msgid "Send signal"
+msgstr ""
+
+#: templates/locations/dogs.html:281
+msgid "Tower Examination"
+msgstr ""
+
+#: templates/locations/dogs.html:282
+msgid ""
+"The guard in the tower is looking the other way. Maybe you should get his"
+" attention with some kind of popup message?"
+msgstr ""
+
+#: templates/locations/dogs.html:283
+msgid "Situation Assessment"
+msgstr ""
+
+#: templates/locations/dogs.html:284
+msgid ""
+"The dogs look aggressive. Need to call for help urgently! Maybe an "
+"alert(\"dogs!\") message would get the guard's attention?"
+msgstr ""
+
+#: templates/locations/dogs.html:285
+msgid ""
+"I heard the alarm!\n"
+"Hold on, I'm coming to help!\n"
+"And here's your reward for quick thinking!"
+msgstr ""
+
+#: templates/locations/farmhouse.html:3
+msgid "STALKER::FARMHOUSE"
+msgstr ""
+
+#: templates/locations/farmhouse.html:5
+msgid "FARMHOUSE"
+msgstr ""
+
+#: templates/locations/farmhouse.html:9
+msgid ""
+"Inside the old farmhouse, you find a wounded stalker near an old computer"
+" terminal. He is breathing heavily but trying to say something."
+msgstr ""
+
+#: templates/locations/farmhouse.html:12 templates/locations/farmhouse.html:181
+msgid "Talk to stalker"
+msgstr ""
+
+#: templates/locations/farmhouse.html:13
+msgid "Check terminal"
+msgstr ""
+
+#: templates/locations/farmhouse.html:14 templates/locations/farmhouse.html:183
+msgid "Look around"
+msgstr ""
+
+#: templates/locations/farmhouse.html:21
+msgid "SQLite Database Terminal"
+msgstr ""
+
+#: templates/locations/farmhouse.html:29
+msgid ""
+"Database: treasures\n"
+"Table: treasures\n"
+"Columns: \n"
+"  - id (INTEGER)\n"
+"  - location (TEXT)\n"
+"  - coordinates (TEXT)\n"
+"  - flag (TEXT)\n"
+"\n"
+"Enter a SELECT query to get the treasure data:"
+msgstr ""
+
+#: templates/locations/farmhouse.html:40
+msgid "SELECT..."
+msgstr ""
+
+#: templates/locations/farmhouse.html:41
+msgid "Execute"
+msgstr ""
+
+#: templates/locations/farmhouse.html:45 templates/locations/farmhouse.html:185
+msgid "Query result:"
+msgstr ""
+
+#: templates/locations/farmhouse.html:46
+msgid "Waiting for query..."
+msgstr ""
+
+#: templates/locations/farmhouse.html:182
+msgid ""
+"*cough* In the database... coordinates and flag... Try SELECT... *cough* "
+"Look how to SELECT all from the table... *cough*"
+msgstr ""
+
+#: templates/locations/farmhouse.html:184
+msgid ""
+"The room is dark, but the terminal is working. You can see the SQLite "
+"database interface on the monitor. Maybe try a query? You need to specify"
+" WHAT to SELECT, and FROM where to SELECT."
+msgstr ""
+
+#: templates/locations/farmhouse.html:186
+msgid "Executing query..."
+msgstr ""
+
+#: templates/locations/farmhouse.html:187
+msgid "Error:"
+msgstr ""
+
+#: templates/locations/farmhouse.html:188
+msgid "Congratulations! You found the flag!"
+msgstr ""
+
+#: templates/locations/garage.html:3 templates/locations/garage.html:5
+msgid "STALKER::GARAGE"
+msgstr ""
+
+#: templates/locations/garage.html:9
+msgid ""
+"You enter an old garage. There's a strange car inside - it looks like "
+"it's been modified to transport something. Maybe checking it will reveal "
+"some secrets..."
+msgstr ""
+
+#: templates/locations/garage.html:17
+msgid "VEHICLE INSPECTION SYSTEM v1.0"
+msgstr ""
+
+#: templates/locations/garage.html:18
+msgid "ACTIVE"
+msgstr ""
+
+#: templates/locations/garage.html:19
+msgid "Access:"
+msgstr ""
+
+#: templates/locations/garage.html:19
+msgid "GRANTED"
+msgstr ""
+
+#: templates/locations/garage.html:21
+msgid "Warning:"
+msgstr ""
+
+#: templates/locations/garage.html:21
+msgid "Suspicious modifications detected..."
+msgstr ""
+
+#: templates/locations/garage.html:36
+msgid "Check car"
+msgstr ""
+
+#: templates/locations/garage.html:37
+msgid "Inspect modifications"
+msgstr ""
+
+#: templates/locations/garage.html:38
+msgid "Scan for hidden compartments"
+msgstr ""
+
+#: templates/locations/garage.html:48
+msgid "Error checking car"
+msgstr ""
+
+#: templates/locations/garage.html:49
+msgid "Vehicle Inspection"
+msgstr ""
+
+#: templates/locations/garage.html:50
+msgid ""
+"The car has been heavily modified. There are traces of hidden "
+"compartments and unusual network activity..."
+msgstr ""
+
+#: templates/locations/garage.html:51
+msgid "Scan Results"
+msgstr ""
+
+#: templates/locations/garage.html:52
+msgid ""
+"Scan complete. Multiple hidden compartments detected. The car seems to be"
+" transmitting data through network requests..."
+msgstr ""
+
+#: templates/locations/shed.html:3 templates/locations/shed.html:5
+msgid "STALKER::SHED"
+msgstr ""
+
+#: templates/locations/shed.html:9
+msgid ""
+"You approach the old shed. The door is firmly locked, but local stalkers "
+"say there is a secret entrance used by smugglers. On the wall, you notice"
+" a strange terminal with a small screen. A message flashes on the screen:"
+msgstr ""
+
+#: templates/locations/shed.html:12
+msgid ""
+"SECRET PATH NAVIGATION SYSTEM v1.0\n"
+"Status: ACTIVE\n"
+"Access: WAITING\n"
+"\n"
+"Error: Path not found\n"
+"Enter the correct path to access..."
+msgstr ""
+
+#: templates/locations/shed.html:21
+msgid "Examine terminal"
+msgstr ""
+
+#: templates/locations/shed.html:22
+msgid "Search area"
+msgstr ""
+
+#: templates/locations/shed.html:23
+msgid "Check notes"
+msgstr ""
+
+#: templates/locations/shed.html:50
+msgid "Terminal Examination"
+msgstr ""
+
+#: templates/locations/shed.html:51
+msgid ""
+"On the terminal's case, you notice an inscription: \"PathFinder 3000. To "
+"activate the secret entrance, use the correct path through the web "
+"interface. Example: /location/shed/PATH\""
+msgstr ""
+
+#: templates/locations/shed.html:52
+msgid "Area Search"
+msgstr ""
+
+#: templates/locations/shed.html:53
+msgid ""
+"You found nothing. You should ask the guys at the campfire, maybe they "
+"know something."
+msgstr ""
+
+#: templates/locations/shed.html:54
+msgid "Notes Check"
+msgstr ""
+
+#: templates/locations/shed.html:55
+msgid ""
+"In the notes of local stalkers, it is mentioned that smugglers often use "
+"standard directory names for their secret entrances. This helps them "
+"remember the paths."
+msgstr ""
+
+#: templates/locations/sydorovich.html:3 templates/locations/sydorovich.html:5
+msgid "STALKER::SYDOROVICH"
+msgstr ""
+
+#: templates/locations/sydorovich.html:11
+msgid ""
+"You descend into Sydorovich's underground bunker. The trader sits at his "
+"desk, surrounded by various equipment."
+msgstr ""
+
+#: templates/locations/sydorovich.html:14
+msgid "Talk to Sydorovich"
+msgstr ""
+
+#: templates/locations/sydorovich.html:15
+msgid "Show found flags"
+msgstr ""
+
+#: templates/locations/sydorovich.html:16
+msgid "Ask about equipment"
+msgstr ""
+
+#: templates/locations/sydorovich.html:21
+msgid "Sydorovich looks at you intently:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:22
+msgid ""
+"\"Well, show me what you brought. For each correct flag, you'll get a "
+"piece of equipment.\""
+msgstr ""
+
+#: templates/locations/sydorovich.html:26
+msgid "Shed:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:31
+msgid "Farmhouse:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:36
+msgid "Dogs:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:41
+msgid "Abandoned house:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:46
+msgid "Technician house:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:51
+msgid "Anomaly:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:56
+msgid "Bandit camp:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:61
+msgid "Garage:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:66
+msgid "Vending machine:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:72
+msgid "Submit flags"
+msgstr ""
+
+#: templates/locations/sydorovich.html:76
+msgid "Received equipment:"
+msgstr ""
+
+#: templates/locations/sydorovich.html:86
+#: templates/locations/sydorovich.html:274
+msgid "CONGRATULATIONS, STALKER!"
+msgstr ""
+
+#: templates/locations/sydorovich.html:87
+#: templates/locations/sydorovich.html:275
+msgid ""
+"You've proven yourself worthy in the Zone. All equipment collected, all "
+"challenges completed."
+msgstr ""
+
+#: templates/locations/sydorovich.html:90
+#: templates/locations/sydorovich.html:276
+msgid "Sidorovich's Final Words"
+msgstr ""
+
+#: templates/locations/sydorovich.html:91
+#: templates/locations/sydorovich.html:277
+msgid ""
+"Ha! I must admit, rookie, you've surprised me. Not many can find all "
+"these flags. You've got the mind of a real stalker - quick and sharp. The"
+" Zone needs people like you."
+msgstr ""
+
+#: templates/locations/sydorovich.html:92
+#: templates/locations/sydorovich.html:278
+msgid ""
+"But remember - this was just your first test. The real challenges of the "
+"Zone lie ahead. Keep that equipment close, you're going to need it..."
+msgstr ""
+
+#: templates/locations/sydorovich.html:95
+#: templates/locations/sydorovich.html:279
+msgid "FINALE UNLOCKED!"
+msgstr ""
+
+#: templates/locations/sydorovich.html:96
+#: templates/locations/sydorovich.html:280
+msgid "The screen glitches and flickers..."
+msgstr ""
+
+#: templates/locations/sydorovich.html:268
+msgid "received!"
+msgstr ""
+
+#: templates/locations/sydorovich.html:269
+msgid "Sydorovich"
+msgstr ""
+
+#: templates/locations/sydorovich.html:270
+msgid ""
+"\"Well, rookie, did you bring something interesting? I trade flags for "
+"equipment.\""
+msgstr ""
+
+#: templates/locations/sydorovich.html:271
+msgid ""
+"\"For each correct flag, you'll get something useful. The more you bring,"
+" the better equipment you can choose.\""
+msgstr ""
+
+#: templates/locations/sydorovich.html:272
+msgid "Good job, stalker! Come back when you find more flags."
+msgstr ""
+
+#: templates/locations/sydorovich.html:273
+msgid "None of these flags are correct. Keep searching, stalker!"
+msgstr ""
+
+#: templates/locations/technician.html:3 templates/locations/technician.html:5
+msgid "TECHNICIAN HOUSE"
+msgstr ""
+
+#: templates/locations/technician.html:9
+msgid ""
+"In the technician's house, you find a workbench covered with various "
+"equipment. Strange messages are flashing on the monitor screen."
+msgstr ""
+
+#: templates/locations/technician.html:12
+msgid "Talk to technician"
+msgstr ""
+
+#: templates/locations/technician.html:13
+msgid "Start challenges"
+msgstr ""
+
+#: templates/locations/technician.html:14
+msgid "Learn more about methods"
+msgstr ""
+
+#: templates/locations/technician.html:20
+msgid "Data Processing Methods"
+msgstr ""
+
+#: templates/locations/technician.html:22
+msgid "Encoding"
+msgstr ""
+
+#: templates/locations/technician.html:23
+msgid ""
+"The process of converting data from one format to another for "
+"transmission or storage. Not intended for data protection."
+msgstr ""
+
+#: templates/locations/technician.html:24
+msgid "Example: Base64 converts binary data to text format."
+msgstr ""
+
+#: templates/locations/technician.html:27
+msgid "Encryption"
+msgstr ""
+
+#: templates/locations/technician.html:28
+msgid ""
+"The process of protecting data by transforming it using a secret key. "
+"Designed to ensure confidentiality."
+msgstr ""
+
+#: templates/locations/technician.html:29
+msgid "Example: XOR encryption uses a key to mask data."
+msgstr ""
+
+#: templates/locations/technician.html:32
+msgid "Hashing"
+msgstr ""
+
+#: templates/locations/technician.html:33
+msgid ""
+"One-way transformation of data into a fixed size. Cannot restore original"
+" data, can only compare hashes."
+msgstr ""
+
+#: templates/locations/technician.html:34
+msgid "Example: MD5 creates a 32-character hash from any input data."
+msgstr ""
+
+#: templates/locations/technician.html:42
+msgid "CRYPTOGRAPHIC CHALLENGES"
+msgstr ""
+
+#: templates/locations/technician.html:52
+msgid "Task 1: Base64 Decoding"
+msgstr ""
+
+#: templates/locations/technician.html:54
+msgid "Decode this Base64 message:"
+msgstr ""
+
+#: templates/locations/technician.html:58
+msgid "Enter decoded message..."
+msgstr ""
+
+#: templates/locations/technician.html:59
+#: templates/locations/technician.html:75
+#: templates/locations/technician.html:90
+msgid "Check"
+msgstr ""
+
+#: templates/locations/technician.html:66
+msgid "Task 2: XOR Decryption"
+msgstr ""
+
+#: templates/locations/technician.html:68
+msgid "Decrypt the message encrypted with XOR and encoded in base64:"
+msgstr ""
+
+#: templates/locations/technician.html:69
+msgid "Ciphertext (base64):"
+msgstr ""
+
+#: templates/locations/technician.html:70
+msgid "Key:"
+msgstr ""
+
+#: templates/locations/technician.html:71
+msgid "Hint: First decode base64, then apply XOR with the key"
+msgstr ""
+
+#: templates/locations/technician.html:74
+msgid "Enter decrypted message..."
+msgstr ""
+
+#: templates/locations/technician.html:82
+msgid "Task 3: MD5 Hash"
+msgstr ""
+
+#: templates/locations/technician.html:84
+msgid "Find the word that gives this MD5 hash:"
+msgstr ""
+
+#: templates/locations/technician.html:86
+msgid "Hint: This is a very common password"
+msgstr ""
+
+#: templates/locations/technician.html:89
+msgid "Enter word..."
+msgstr ""
+
+#: templates/locations/technician.html:95
+msgid "Grab the reward"
+msgstr ""
+
+#: templates/locations/technician.html:271
+msgid "Talk to Technician"
+msgstr ""
+
+#: templates/locations/technician.html:272
+msgid ""
+"The technician looks at you with interest: \"Want to test your "
+"cryptography skills? I have some interesting challenges for you...\""
+msgstr ""
+
+#: templates/locations/technician.html:275
+msgid "Correct!"
+msgstr ""
+
+#: templates/locations/technician.html:276
+msgid "Incorrect. Try again."
+msgstr ""
+
+#: templates/locations/technician.html:277
+msgid "All challenges completed! You can now grab your reward."
+msgstr ""
+
+#: templates/locations/vending.html:3
+msgid "STALKER::VENDING"
+msgstr ""
+
+#: templates/locations/vending.html:5
+msgid "VENDING MACHINE"
+msgstr ""
+
+#: templates/locations/vending.html:9
+msgid ""
+"You discover an old vending machine in a dimly lit corner. Its display "
+"glows with an eerie rust-colored light, showing an absurdly high price. "
+"Your PDA detects unusual network activity coming from the machine."
+msgstr ""
+
+#: templates/locations/vending.html:12
+msgid "Examine display"
+msgstr ""
+
+#: templates/locations/vending.html:13
+msgid "Scan network activity"
+msgstr ""
+
+#: templates/locations/vending.html:14
+msgid "Check pricing system"
+msgstr ""
+
+#: templates/locations/vending.html:20
+msgid "STALKER VENDING MACHINE v1.0"
+msgstr ""
+
+#: templates/locations/vending.html:21
+msgid "Status: OPERATIONAL"
+msgstr ""
+
+#: templates/locations/vending.html:22
+msgid "Coupons available: 1"
+msgstr ""
+
+#: templates/locations/vending.html:24
+msgid "ITEMS AVAILABLE:"
+msgstr ""
+
+#: templates/locations/vending.html:25
+msgid "Flag: 1 000 000 coupons"
+msgstr ""
+
+#: templates/locations/vending.html:29
+msgid "Buy a flag"
+msgstr ""
+
+#: templates/locations/vending.html:43
+msgid "Display Analysis"
+msgstr ""
+
+#: templates/locations/vending.html:44
+msgid ""
+"The vending machine's interface appears to be running on an old embedded "
+"system. The price seems to be handled by a simple POST request to the "
+"internal server. Maybe there's a way to... adjust it?"
+msgstr ""
+
+#: templates/locations/vending.html:48
+msgid "Network Scan"
+msgstr ""
+
+#: templates/locations/vending.html:49
+msgid ""
+"Your PDA detects that the machine processes purchase requests locally. "
+"All parameters, including price and quantity, are sent directly to the "
+"machine's server. A security-minded stalker would definitely check these "
+"requests with special tools..."
+msgstr ""
+
+#: templates/locations/vending.html:53
+msgid "Price Analysis"
+msgstr ""
+
+#: templates/locations/vending.html:54
+msgid ""
+"The pricing system seems poorly secured. The machine accepts a \"price\" "
+"parameter in its purchase request. An experienced stalker would know how "
+"to intercept and modify such requests using tools like Burp Suite..."
+msgstr ""
 

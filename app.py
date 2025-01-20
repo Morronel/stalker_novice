@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for, make_response
 from functools import wraps
 import sqlite3
 import os
@@ -160,7 +160,9 @@ def save_flag(location, flag):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    response = make_response(render_template('index.html'))
+    response.set_cookie('role', 'stalker')
+    return response
 
 @app.route('/map', methods=['GET', 'POST'])
 def map():
