@@ -59,7 +59,7 @@ This project is released under the MIT License. See the LICENSE file for details
 This is a fan-made CTF challenge inspired by the S.T.A.L.K.E.R. series. All S.T.A.L.K.E.R.-related trademarks and copyrights are property of their respective owners. This project is created for educational purposes only.
 
 ## Contributing
-Feel free to submit issues, fork the repository, and create pull requests for any improvements. Thanks to Bogdan Shchogolev for testing the challenge and providing feedback.
+Feel free to submit issues and fork the repository. Thanks to Bogdan Shchogolev for testing the challenge and providing feedback.
 
 ## Known Issues
 - Flags auto-submit after encountering them in the challenge.
