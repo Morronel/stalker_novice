@@ -70,4 +70,5 @@ Good hunting, stalker!
 ![image](https://github.com/user-attachments/assets/b61d8b93-3593-421f-b28a-6ab1da9bce00)
 ![image](https://github.com/user-attachments/assets/85ff34dc-db82-4976-8d8d-ace6ac7c0de2)
 ![image](https://github.com/user-attachments/assets/dffb5484-3398-4436-932a-fa357f377f96)
+![image](https://github.com/user-attachments/assets/c50938ce-d3d7-47a3-96f0-8e8dbff6b13c)
 
