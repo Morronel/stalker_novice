@@ -4,7 +4,7 @@ Difficulty: "Novice"
 A FREE and OPEN SOURCE web-based CTF (Capture The Flag) challenge inspired by the S.T.A.L.K.E.R. game series atmosphere. This project is a fan creation and is not affiliated with or endorsed by GSC Game World or the official S.T.A.L.K.E.R. team.
 
 ## Description
-Welcome to the Zone, stalker! This web challenge will test your basic web security skills in a S.T.A.L.K.E.R.-themed environment. As a rookie stalker, you've just arrived at the Cordon. Sidorovich, the local trader, has a special task for you - find hidden flags across different locations and exchange them for valuable equipment.
+Welcome to the Zone, stalker! This web challenge will test your basic web security skills in a S.T.A.L.K.E.R.-themed environment. As a rookie stalker, you've just arrived at the Cordon. Sidorovich, the local trader, has a special task for you - find hidden flags across different locations and exchange them for valuable equipment. Available in two languages - English and Ukrainian, out of the box!
 
 ## Features
 - 9 unique locations with different web security challenges
